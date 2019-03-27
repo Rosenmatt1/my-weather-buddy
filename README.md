@@ -2,9 +2,9 @@
 
 Problem Statement: The weather can change dramatically and quickly. One day can be sunny and warm, while the next day freezing. It can challenging to plan to dress appropriatly. The solution is to create an app that sends a user weather alerts based on the criteria of their choosing.
 
-![ERD]("./src/components/assets/ERD.png")
+![ERD](./src/components/assets/ERD.png)
 
-![ERD](/components/assets/ERD.png?raw=true "my-weather-buddy-ERD")
+![ERD](./components/assets/ERD.png?raw=true "my-weather-buddy-ERD")
 
 Routes Plan:
 - Fetch the 5 day forecast from OpenWeather every night at 7pm(SetInterval)
