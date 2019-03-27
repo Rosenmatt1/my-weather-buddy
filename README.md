@@ -4,6 +4,8 @@ Problem Statement: The weather can change dramatically and quickly. One day can 
 
 ![ERD](https://github.com/Rosenmatt1/my-weather-buddy/components/assets/ERD.png)
 
+![ERD](/components/assets/to/ERD.png?raw=true "Optional Title")
+
 Routes Plan:
 - Fetch the 5 day forecast from OpenWeather every night at 7pm(SetInterval)
 - Have server every night at 7pm check if tomorrow's weather data meets criteria(SetInterval)
