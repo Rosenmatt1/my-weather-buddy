@@ -17,12 +17,13 @@ Routes Plan:
 https://trello.com/b/t3px7iXE/myweather-buddy
 
 Technologies Used:
-React-Native
-Node/PostgreSQL/Express/Knex
-OpenWeather API
-Twilio API
-Google Geocoordinates API or Google Places API
-NPM Font Awesome
+- React-Native
+- Node/PostgreSQL/Express/Knex
+- OpenWeather API
+- Twilio API
+- Google Geocoordinates API or Google Places API
+- NPM Font Awesome
+- React-Native Navigation 
 
 Color Palette:
 https://www.canva.com/colors/combinations/berry-jar/
