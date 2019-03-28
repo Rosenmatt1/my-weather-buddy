@@ -7,9 +7,11 @@ Problem Statement: The weather can change dramatically and quickly. One day can 
 Routes Plan:
 - Fetch the 5 day forecast from OpenWeather every night at 7pm(SetInterval)
 - Have server every night at 7pm check if tomorrow's weather data meets criteria(SetInterval)
-- Have POST route create Alert and adds data to Alerts database
-- Have DELETE route that deletes the alert from database
-- Have PUT route that allows alert to be edited.
+- POST route "/create/:email" to create user
+- POST route "/alert/:userID" to create alert
+- Delete route "/alert/:alertID"
+- PATCH route "/alert/:alertID"
+- Get route "user/:id" for display of alerts
 * All current data will be reflected in database.
 
 https://trello.com/b/t3px7iXE/myweather-buddy
