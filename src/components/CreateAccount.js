@@ -17,6 +17,13 @@ class CreateAccount extends Component {
           title="Create Account"
           // onPress={this.placeSubmitHandler}
         />
+
+        <Button
+          title="Back to home"
+          onPress={() =>
+            this.props.navigation.navigate('Home')
+          }
+        />
       </View>
     )
   }
