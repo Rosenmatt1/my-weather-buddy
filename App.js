@@ -1,23 +1,16 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, View, Button, Text } from 'react-native'
+import { Platform, StyleSheet, View, } from 'react-native'
 import { createStackNavigator, createAppContainer, } from 'react-navigation'
 import CreateAccount from './src/components/CreateAccount.js'
+import Login from './src/components/Login.js'
 
-
-class Login extends Component {
+class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Login</Text>
-        <Button
-          title="Login"
-          onPress={() => this.props.navigation.navigate('createAccount')}
-        />
-      </View>
+      <AppNavigator />
     )
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {
