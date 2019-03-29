@@ -6,16 +6,35 @@ class CreateAccount extends Component {
   render() {
     return (
       <View style={styles.form}>
-      
+
         <TextInput
           style={styles.inputs}
           placeholder="Name"
-          value="this will be state name"
+          // value="this will be state name"
           // onChangeText={this.placeNameChangedHandler}
         />
+        <TextInput
+          style={styles.inputs}
+          placeholder="Email"
+          // value="this will be state email"
+        // onChangeText={this.placeNameChangedHandler}
+        />
+        <TextInput
+          style={styles.inputs}
+          placeholder="Phone"
+          // value="this will be state phone"
+        // onChangeText={this.placeNameChangedHandler}
+        />
+        <TextInput
+          style={styles.inputs}
+          placeholder="Password"
+          // value="this will be state password"
+        // onChangeText={this.placeNameChangedHandler}
+        />
+
         <Button
           style={styles.createButton}
-          title="Create Account"
+          title="Already have an account? Login"
           onPress={() =>
             this.props.navigation.navigate('login')
           }
@@ -29,8 +48,7 @@ class CreateAccount extends Component {
 const styles = StyleSheet.create({
   form: {
     width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: "column",
     alignItems: "center"
   },
   inputs: {

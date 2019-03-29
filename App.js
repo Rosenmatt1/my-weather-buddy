@@ -12,21 +12,6 @@ class App extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#C8F4F9',
-  },
-  // title: {
-  //   fontSize: 20,
-  //   textAlign: 'center',
-  //   alignContent: 'flex-start',
-  //   margin: 10,
-  // },
-})
-
 const AppNavigator = createStackNavigator({
   login: Login,
   createAccount: CreateAccount,
