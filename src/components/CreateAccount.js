@@ -6,6 +6,7 @@ class CreateAccount extends Component {
   render() {
     return (
       <View style={styles.form}>
+      
         <TextInput
           style={styles.inputs}
           placeholder="Name"
@@ -15,15 +16,11 @@ class CreateAccount extends Component {
         <Button
           style={styles.createButton}
           title="Create Account"
-          // onPress={this.placeSubmitHandler}
+          onPress={() =>
+            this.props.navigation.navigate('login')
+          }
         />
 
-        {/* <Button
-          title="Back to home"
-          onPress={() =>
-            this.props.navigation.navigate('Home')
-          }
-        /> */}
       </View>
     )
   }

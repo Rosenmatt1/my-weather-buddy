@@ -1,40 +1,23 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, View, Button, Text } from 'react-native'
 import { createStackNavigator, createAppContainer, } from 'react-navigation'
-// import CreateAccount from './src/components/CreateAccount.js'
-// import AppNavigator from './src/components/AppNavigator.js';
+import CreateAccount from './src/components/CreateAccount.js'
 
 
-
-class App extends Component {
+class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>This is App</Text>
+        <Text>Login</Text>
         <Button
-          title="Go to App"
-          onPress={() => this.props.navigation.navigate('test')}
+          title="Login"
+          onPress={() => this.props.navigation.navigate('createAccount')}
         />
       </View>
     )
   }
 }
 
-class Test extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>This is Test</Text>
-        <Button
-          title="Go to Test"
-          onPress={() =>
-            this.props.navigation.navigate('home')
-          }
-        />
-      </View>
-    )
-  }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -52,8 +35,8 @@ const styles = StyleSheet.create({
 })
 
 const AppNavigator = createStackNavigator({
-  home: App,
-  test: Test,
+  login: Login,
+  createAccount: CreateAccount,
 })
 
 const AppContainer = createAppContainer(AppNavigator);
