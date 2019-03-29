@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, View, } from 'react-native'
-import CreateAccount from './src/components/CreateAccount.js'
+// import CreateAccount from './CreateAccount.js'
+
+import AppNavigator from './AppNavigator';
 
 class App extends Component {
   render() {
     return (
       <View style={styles.container}>
     
-          <CreateAccount />
-         
+        {/* <CreateAccount /> */}
+
+        <AppNavigator />
+
       </View>
     )
   }
