@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
-import CreateAccount from './components/HomeScreen.js'
+import React, { Component } from 'react'
+import { Platform, StyleSheet, View, } from 'react-native'
+import CreateAccount from './src/components/CreateAccount.js'
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-     
-      <CreateAccount />
-      
+    
+          <CreateAccount />
+         
       </View>
-    );
+    )
   }
 }
 
@@ -21,17 +21,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#C8F4F9',
   },
-  title: {
-    fontSize: 20,
-    textAlign: 'center',
-    // alignContent: 'flex-start',
-    margin: 10,
-  },
-  // createAccount: {
-  //   // flex: 1,
-  //   width: "100%",
-  //   flexDirection: "row",
-  //   justifyContent: "space-between",
-  //   alignItems: "center"
+  // title: {
+  //   fontSize: 20,
+  //   textAlign: 'center',
+  //   alignContent: 'flex-start',
+  //   margin: 10,
   // },
-});
+
+})
+
+export default App

@@ -1,35 +1,29 @@
 import React, { Component } from "react";
-import { View, TextInput, Button, StyleSheet,  } from "react-native";
-
+import { View, TextInput, Button, StyleSheet } from "react-native";
 
 class CreateAccount extends Component {
   
-
   render() {
     return (
       <View style={styles.form}>
         <TextInput
-          placeholder="Name"
-          // value={this.state.placeName}
-          // onChangeText={this.placeNameChangedHandler}
           style={styles.inputs}
+          placeholder="Name"
+          value="this will be state name"
+          // onChangeText={this.placeNameChangedHandler}
         />
-        {/* <TouchableOpacity>
-          <Icon size={30} name="ios-airplane" color="red" />
-        </TouchableOpacity> */}
         <Button
+          style={styles.createButton}
           title="Create Account"
-          // style={styles.placeButton}
           // onPress={this.placeSubmitHandler}
         />
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   form: {
-    // flex: 1,
     width: "100%",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -38,9 +32,9 @@ const styles = StyleSheet.create({
   inputs: {
     width: "70%"
   },
-  placeButton: {
+  createButton: {
     width: "30%"
-  }
+  },
 })
 
 export default CreateAccount
