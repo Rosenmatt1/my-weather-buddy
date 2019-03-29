@@ -1,17 +1,36 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, View, } from 'react-native'
-import CreateAccount from './src/components/CreateAccount.js'
-// import AppNavigator from './src/components/AppNavigator';
+import { Platform, StyleSheet, View, Button, Text } from 'react-native'
+import { createStackNavigator, createAppContainer, } from 'react-navigation'
+// import CreateAccount from './src/components/CreateAccount.js'
+// import AppNavigator from './src/components/AppNavigator.js';
+
+
 
 class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-    
-        <CreateAccount />
+        <Text>This is App</Text>
+        <Button
+          title="Go to App"
+          onPress={() => this.props.navigation.navigate('test')}
+        />
+      </View>
+    )
+  }
+}
 
-        {/* <AppNavigator /> */}
-
+class Test extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>This is Test</Text>
+        <Button
+          title="Go to Test"
+          onPress={() =>
+            this.props.navigation.navigate('home')
+          }
+        />
       </View>
     )
   }
@@ -30,7 +49,15 @@ const styles = StyleSheet.create({
   //   alignContent: 'flex-start',
   //   margin: 10,
   // },
-
 })
 
-export default App
+const AppNavigator = createStackNavigator({
+  home: App,
+  test: Test,
+})
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default AppContainer
+
+
