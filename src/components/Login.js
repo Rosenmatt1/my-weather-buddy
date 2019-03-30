@@ -22,12 +22,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#C8F4F9',
   },
-  // title: {
-  //   fontSize: 20,
-  //   textAlign: 'center',
-  //   alignContent: 'flex-start',
-  //   margin: 10,
-  // },
 })
 
 export default Login

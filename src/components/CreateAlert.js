@@ -10,43 +10,33 @@ class CreateAlert extends Component {
         <Heading >My Weather Buddy</Heading>
 
         <View style={styles.inputContainer}>
+          <Text></Text>
           <TextInput
             style={styles.inputs}
-            placeholder="Name"
-          // value="this will be state name"
+            placeholder="Temp"
+          // value="this will be the temp"
           // onChangeText={this.placeNameChangedHandler}
           />
-          <TextInput
-            style={styles.inputs}
-            placeholder="Email"
-          // value="this will be state email"
-          // onChangeText={this.placeNameChangedHandler}
+
+          <Button
+            style={styles.createAlertButton}
+            title="Create Alert"
+            onPress={() =>
+              this.props.navigation.navigate('viewAlerts')
+            }
+          //  onPress={(e) => { func1(); func2(); }}>
           />
-          <TextInput
-            style={styles.inputs}
-            placeholder="Phone"
-          // value="this will be state phone"
-          // onChangeText={this.placeNameChangedHandler}
-          />
-          <TextInput
-            style={styles.inputs}
-            placeholder="Password"
-          // value="this will be state password"
-          // onChangeText={this.placeNameChangedHandler}
+
+          <Button
+            style={styles.viewAlertsButton}
+            title="View Alerts"
+            onPress={() =>
+              this.props.navigation.navigate('viewAlerts')
+            }
+          //  onPress={(e) => { func1(); func2(); }}>
           />
         </View>
-       
-
-        <Button
-          style={styles.viewAlertsButton}
-          title="Already have an account? Login"
-          onPress={() =>
-            this.props.navigation.navigate('login')
-          }
-        //  onPress={(e) => { func1(); func2(); }}>
-        />
       </View>
-      // </View>
     )
   }
 }
@@ -68,6 +58,9 @@ const styles = StyleSheet.create({
     borderColor: '#eee',
     padding: 5,
     margin: 8,
+  },
+  createAlertButton: {
+    width: '30%'
   },
   viewAlertsButton: {
     width: '30%'
