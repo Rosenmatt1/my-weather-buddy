@@ -3,7 +3,7 @@ import { Platform, StyleSheet, View, } from 'react-native'
 import { createStackNavigator, createAppContainer, } from 'react-navigation'
 import CreateAccount from './src/components/CreateAccount.js'
 import CreateAlert from './src/components/CreateAlert.js'
-import ViewAlert from './src/components/ViewAlert.js'
+import ViewAlerts from './src/components/ViewAlerts.js'
 import Login from './src/components/Login.js'
 
 class App extends Component {
@@ -32,7 +32,7 @@ const AppNavigator = createStackNavigator({
   createAccount: CreateAccount,
   login: Login,
   createAlert: CreateAlert,
-  viewAlerts: ViewAlert,
+  viewAlerts: ViewAlerts,
 })
 
 const AppContainer = createAppContainer(AppNavigator);

@@ -10,7 +10,6 @@ class CreateAlert extends Component {
         <Heading >My Weather Buddy</Heading>
 
         <View style={styles.inputContainer}>
-          <Text></Text>
           <TextInput
             style={styles.inputs}
             placeholder="Temp"

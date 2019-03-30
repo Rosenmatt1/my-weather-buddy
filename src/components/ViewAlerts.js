@@ -19,16 +19,15 @@ class ViewAlert extends Component {
           />
 
           <Button
-            style={styles.createAlertButton}
+            style={styles.delete}
             title="Delete"
             onPress={() =>
               this.props.navigation.navigate('viewAlerts')
             }
           //  onPress={(e) => { func1(); func2(); }}>
           />
-
           <Button
-            style={styles.viewAlertsButton}
+            style={styles.update}
             title="Edit"
             onPress={() =>
               this.props.navigation.navigate('viewAlerts')
@@ -36,6 +35,26 @@ class ViewAlert extends Component {
           //  onPress={(e) => { func1(); func2(); }}>
           />
         </View>
+
+
+        <Button
+          style={styles.createAlert}
+          title="Create New Alert"
+          onPress={() =>
+            this.props.navigation.navigate('createAlert')
+          }
+        //  onPress={(e) => { func1(); func2(); }}>
+        />
+
+        <Button
+          style={styles.createAlert}
+          title="Log Out"
+          onPress={() =>
+            this.props.navigation.navigate('login')
+          }
+        //  onPress={(e) => { func1(); func2(); }}>
+        />
+
       </View>
     )
   }
@@ -58,6 +77,15 @@ const styles = StyleSheet.create({
     borderColor: '#eee',
     padding: 5,
     margin: 8,
+  },
+  update: {
+    width: '30%'
+  },
+  delete: {
+    width: '30%'
+  },
+  delete: {
+    width: '50%'
   },
   
 })
