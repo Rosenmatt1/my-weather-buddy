@@ -41,6 +41,7 @@ class CreateAccount extends Component {
           onPress={() =>
             this.props.navigation.navigate('login')
           }
+        //  onPress={(e) => { func1(); func2(); }}>
         />
 
       </View>
