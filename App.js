@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, View, } from 'react-native'
 import { createStackNavigator, createAppContainer, } from 'react-navigation'
+import AccountDetails from './src/components/AccountDetails.js'
 import CreateAccount from './src/components/CreateAccount.js'
 import CreateAlert from './src/components/CreateAlert.js'
 import ViewAlerts from './src/components/ViewAlerts.js'
@@ -33,6 +34,7 @@ const AppNavigator = createStackNavigator({
   login: Login,
   createAlert: CreateAlert,
   viewAlerts: ViewAlerts,
+  accountDetails: AccountDetails,
 })
 
 const AppContainer = createAppContainer(AppNavigator);

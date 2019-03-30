@@ -48,9 +48,9 @@ class ViewAlert extends Component {
 
         <Button
           style={styles.createAlert}
-          title="Log Out"
+          title="Account Details"
           onPress={() =>
-            this.props.navigation.navigate('login')
+            this.props.navigation.navigate('accountDetails')
           }
         //  onPress={(e) => { func1(); func2(); }}>
         />

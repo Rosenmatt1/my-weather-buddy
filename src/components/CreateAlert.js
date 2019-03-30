@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, TextInput, Button, StyleSheet, Text } from "react-native";
+import { View, TextInput, Button, StyleSheet } from "react-native";
 import Heading from './Heading.js'
 
 class CreateAlert extends Component {
