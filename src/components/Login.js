@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, View, Button, Text } from 'react-native'
+import Heading from './Heading.js'
 
 class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Login</Text>
+        <Heading> Login </Heading>
         <Button
           title="Login"
-          onPress={() => this.props.navigation.navigate('createAccount')}
+          onPress={() => this.props.navigation.navigate('createAlert')}
         />
       </View>
     )
