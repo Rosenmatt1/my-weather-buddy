@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { View, TextInput, Button, StyleSheet } from "react-native";
+import { View, TextInput, Button, StyleSheet, Text } from "react-native";
 
 class CreateAccount extends Component {
   
   render() {
     return (
       <View style={styles.form}>
-
+        <Text>My Weather Buddy</Text>
         <TextInput
           style={styles.inputs}
           placeholder="Name"
@@ -31,9 +31,12 @@ class CreateAccount extends Component {
           // value="this will be state password"
         // onChangeText={this.placeNameChangedHandler}
         />
+        <Button 
+          title="Create Account"
+        />
 
         <Button
-          style={styles.createButton}
+          style={styles.login}
           title="Already have an account? Login"
           onPress={() =>
             this.props.navigation.navigate('login')
@@ -47,14 +50,16 @@ class CreateAccount extends Component {
 
 const styles = StyleSheet.create({
   form: {
+    flex: 1,
     width: "100%",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    backgroundColor: '#C8F4F9',
   },
   inputs: {
     width: "70%"
   },
-  createButton: {
+  login: {
     width: "30%"
   },
 })
