@@ -2,37 +2,43 @@ import React, { Component } from "react";
 import { View, TextInput, Button, StyleSheet, Text } from "react-native";
 
 class CreateAccount extends Component {
-  
+
   render() {
     return (
+      // <View>
+      //   <View>
+      //     <Text>My Weather Buddy</Text>
+      //   </View>
+
       <View style={styles.form}>
         <Text>My Weather Buddy</Text>
         <TextInput
           style={styles.inputs}
           placeholder="Name"
-          // value="this will be state name"
-          // onChangeText={this.placeNameChangedHandler}
+        // value="this will be state name"
+        // onChangeText={this.placeNameChangedHandler}
         />
         <TextInput
           style={styles.inputs}
           placeholder="Email"
-          // value="this will be state email"
+        // value="this will be state email"
         // onChangeText={this.placeNameChangedHandler}
         />
         <TextInput
           style={styles.inputs}
           placeholder="Phone"
-          // value="this will be state phone"
+        // value="this will be state phone"
         // onChangeText={this.placeNameChangedHandler}
         />
         <TextInput
           style={styles.inputs}
           placeholder="Password"
-          // value="this will be state password"
+        // value="this will be state password"
         // onChangeText={this.placeNameChangedHandler}
         />
-        <Button 
+        <Button
           title="Create Account"
+          style={styles.create}
         />
 
         <Button
@@ -43,22 +49,28 @@ class CreateAccount extends Component {
           }
         //  onPress={(e) => { func1(); func2(); }}>
         />
-
       </View>
+      // </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  // parent: {
+  //   flex: 1,
+  // },
   form: {
     flex: 1,
     width: "100%",
-    flexDirection: "column",
+    justifyContent: 'center',
     alignItems: "center",
     backgroundColor: '#C8F4F9',
   },
   inputs: {
     width: "70%"
+  },
+  create: {
+    width: "30%"
   },
   login: {
     width: "30%"
