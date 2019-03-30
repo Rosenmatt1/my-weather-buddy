@@ -5,16 +5,31 @@ import CreateAccount from './src/components/CreateAccount.js'
 import Login from './src/components/Login.js'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      lat: null,
+      long: null,
+    }
+  }
+
+
   render() {
     return (
-      <AppNavigator />
+      <AppNavigator 
+        // screenProps={{
+        //   currentFriends: this.state.currentFriends,
+        //   possibleFriends: this.state.possibleFriends,
+        //   addFriend: this.addFriend,
+        // }}
+      />
     )
   }
 }
 
 const AppNavigator = createStackNavigator({
-  login: Login,
   createAccount: CreateAccount,
+  login: Login,
 })
 
 const AppContainer = createAppContainer(AppNavigator);
