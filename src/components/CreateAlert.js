@@ -2,18 +2,13 @@ import React, { Component } from "react";
 import { View, TextInput, Button, StyleSheet, Text } from "react-native";
 import Heading from './Heading.js'
 
-class CreateAccount extends Component {
+class CreateAlert extends Component {
 
   render() {
     return (
-      // <View>
-      //   <View>
-      //     <Text>My Weather Buddy</Text>
-      //   </View>
-
       <View style={styles.form}>
         <Heading >My Weather Buddy</Heading>
-        
+
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.inputs}
@@ -40,13 +35,10 @@ class CreateAccount extends Component {
           // onChangeText={this.placeNameChangedHandler}
           />
         </View>
-        <Button
-          title="Create Account"
-          style={styles.create}
-        />
+       
 
         <Button
-          style={styles.login}
+          style={styles.viewAlertsButton}
           title="Already have an account? Login"
           onPress={() =>
             this.props.navigation.navigate('login')
@@ -77,12 +69,9 @@ const styles = StyleSheet.create({
     padding: 5,
     margin: 8,
   },
-  create: {
-    width: '30%'
-  },
-  login: {
+  viewAlertsButton: {
     width: '30%'
   },
 })
 
-export default CreateAccount
+export default CreateAlert
