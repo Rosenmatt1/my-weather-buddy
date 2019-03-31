@@ -9,11 +9,14 @@ class ViewAlert extends Component {
       <View style={styles.form}>
         <Heading>Current Alerts</Heading>
 
+        <Text style={styles.miniText}> **Alerts are sent at 7pm the night before the weather condition will be met** </Text>
+
         <View style={styles.inputContainer}>
           <Text>Alert 1</Text>
           <TextInput
             style={styles.inputs}
             placeholder="Temp"
+            keyboardType="numeric"
           // value="this will be the temp"
           // onChangeText={this.placeNameChangedHandler}
           />
@@ -38,7 +41,7 @@ class ViewAlert extends Component {
 
 
         <Button
-          style={styles.createAlert}
+          style={styles.buttons}
           title="Create New Alert"
           onPress={() =>
             this.props.navigation.navigate('createAlert')
@@ -47,7 +50,7 @@ class ViewAlert extends Component {
         />
 
         <Button
-          style={styles.createAlert}
+          style={styles.buttons}
           title="Account Details"
           onPress={() =>
             this.props.navigation.navigate('accountDetails')
@@ -84,10 +87,14 @@ const styles = StyleSheet.create({
   delete: {
     width: '30%'
   },
-  delete: {
+  buttons: {
     width: '50%'
   },
-  
+  miniText: {
+    width: '70%',
+    fontWeight: '100',
+  },
+
 })
 
 export default ViewAlert

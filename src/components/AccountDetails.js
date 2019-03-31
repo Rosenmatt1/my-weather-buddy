@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, View, Button, TextInput } from 'react-native'
+import { Platform, StyleSheet, View, Button, Text, } from 'react-native'
 import Heading from './Heading.js'
 
 class AccountDetails extends Component {
@@ -12,14 +12,21 @@ class AccountDetails extends Component {
           <Text>Email(UserName):</Text>
           <Text>Matty85@aol.com</Text>
         </View>
+        <Button
+          title="Change Email"
+          onPress={() => this.props.navigation.navigate('createAlert')}
+        />
 
+        <View style={styles.password}>
+          <Text>Password:</Text>
+          <Text>*********</Text>
+        </View>
         <Button
           title="Change Password"
           onPress={() => this.props.navigation.navigate('createAlert')}
         />
 
         <Button
-          style={styles.createAlert}
           title="Log Out"
           onPress={() =>
             this.props.navigation.navigate('login')
@@ -33,8 +40,6 @@ class AccountDetails extends Component {
 }
 
 const styles = StyleSheet.create({
-
-
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -44,15 +49,8 @@ const styles = StyleSheet.create({
   email: {
     flexDirection: 'row',
   },
-  inputContainer: {
-    width: '70%'
-  },
-  inputs: {
-    width: '100%',
-    borderWidth: 1,
-    borderColor: '#eee',
-    padding: 5,
-    margin: 8,
+  password: {
+    flexDirection: 'row',
   },
 })
 
