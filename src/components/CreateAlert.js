@@ -25,10 +25,11 @@ class CreateAlert extends Component {
 
           <TextInput
             style={styles.alertMessage}
-            placeholder="Enter Text Message to be Sent"
+            placeholder="ie Wear Shorts and Sandals"
           // value="this will be the alert message"
           // onChangeText={this.placeNameChangedHandler}
           />
+          <Text style={styles.miniText}>Enter Text Message to be Sent</Text>
 
           <Button
             style={styles.createAlertButton}
@@ -70,6 +71,7 @@ const styles = StyleSheet.create({
   userInput: {
     width: '10%',
     borderWidth: 1,
+    backgroundColor: 'white',
     borderColor: '#eee',
     padding: 5,
     margin: 8,
@@ -77,6 +79,7 @@ const styles = StyleSheet.create({
   alertMessage: {
     width: '100%',
     borderWidth: 1,
+    backgroundColor: 'white',
     borderColor: '#eee',
     padding: 5,
     margin: 8,
@@ -86,6 +89,10 @@ const styles = StyleSheet.create({
   },
   viewAlertsButton: {
     width: '30%'
+  },
+  miniText: {
+    width: '70%',
+    fontWeight: '100',
   },
 })
 
