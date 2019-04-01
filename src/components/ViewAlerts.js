@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { View, Button, StyleSheet, Text } from "react-native";
 import Heading from './Heading.js'
 
+const puce = '#513B41'
+
 class ViewAlert extends Component {
 
   render() {
@@ -12,9 +14,9 @@ class ViewAlert extends Component {
         <Text style={styles.miniText}> **Alerts are sent at 7pm the night before the weather condition will be met** </Text>
 
         <View style={styles.alertContainer}>
-        <View>
-          <Text>Alert 1</Text>
-          <Text>Content of Alert.  If over 90 degrees, wear shorts and sandals.</Text>
+          <View style={styles.center}>
+            <Text style={styles.puceColor}>Alert 1</Text>
+            <Text style={styles.puceColor}>Content of Alert.  If over 90 degrees, wear shorts and sandals.</Text>
           </View>
 
           <View style={styles.rower}>
@@ -66,6 +68,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center'
   },
+  puceColor: {
+    color: puce,
+  },
+  center: {
+    justifyContent: 'center',
+    alignItems: "center",
+  },
   container: {
     flex: 1,
     width: '100%',
@@ -75,27 +84,22 @@ const styles = StyleSheet.create({
   },
   alertContainer: {
     width: '70%',
-    borderColor: '#513B41',
+    borderWidth: 1,
+    borderColor: puce,
     backgroundColor: 'white',
     
-  },
-  inputs: {
-    width: '100%',
-    borderWidth: 1,
-    borderColor: '#eee',
-    padding: 5,
-    margin: 8,
   },
   update: {
     width: '30%'
   },
   delete: {
     width: '30%',
-    color: 'red',
+    color: '#F83839',
   },
   miniText: {
     width: '70%',
     fontWeight: '100',
+    marginBottom: 70,
   },
 
 })
