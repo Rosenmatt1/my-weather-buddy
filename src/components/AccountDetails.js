@@ -26,13 +26,15 @@ class AccountDetails extends Component {
           onPress={() => this.props.navigation.navigate('createAlert')}
         />
 
-        <Button
-          title="Log Out"
-          onPress={() =>
-            this.props.navigation.navigate('login')
-          }
-        //  onPress={(e) => { func1(); func2(); }}>
-        />
+        <View style={styles.logout}>
+          <Button
+            title="Log Out"
+            onPress={() =>
+              this.props.navigation.navigate('login')
+            }
+          //  onPress={(e) => { func1(); func2(); }}>
+          />
+        </View>
 
       </View>
     )
@@ -51,6 +53,9 @@ const styles = StyleSheet.create({
   },
   password: {
     flexDirection: 'row',
+  },
+  logout: {
+    marginTop: 30,
   },
 })
 
