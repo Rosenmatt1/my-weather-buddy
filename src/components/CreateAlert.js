@@ -16,7 +16,7 @@ class CreateAlert extends Component {
             <Text> > </Text>
             <TextInput
               style={styles.userInput}
-              placeholder="Temp"
+              placeholder="90"
             // value="this will be the temp"
             // onChangeText={this.placeNameChangedHandler}
             />
@@ -29,25 +29,30 @@ class CreateAlert extends Component {
           // value="this will be the alert message"
           // onChangeText={this.placeNameChangedHandler}
           />
-          <Text style={styles.miniText}>Enter Text Message to be Sent</Text>
+          <View style={styles.center}>
+            <Text style={styles.miniText}>Enter Text Message to Receive</Text>
+          </View>
 
           <Button
             style={styles.createAlertButton}
-            title="Create Alert"
+            title="Set Alert"
             onPress={() =>
               this.props.navigation.navigate('viewAlerts')
             }
           //  onPress={(e) => { func1(); func2(); }}>
           />
 
-          <Button
-            style={styles.viewAlertsButton}
-            title="View Alerts"
-            onPress={() =>
-              this.props.navigation.navigate('viewAlerts')
-            }
-          //  onPress={(e) => { func1(); func2(); }}>
-          />
+          <View style={styles.marginTop}>
+            <Button
+              style={styles.viewAlertsButton}
+              title="View Alerts"
+              onPress={() =>
+                this.props.navigation.navigate('viewAlerts')
+              }
+            //  onPress={(e) => { func1(); func2(); }}>
+            />
+          </View>
+
         </View>
       </View>
     )
@@ -57,6 +62,10 @@ class CreateAlert extends Component {
 const styles = StyleSheet.create({
   alertSetter: {
     flexDirection: 'row',
+  },
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   form: {
     flex: 1,
@@ -73,8 +82,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     backgroundColor: 'white',
     borderColor: '#eee',
-    padding: 5,
-    margin: 8,
   },
   alertMessage: {
     width: '100%',
@@ -88,11 +95,17 @@ const styles = StyleSheet.create({
     width: '30%'
   },
   viewAlertsButton: {
-    width: '30%'
+    width: '30%',
+    marginTop: 70,
+  },
+  marginTop: {
+    marginTop: 70,
   },
   miniText: {
-    width: '70%',
+    width: '80%',
     fontWeight: '100',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 })
 

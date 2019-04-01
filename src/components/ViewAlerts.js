@@ -86,8 +86,9 @@ const styles = StyleSheet.create({
     width: '70%',
     borderWidth: 1,
     borderColor: puce,
+    borderRadius: 15,
     backgroundColor: 'white',
-    
+    marginBottom: 30,
   },
   update: {
     width: '30%'
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
   miniText: {
     width: '70%',
     fontWeight: '100',
-    marginBottom: 70,
+    marginBottom: 30,
   },
 
 })
