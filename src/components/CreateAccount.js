@@ -32,6 +32,24 @@ class CreateAccount extends Component {
     console.log(this.state.lat)
   }
 
+   createUser = (e) => {
+    e.preventDefault()
+    var newUser = {
+      name: 'Jenn Smith',
+      email: 'Jenn@hotmail.com',
+      phone: '444-444-4444',
+      hashed_password: "1bh*cjhsjh32322$"
+    }
+     await fetch('http://localhost:3000/create/Jenn@hotmail.com', {
+      method: 'POST',
+      body: JSON.stringify(newUser),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+  }
+
 
   render() {
     return (
