@@ -3,17 +3,41 @@ import { View, TextInput, Button, StyleSheet, Text } from "react-native";
 import Heading from './Heading.js'
 
 class CreateAccount extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      lat: 654,
+      long: 80,
+    }
+  }
+
+  testFunction = (props) => {
+    let message = "It worked!!"
+    console.log(message)
+  }
+
+  tester = () => {
+    console.log("Component Did Mount!")
+  }
+
+  componentDidMount() {
+    this.tester()
+    window.navigator.geolocation.getCurrentPosition(position => this.setState({
+      lat: position.coords.latitude
+    }),
+      err => this.setState({
+        errorMessage: err.message
+      })
+    )
+  }
 
   render() {
+    console.log('testing')
     return (
-      // <View>
-      //   <View>
-      //     <Text>My Weather Buddy</Text>
-      //   </View>
 
       <View style={styles.form}>
         <Heading >My Weather Buddy</Heading>
-        
+
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.inputs}
@@ -43,8 +67,9 @@ class CreateAccount extends Component {
         <Button
           title="Create Account"
           style={styles.create}
-          onPress={() =>
-            this.props.navigation.navigate('createAlert')
+          onPress={
+            // this.props.navigation.navigate('createAlert')
+            () => this.testFunction()
           }
         />
 

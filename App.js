@@ -10,17 +10,27 @@ import Login from './src/components/Login.js'
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      lat: null,
-      long: null,
-    }
   }
+
+
+  // renderContent() {
+  //   if (this.state.errorMessage && !this.state.lat) {
+  //     return <View><Text>Error: {this.state.errorMessage}</Text></View >
+  //   }
+
+  //   if (!this.state.errorMessage && this.state.lat) {
+  //     return <SeasonDisplay lat={this.state.lat} />
+  //   }
+
+  //   return <Loader />
+  // }
 
   render() {
     return (
       <AppNavigator 
-        // screenProps={{
-        //   currentFriends: this.state.currentFriends,
+        // screenProps=
+        // {{
+        //   testFunction: this.testFunction,
         //   possibleFriends: this.state.possibleFriends,
         //   addFriend: this.addFriend,
         // }}
@@ -31,6 +41,7 @@ class App extends Component {
 
 const AppNavigator = createStackNavigator({
   createAccount: CreateAccount,
+  // createAccount: { CreateAccount: props => this.testFunction(props) },
   login: Login,
   createAlert: CreateAlert,
   viewAlerts: ViewAlerts,
