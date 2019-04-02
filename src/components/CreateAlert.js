@@ -3,6 +3,9 @@ import { View, TextInput, Button, StyleSheet, Text } from "react-native";
 import Heading from './Heading.js'
 
 class CreateAlert extends Component {
+  constructor(props) {
+    super(props)
+  }
 
   render() {
     return (

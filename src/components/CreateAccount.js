@@ -6,22 +6,12 @@ class CreateAccount extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      lat: 654,
-      long: 80,
+      lat: null,
+      long: null,
     }
   }
 
-  testFunction = (props) => {
-    let message = "It worked!!"
-    console.log(message)
-  }
-
-  tester = () => {
-    console.log("Component Did Mount!")
-  }
-
   componentDidMount() {
-    this.tester()
     window.navigator.geolocation.getCurrentPosition(position => this.setState({
       lat: position.coords.latitude
     }),
@@ -31,10 +21,12 @@ class CreateAccount extends Component {
     )
   }
 
-  render() {
-    console.log('testing')
-    return (
+  displayState = () => {
+    console.log(this.state.lat)
+  }
 
+  render() {
+    return (
       <View style={styles.form}>
         <Heading >My Weather Buddy</Heading>
 
@@ -67,9 +59,9 @@ class CreateAccount extends Component {
         <Button
           title="Create Account"
           style={styles.create}
-          onPress={
+          onPress={() =>
             // this.props.navigation.navigate('createAlert')
-            () => this.testFunction()
+            this.displayState()
           }
         />
 
@@ -85,7 +77,6 @@ class CreateAccount extends Component {
         <Text style={styles.miniText}>**The location for your alerts will be set to your current location at the time of making the account. Please accept the GeoCoordinates request.**</Text>
 
       </View>
-      // </View>
     )
   }
 }
