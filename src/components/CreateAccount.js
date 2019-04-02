@@ -6,22 +6,12 @@ class CreateAccount extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      lat: 865,
-      long: null,
+      lat: 39,
+      long: 105,
     }
   }
 
-  // componentDidMount() {
-  //   window.navigator.geolocation.getCurrentPosition(position => this.setState({
-  //     lat: position.coords.latitude
-  //   }),
-  //     err => this.setState({
-  //       errorMessage: err.message
-  //     })
-  //   )
-  // }
-
-  getLocation = () => {
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(position => this.setState({
       lat: position.coords.latitude
     }),
@@ -29,10 +19,22 @@ class CreateAccount extends Component {
         errorMessage: err.message
       })
     )
-    console.log(this.state.lat)
   }
 
-   createUser = (e) => {
+  getLocation = () => {
+    // window.navigator.geolocation.getCurrentPosition(position => this.setState({
+    //   lat: position.coords.latitude,
+    //   long: position
+    // }),
+    //   err => this.setState({
+    //     errorMessage: err.message
+    //   })
+    // )
+    console.log(this.state.lat)
+    console.log(this.state.long)
+  }
+
+   createUser = async (e) => {
     e.preventDefault()
     var newUser = {
       name: 'Jenn Smith',
@@ -40,7 +42,7 @@ class CreateAccount extends Component {
       phone: '444-444-4444',
       hashed_password: "1bh*cjhsjh32322$"
     }
-     await fetch('http://localhost:3000/create/Jenn@hotmail.com', {
+     await fetch('http://localhost:3000/create/', {
       method: 'POST',
       body: JSON.stringify(newUser),
       headers: {
@@ -86,7 +88,7 @@ class CreateAccount extends Component {
           title="Create Account"
           style={styles.create}
           onPress={() => {
-            this.props.navigation.navigate('createAlert');
+            this.props.navigation.navigate('createAlert', { lat: this.state.lat });
             this.getLocation();
     }
           }

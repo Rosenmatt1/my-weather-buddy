@@ -7,9 +7,23 @@ const puce = '#513B41'
 class ViewAlert extends Component {
   constructor(props) {
     super(props)
+    this.state({
+      forecast: [],
+    })
   }
 
+  // componentDidMount() {
+  //   fetch('http://localhost:3000/user/2')
+  //     .then(data => data.json())
+  //     .then(res => {
+  //       this.setState({
+  //         forecast: res
+  //       })
+  //     })
+  // }
+
   // 'http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&APPID=ab7c893ba66ab77f4354fb07e9abfd0e'
+
 
   render() {
     return (

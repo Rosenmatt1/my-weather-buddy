@@ -7,22 +7,22 @@ class CreateAlert extends Component {
     super(props)
   }
 
-  // createAlert = (e) => {
-  //   e.preventDefault()
-  //   var newAlert = {
-  //     message: "This is a test dumby message",
-  //     user_id: 2,
-  //     type_id: 2
-  //   }
-  //   await fetch('http://localhost:3000/alert/2', {
-  //     method: 'POST',
-  //     body: JSON.stringify(newAlert),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Accept': 'application/json',
-  //     }
-  //   })
-  // }
+  createAlert = async (e) => {
+    e.preventDefault()
+    var newAlert = {
+      message: "This is a test dumby message",
+      user_id: 2,
+      type_id: 2
+    }
+    await fetch('http://localhost:3000/alert/2', {
+      method: 'POST',
+      body: JSON.stringify(newAlert),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+  }
 
 
   render() {
