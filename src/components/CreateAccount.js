@@ -6,12 +6,22 @@ class CreateAccount extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      lat: null,
+      lat: 865,
       long: null,
     }
   }
 
-  componentDidMount() {
+  // componentDidMount() {
+  //   window.navigator.geolocation.getCurrentPosition(position => this.setState({
+  //     lat: position.coords.latitude
+  //   }),
+  //     err => this.setState({
+  //       errorMessage: err.message
+  //     })
+  //   )
+  // }
+
+  getLocation = () => {
     window.navigator.geolocation.getCurrentPosition(position => this.setState({
       lat: position.coords.latitude
     }),
@@ -19,11 +29,9 @@ class CreateAccount extends Component {
         errorMessage: err.message
       })
     )
-  }
-
-  displayState = () => {
     console.log(this.state.lat)
   }
+
 
   render() {
     return (
@@ -59,9 +67,10 @@ class CreateAccount extends Component {
         <Button
           title="Create Account"
           style={styles.create}
-          onPress={() =>
-            // this.props.navigation.navigate('createAlert')
-            this.displayState()
+          onPress={() => {
+            this.props.navigation.navigate('createAlert')
+            this.getLocation()
+    }
           }
         />
 
