@@ -9,7 +9,7 @@ class ViewAlert extends Component {
     super(props)
   }
 
-  'http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&APPID=ab7c893ba66ab77f4354fb07e9abfd0e'
+  // 'http://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&APPID=ab7c893ba66ab77f4354fb07e9abfd0e'
 
   render() {
     return (
