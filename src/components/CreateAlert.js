@@ -7,6 +7,27 @@ class CreateAlert extends Component {
     super(props)
   }
 
+  createAlert = (e) => {
+    e.preventDefault()
+    var newAlert = {
+
+    }
+    await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(newAlert),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    this.setState({
+
+    })
+  }
+
+
+  
+
   render() {
     return (
       <View style={styles.form}>
@@ -52,7 +73,6 @@ class CreateAlert extends Component {
               onPress={() =>
                 this.props.navigation.navigate('viewAlerts')
               }
-            //  onPress={(e) => { func1(); func2(); }}>
             />
           </View>
 
