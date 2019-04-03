@@ -46,7 +46,7 @@ class CreateAccount extends Component {
       phone: e.target[2].value,
       hashed_password: e.target[3].value,
     })
-    var newUser = {
+    const newUser = {
       name: this.state.name,
       email: this.state.email,
       phone: this.state.phone,

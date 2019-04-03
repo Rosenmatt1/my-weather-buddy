@@ -9,7 +9,7 @@ class CreateAlert extends Component {
 
   createAlert = async (e) => {
     e.preventDefault()
-    var newAlert = {
+    const newAlert = {
       message: "This is a test dumby message",
       user_id: 2,
       type_id: 2
