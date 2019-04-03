@@ -1,12 +1,25 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, View, Button, TextInput } from 'react-native'
+import { Platform, StyleSheet, View, Button, TextInput, } from 'react-native'
 import Heading from './Heading.js'
 
 class Postform extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      title: '',
+      body: '',
+    }
+    this.onChange = this.onChange.bind(this)
+  }
 
+  onChange = (e) => {
+    this.setState({[e.target.name]: e.target.value})
+  }
 
+  
   render() {
     return (
+     
       <View style={styles.container}>
         <Heading> Postform </Heading>
 
@@ -14,15 +27,17 @@ class Postform extends Component {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.inputs}
-            placeholder="Email"
-          // value="this will be the temp"
-          // onChangeText={this.placeNameChangedHandler}
+            name="name"
+            placeholder="name"
+            value={this.state.title}
+            onChangeText={this.onChangeText}
           />
           <TextInput
             style={styles.inputs}
-            placeholder="Password"
-          // value="this will be the temp"
-          // onChangeText={this.placeNameChangedHandler}
+            name="body"
+            placeholder="body"
+            value={this.state.body}
+            onChangeText={this.onChangeText}
           />
         </View>
 
@@ -32,6 +47,7 @@ class Postform extends Component {
         />
 
       </View>
+
     )
   }
 }

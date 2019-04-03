@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, View, Button, Text } from 'react-native'
+import { Platform, StyleSheet, View, Button, Text, } from 'react-native'
 import Heading from './Heading.js'
 
 class Post extends Component {
@@ -26,11 +26,8 @@ class Post extends Component {
     return (
       <View style={styles.container}>
         <Heading> Post </Heading>
-       
-
-        {/* <View style={styles.inputContainer}> */}
+        
           {postItems}
-        {/* </View> */}
 
         <Button
           title="Login"
@@ -48,17 +45,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#C8F4F9',
-  },
-  inputContainer: {
-    width: '70%'
-  },
-  inputs: {
-    width: '100%',
-    borderWidth: 1,
-    backgroundColor: 'white',
-    borderColor: '#eee',
-    padding: 5,
-    margin: 8,
   },
 })
 

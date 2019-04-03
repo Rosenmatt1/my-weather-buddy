@@ -83,24 +83,28 @@ class CreateAccount extends Component {
           <TextInput
             style={styles.inputs}
             placeholder="Name"
+            name="name"
             // value={this.state.name}
           // onChangeText={this.placeNameChangedHandler}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Email"
+            name="email"
             // value={this.state.email}
           // onChangeText={this.placeNameChangedHandler}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Phone"
+            name="phone"
             // value={this.state.phone}
           // onChangeText={this.placeNameChangedHandler}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Password"
+            name="hashed_password"
             // value={this.state.password}
           // onChangeText={this.placeNameChangedHandler}
           />
