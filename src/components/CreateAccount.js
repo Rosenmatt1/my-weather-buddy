@@ -42,37 +42,36 @@ class CreateAccount extends Component {
     // console.log(this.state.hashed_password)
   }
 
-   createUser = (e) => {
-    e.preventDefault()
-    this.setState({
-      name: e.target[0].value,
-      email: e.target[1].value,
-      phone: e.target[2].value,
-      hashed_password: e.target[3].value,
-    })
-     console.log(this.state.name)
-     console.log(this.state.email)
-     console.log(this.state.phone)
-     console.log(this.state.hashed_password)
-    this.postUser()
-  }
+  //  createUser = (e) => {
+  //   this.setState({
+  //     name: e.target[0].value,
+  //     email: e.target[1].value,
+  //     phone: e.target[2].value,
+  //     hashed_password: e.target[3].value,
+  //   })
+  //    console.log(this.state.name)
+  //    console.log(this.state.email)
+  //    console.log(this.state.phone)
+  //    console.log(this.state.hashed_password)
+  //   this.postUser()
+  // }
 
-  postUser = () => {
-    const newUser = {
-      name: this.state.name,
-      email: this.state.email,
-      phone: this.state.phone,
-      hashed_password: this.state.hashed_password
-    }
-    fetch('http://localhost:3000/create/', {
-      method: 'POST',
-      body: JSON.stringify(newUser),
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      }
-    })
-  }
+  // postUser = () => {
+  //   const newUser = {
+  //     name: this.state.name,
+  //     email: this.state.email,
+  //     phone: this.state.phone,
+  //     hashed_password: this.state.hashed_password
+  //   }
+  //   fetch('http://localhost:3000/create/', {
+  //     method: 'POST',
+  //     body: JSON.stringify(newUser),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       'Accept': 'application/json',
+  //     }
+  //   })
+  // }
 
 
   render() {
@@ -111,7 +110,8 @@ class CreateAccount extends Component {
           style={styles.create}
           onPress={() => {
             this.props.navigation.navigate('createAlert', { lat: this.state.lat });
-            this.getLocation(); () => this.createUser();
+            this.getLocation(); 
+            // this.createUser();
     }
           }
         />
