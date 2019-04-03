@@ -6,6 +6,10 @@ class CreateAccount extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      name: '',
+      phone: '',
+      email: '',
+      hashed_password: '',
       lat: 39,
       long: 105,
     }
@@ -36,11 +40,17 @@ class CreateAccount extends Component {
 
    createUser = async (e) => {
     e.preventDefault()
+    this.setState({
+      name: e.target[0].value,
+      email: e.target[1].value,
+      phone: e.target[2].value,
+      hashed_password: e.target[3].value,
+    })
     var newUser = {
-      name: 'Jenn Smith',
-      email: 'Jenn@hotmail.com',
-      phone: '444-444-4444',
-      hashed_password: "1bh*cjhsjh32322$"
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.phone,
+      hashed_password: this.state.hashed_password
     }
      await fetch('http://localhost:3000/create/', {
       method: 'POST',
@@ -62,25 +72,25 @@ class CreateAccount extends Component {
           <TextInput
             style={styles.inputs}
             placeholder="Name"
-          // value="this will be state name"
+            value={this.state.name}
           // onChangeText={this.placeNameChangedHandler}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Email"
-          // value="this will be state email"
+            value={this.state.email}
           // onChangeText={this.placeNameChangedHandler}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Phone"
-          // value="this will be state phone"
+            value={this.state.phone}
           // onChangeText={this.placeNameChangedHandler}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Password"
-          // value="this will be state password"
+            value={this.state.password}
           // onChangeText={this.placeNameChangedHandler}
           />
         </View>
