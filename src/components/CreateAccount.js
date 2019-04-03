@@ -6,10 +6,10 @@ class CreateAccount extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: '',
-      phone: '',
-      email: '',
-      hashed_password: '',
+      name: 'John',
+      phone: '303-555-7777',
+      email: 'Lang@aol.com',
+      hashed_password: '3r8&653%1',
       lat: 39,
       long: 105,
     }
@@ -36,9 +36,13 @@ class CreateAccount extends Component {
     // )
     console.log(this.state.lat)
     console.log(this.state.long)
+    // console.log(this.state.name)
+    // console.log(this.state.email)
+    // console.log(this.state.phone)
+    // console.log(this.state.hashed_password)
   }
 
-   createUser = async (e) => {
+   createUser = (e) => {
     e.preventDefault()
     this.setState({
       name: e.target[0].value,
@@ -46,13 +50,21 @@ class CreateAccount extends Component {
       phone: e.target[2].value,
       hashed_password: e.target[3].value,
     })
+     console.log(this.state.name)
+     console.log(this.state.email)
+     console.log(this.state.phone)
+     console.log(this.state.hashed_password)
+    this.postUser()
+  }
+
+  postUser = () => {
     const newUser = {
       name: this.state.name,
       email: this.state.email,
       phone: this.state.phone,
       hashed_password: this.state.hashed_password
     }
-     await fetch('http://localhost:3000/create/', {
+    fetch('http://localhost:3000/create/', {
       method: 'POST',
       body: JSON.stringify(newUser),
       headers: {
@@ -72,25 +84,25 @@ class CreateAccount extends Component {
           <TextInput
             style={styles.inputs}
             placeholder="Name"
-            value={this.state.name}
+            // value={this.state.name}
           // onChangeText={this.placeNameChangedHandler}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Email"
-            value={this.state.email}
+            // value={this.state.email}
           // onChangeText={this.placeNameChangedHandler}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Phone"
-            value={this.state.phone}
+            // value={this.state.phone}
           // onChangeText={this.placeNameChangedHandler}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Password"
-            value={this.state.password}
+            // value={this.state.password}
           // onChangeText={this.placeNameChangedHandler}
           />
         </View>
@@ -99,7 +111,7 @@ class CreateAccount extends Component {
           style={styles.create}
           onPress={() => {
             this.props.navigation.navigate('createAlert', { lat: this.state.lat });
-            this.getLocation();
+            this.getLocation(); () => this.createUser();
     }
           }
         />
