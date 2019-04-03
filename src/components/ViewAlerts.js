@@ -7,9 +7,9 @@ const puce = '#513B41'
 class ViewAlert extends Component {
   constructor(props) {
     super(props)
-    this.state({
+    this.state = {
       forecast: [],
-    })
+    }
   }
 
   // componentDidMount() {
