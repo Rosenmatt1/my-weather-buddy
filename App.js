@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import { Platform } from 'react-native'
 import { createStackNavigator, createAppContainer, } from 'react-navigation'
+import { Provider } from 'react-redux'
+import Store from './src/components/Store.js'
+
+
 import AccountDetails from './src/components/AccountDetails.js'
 import CreateAccount from './src/components/CreateAccount.js'
 import CreateAlert from './src/components/CreateAlert.js'
@@ -16,7 +20,9 @@ class App extends Component {
 
   render() {
     return (
-      <AppNavigator/>
+      <Provider store={store}>
+        <AppNavigator/>
+      </Provider>
     )
   }
 }
