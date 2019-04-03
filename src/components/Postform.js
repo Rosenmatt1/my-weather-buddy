@@ -6,16 +6,35 @@ class Postform extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      title: '',
-      body: '',
+      title: 'Jimbo',
+      body: 'Hello world',
     }
     this.onChange = this.onChange.bind(this)
+    this.onPress = this.onPress.bind(this)
   }
 
-  onChange = (e) => {
+  onChange(e) {
     this.setState({[e.target.name]: e.target.value})
   }
 
+  onPress(e) {
+    e.preventDefault()
+    
+    const newPost = {
+      title: this.state.title,
+      body: this.state.body
+    }
+
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(newPost)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
+  }
   
   render() {
     return (
@@ -27,23 +46,26 @@ class Postform extends Component {
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.inputs}
-            name="name"
-            placeholder="name"
+            type="text"
+            name="title"
+            placeholder="title"
             value={this.state.title}
-            onChangeText={this.onChangeText}
+            onChange={this.onChange}
           />
           <TextInput
             style={styles.inputs}
+            type="text"
             name="body"
             placeholder="body"
             value={this.state.body}
-            onChangeText={this.onChangeText}
+            onChange={this.onChange}
           />
         </View>
 
         <Button
           title="Login"
-          onPress={() => this.props.navigation.navigate('post')}
+          // onPress={() => this.props.navigation.navigate('post')}
+          onPress={this.onPress}
         />
 
       </View>
