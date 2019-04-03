@@ -6,6 +6,8 @@ import CreateAccount from './src/components/CreateAccount.js'
 import CreateAlert from './src/components/CreateAlert.js'
 import ViewAlerts from './src/components/ViewAlerts.js'
 import Login from './src/components/Login.js'
+import Post from './src/components/Post.js'
+import Postform from './src/components/Postform.js'
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +22,8 @@ class App extends Component {
 }
 
 const AppNavigator = createStackNavigator({
+  post: Post,
+  postform: Postform,
   createAccount: CreateAccount,
   login: Login,
   createAlert: CreateAlert,
