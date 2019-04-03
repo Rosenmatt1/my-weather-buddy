@@ -1,20 +1,15 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, View, Button, Text, } from 'react-native'
 import Heading from './Heading.js'
+import { connect }from 'react-redux'
+import { fetchPosts } from '../actions/PostActions'
 
 class Post extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-    posts: [],
-    }
-  }
 
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/posts')
-      .then(res => res.json())
-      .then(data => this.setState({posts: data}))
+    this.props.fetchPosts()
   }
+  
 
   render() {
     const postItems = this.state.posts.map(item => (
@@ -48,4 +43,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Post
+export default connect(null, {fetchPosts})(Post)

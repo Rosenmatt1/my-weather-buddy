@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Platform } from 'react-native'
 import { createStackNavigator, createAppContainer, } from 'react-navigation'
 import { Provider } from 'react-redux'
-import Store from './src/components/Store.js'
+import store from './src/components/Store.js'
 
 
 import AccountDetails from './src/components/AccountDetails.js'
