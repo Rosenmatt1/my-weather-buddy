@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, View, Button, TextInput, } from 'react-native'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { createPost } from '../actions/PostActions.js'
 import Heading from './Heading.js'
 
 class Postform extends Component {
@@ -19,26 +22,15 @@ class Postform extends Component {
 
   onPress(e) {
     e.preventDefault()
-    
     const newPost = {
       title: this.state.title,
       body: this.state.body
     }
-
-    fetch('https://jsonplaceholder.typicode.com/posts', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(newPost)
-    })
-    .then(res => res.json())
-    .then(data => console.log(data))
+    this.props.createPost(newPost)
   }
   
   render() {
     return (
-     
       <View style={styles.container}>
         <Heading> Postform </Heading>
 
@@ -69,7 +61,6 @@ class Postform extends Component {
         />
 
       </View>
-
     )
   }
 }
@@ -94,4 +85,8 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Postform
+Postform.propTypes = {
+  createPost: PropTypes.func.isRequired
+}
+
+export default connect(null, { createPost })(Postform)

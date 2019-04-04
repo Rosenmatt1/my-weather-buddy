@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST } from '../actions/Types'
+import { FETCH_POSTS, NEW_POST } from '../actions/Types.js'
 
 const initialState = {
   items: [],
@@ -13,6 +13,12 @@ export default function(state = initialState, action) {
       ...state,
       items: action.payload
     }
+    case NEW_POST:
+      console.log('reducer')
+      return {
+        ...state,
+        item: action.payload
+      }
     default: 
       return state;
   }
