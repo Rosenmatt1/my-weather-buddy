@@ -17,7 +17,6 @@ class CreateAccount extends Component {
   }
 
   componentDidMount() {
-    
     window.navigator.geolocation.getCurrentPosition(position => this.setState({
       // lat: position.coords.latitude
       location: position.coords.latitude
@@ -43,11 +42,18 @@ class CreateAccount extends Component {
     console.log(this.state.email)
   }
 
+  setPhone = () => {
+    this.setState({
+      phone: e.target
+    })
+    console.log(this.state.phone)
+  }
+
   setPassword = () => {
     this.setState({
       password: e.target
     })
-    console.log(this.state.email)
+    console.log(this.state.password)
   }
 
   //  createUser = (e) => {
