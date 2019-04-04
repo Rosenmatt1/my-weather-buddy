@@ -14,6 +14,10 @@ class CreateAccount extends Component {
       long: 105,
       location: []
     }
+    this.setName = this.setName.bind(this)
+    this.setEmail = this.setEmail.bind(this)
+    this.setPhone = this.setPhone.bind(this)
+    this.setPassword = this.setPassword.bind(this)
   }
 
   componentDidMount() {
@@ -42,42 +46,42 @@ class CreateAccount extends Component {
     console.log(this.state.email)
   }
 
-  setPhone = () => {
+  setPhone = (e) => {
     this.setState({
       phone: e.target
     })
     console.log(this.state.phone)
   }
 
-  setPassword = () => {
+  setPassword = (e) => {
     this.setState({
-      password: e.target
+      hashed_password: e.target
     })
-    console.log(this.state.password)
+    console.log(this.state.hashed_password)
   }
 
-  //  createUser = (e) => {
-  //   this.setState({
-  //     name: e.nativeEventtarget[0].value,
-  //     email: e.target[1],
-  //     phone: e.target[2],
-  //     hashed_password: e.target[3]
-  //   })
-  //    console.log(this.state.name)
-  //    console.log(this.state.email)
-  //    console.log(this.state.phone)
-  //    console.log(this.state.hashed_password)
-  //   // this.postUser()
-  // }
-
-  getLocation = () => {
-    console.log(this.state.lat)
-    console.log(this.state.long)
+  createUser = (e) => {
+    // this.setState({
+    //   name: e.nativeEventtarget[0].value,
+    //   email: e.target[1],
+    //   phone: e.target[2],
+    //   hashed_password: e.target[3]
+    // })
     console.log(this.state.name)
     console.log(this.state.email)
     console.log(this.state.phone)
     console.log(this.state.hashed_password)
+    // this.postUser()
   }
+
+  // getLocation = () => {
+  //   console.log(this.state.lat)
+  //   console.log(this.state.long)
+  //   console.log(this.state.name)
+  //   console.log(this.state.email)
+  //   console.log(this.state.phone)
+  //   console.log(this.state.hashed_password)
+  // }
 
 
 
@@ -110,7 +114,7 @@ class CreateAccount extends Component {
 
   // searchPrices = (e) => {
   //   e.preventDefault()
-    
+
   //   const toAddress = e.target[1].value
   //   Promise.all([this.fromAddressGoogle(fromAddress), this.toAddressGoogle(toAddress)])
   //     .then(() => {
@@ -118,7 +122,7 @@ class CreateAccount extends Component {
   //       const puLong = this.state.pickupLatLong.lng; 
 
   //     })
-      
+
   // }
 
 
@@ -132,40 +136,37 @@ class CreateAccount extends Component {
             style={styles.inputs}
             placeholder="Name"
             name="name"
-            value={this.state.name}
-            onChangeText={this.setName}
+            // value={this.state.name}
+            onChangeText={(e) =>this.setName(e)}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Email"
             name="email"
-            value={this.state.email}
-            onChangeText={this.setEmail}
+            // value={this.state.email}
+            onChangeText={(e) =>this.setEmail(e)}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Phone"
             name="phone"
             // value={this.state.phone}
-          // onChangeText={this.placeNameChangedHandler}
+            onChangeText={(e) => this.setPhone(e)}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Password"
             name="hashed_password"
-            // value={this.state.password}
-          // onChangeText={this.placeNameChangedHandler}
+            // value={this.state.hashed_password}
+            onChangeText={(e) => this.setPassword(e)}
           />
         </View>
         <Button
           title="Create Account"
           style={styles.create}
           onPress={() => {
-            this.props.navigation.navigate('createAlert', { lat: this.state.lat });
-            this.getLocation(); 
-            // this.createUser();
-    }
-          }
+            this.props.navigation.navigate('createAlert', { lat: this.state.lat }); this.createUser();
+          }}
         />
 
         <Button
