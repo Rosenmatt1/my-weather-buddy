@@ -6,71 +6,113 @@ class CreateAccount extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      name: 'John',
+      name: '',
       phone: '303-555-7777',
-      email: 'Lang@aol.com',
+      email: '',
       hashed_password: '3r8&653%1',
       lat: 39,
       long: 105,
+      location: []
     }
   }
 
   componentDidMount() {
+    
     window.navigator.geolocation.getCurrentPosition(position => this.setState({
-      lat: position.coords.latitude
+      // lat: position.coords.latitude
+      location: position.coords.latitude
     }),
       err => this.setState({
         errorMessage: err.message
       })
     )
+    console.log(this.state.location)
   }
 
-  getLocation = () => {
-    // window.navigator.geolocation.getCurrentPosition(position => this.setState({
-    //   lat: position.coords.latitude,
-    //   long: position
-    // }),
-    //   err => this.setState({
-    //     errorMessage: err.message
-    //   })
-    // )
-    console.log(this.state.lat)
-    console.log(this.state.long)
-    // console.log(this.state.name)
-    // console.log(this.state.email)
-    // console.log(this.state.phone)
-    // console.log(this.state.hashed_password)
+  setName = (e) => {
+    this.setState({
+      name: e.target
+    })
+    console.log(this.state.name)
+  }
+
+  setEmail = (e) => {
+    this.setState({
+      email: e.target
+    })
+    console.log(this.state.email)
+  }
+
+  setPassword = () => {
+    this.setState({
+      password: e.target
+    })
+    console.log(this.state.email)
   }
 
   //  createUser = (e) => {
   //   this.setState({
-  //     name: e.target[0].value,
-  //     email: e.target[1].value,
-  //     phone: e.target[2].value,
-  //     hashed_password: e.target[3].value,
+  //     name: e.nativeEventtarget[0].value,
+  //     email: e.target[1],
+  //     phone: e.target[2],
+  //     hashed_password: e.target[3]
   //   })
   //    console.log(this.state.name)
   //    console.log(this.state.email)
   //    console.log(this.state.phone)
   //    console.log(this.state.hashed_password)
-  //   this.postUser()
+  //   // this.postUser()
   // }
 
-  // postUser = () => {
-  //   const newUser = {
-  //     name: this.state.name,
-  //     email: this.state.email,
-  //     phone: this.state.phone,
-  //     hashed_password: this.state.hashed_password
-  //   }
-  //   fetch('http://localhost:3000/create/', {
-  //     method: 'POST',
-  //     body: JSON.stringify(newUser),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Accept': 'application/json',
-  //     }
+  getLocation = () => {
+    console.log(this.state.lat)
+    console.log(this.state.long)
+    console.log(this.state.name)
+    console.log(this.state.email)
+    console.log(this.state.phone)
+    console.log(this.state.hashed_password)
+  }
+
+
+
+  postUser = () => {
+    const newUser = {
+      name: this.state.name,
+      email: this.state.email,
+      phone: this.state.phone,
+      hashed_password: this.state.hashed_password,
+      lat: this.state.lat,
+      long: this.state.long
+    }
+    fetch('http://localhost:3000/create/', {
+      method: 'POST',
+      body: JSON.stringify(newUser),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+  }
+
+  // toAddressGoogle = async (toGoogleAddress) => {
+  //   await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${toGoogleAddress}&key=AIzaSyBixPOjrGSjxpkw-pszxd_iUvQdbMBTXxg`, {
+  //     method: "GET", "Content-Type": "application/json",
   //   })
+  //     .then(response => response.json())
+  //     .then(data => { this.setState({ location: data.results[0].geometry.location }) })
+  // }
+
+  // searchPrices = (e) => {
+  //   e.preventDefault()
+    
+  //   const toAddress = e.target[1].value
+  //   Promise.all([this.fromAddressGoogle(fromAddress), this.toAddressGoogle(toAddress)])
+  //     .then(() => {
+  //       const lat = this.state.pickupLatLong.lat; 
+  //       const puLong = this.state.pickupLatLong.lng; 
+
+  //     })
+      
   // }
 
 
@@ -84,15 +126,15 @@ class CreateAccount extends Component {
             style={styles.inputs}
             placeholder="Name"
             name="name"
-            // value={this.state.name}
-          // onChangeText={this.placeNameChangedHandler}
+            value={this.state.name}
+            onChangeText={this.setName}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Email"
             name="email"
-            // value={this.state.email}
-          // onChangeText={this.placeNameChangedHandler}
+            value={this.state.email}
+            onChangeText={this.setEmail}
           />
           <TextInput
             style={styles.inputs}
