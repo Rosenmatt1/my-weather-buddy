@@ -21,17 +21,24 @@ class CreateAccount extends Component {
     }
   }
 
-  componentDidMount() {
-    window.navigator.geolocation.getCurrentPosition(position => this.setState({
-      // lat: position.coords.latitude
-      location: position.coords.latitude
-    }),
-      err => this.setState({
-        errorMessage: err.message
-      })
-    )
-    console.log(this.state.location)
-  }
+
+  // componentDidMount() {
+  //   let geoOptions = {
+  //     enableHighAccuracy: true,
+  //     timeOut: 20000,
+  //     maximumAge: 60 * 60 * 24
+  //   }
+  //   window.navigator.geolocation.getCurrentPosition(position => {
+  //     console.log("position", position)
+  //     this.setState({
+  //       // lat: position.coords.latitude
+  //       location: position.coords.latitude
+  //     }),
+  //       err => this.setState({
+  //         errorMessage: err.message
+  //       }), geoOptions
+  //   })
+  // }
 
   setName = (e) => {
     this.setState({
@@ -58,14 +65,51 @@ class CreateAccount extends Component {
   }
 
 
-  getLocation = () => {
-    console.log(this.state.lat)
-    console.log(this.state.long)
-    console.log(this.state.name)
-    console.log(this.state.email)
-    console.log(this.state.phone)
-    console.log(this.state.hashed_password)
+  getLocation = (e) => {
+    console.log("e", e)
+    window.navigator.geolocation.getCurrentPosition(position => { 
+    console.log("position", position)
+      this.setState({
+      // lat: position.coords.latitude
+      location: position.coords.latitude
+    }),
+      err => this.setState({
+        errorMessage: err.message
+      })
+    })
+    console.log("location", this.state.location)
   }
+
+  // getLocation = async (toGoogleAddress) => {
+  //   await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${toGoogleAddress}&key=AIzaSyBixPOjrGSjxpkw-pszxd_iUvQdbMBTXxg`, {
+  //     method: "GET", "Content-Type": "application/json",
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => { this.setState({ location: data.results[0].geometry.location }) })
+  // }
+
+  // const toAddress = e.target[1].value
+  // Promise.all([this.fromAddressGoogle(fromAddress), this.toAddressGoogle(toAddress)])
+
+
+  // pickUpAddress = async (e) => {
+  //   this.setState({ puAddress: e.target.value })
+  //   await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${e.target.value}&key=AIzaSyBixPOjrGSjxpkw-pszxd_iUvQdbMBTXxg&sessiontoken=${localStorage.lyftjwt}`, {
+  //     method: "GET",
+  //     "Content-Type": "application/json",
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       this.setState({
+  //         autocompletePu: data
+  //       })
+  //     })
+  //     .catch(error => {
+  //       console.error(error)
+  //     })
+  // }
+
+  // <input id="autocomplete" onChange={props.pickUpAddress} type="address" className="form-control border-dark" placeholder="Enter Pick Up Location" value={props.puAddress} />
 
 
   postUser = () => {
@@ -86,27 +130,6 @@ class CreateAccount extends Component {
       }
     })
   }
-
-  // toAddressGoogle = async (toGoogleAddress) => {
-  //   await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${toGoogleAddress}&key=AIzaSyBixPOjrGSjxpkw-pszxd_iUvQdbMBTXxg`, {
-  //     method: "GET", "Content-Type": "application/json",
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => { this.setState({ location: data.results[0].geometry.location }) })
-  // }
-
-  // searchPrices = (e) => {
-  //   e.preventDefault()
-
-  //   const toAddress = e.target[1].value
-  //   Promise.all([this.fromAddressGoogle(fromAddress), this.toAddressGoogle(toAddress)])
-  //     .then(() => {
-  //       const lat = this.state.pickupLatLong.lat; 
-  //       const puLong = this.state.pickupLatLong.lng; 
-
-  //     })
-
-  // }
 
 
   render() {
@@ -158,9 +181,7 @@ class CreateAccount extends Component {
         <Button
           title="Create Account"
           style={styles.create}
-          onPress={() => {
-            this.props.navigation.navigate('createAlert', { lat: this.state.lat }); this.getLocation();
-          }}
+          onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat }); this.getLocation()  } }
         />
 
         <Button
