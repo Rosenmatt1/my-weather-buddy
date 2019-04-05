@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, TextInput, Button, StyleSheet, Text, Image } from "react-native";
 // import FontAwesome, { Icons, parseIconName } from 'react-native-fontawesome';
 import Heading from './Heading.js'
-import SvgComponent from './assets/snowflake-solid.svg'
+// import SvgComponent from './assets/snowflake-solid.svg'
 
 // const chev = parseIconFromClassName('fas fa-chevron-left')
 // const snowflake = parseIconFromClassName('fas fa-chevron-left')
@@ -15,17 +15,17 @@ class CreateAccount extends Component {
     super(props)
     this.state = {
       name: '',
-      phone: '303-555-7777',
+      phone: '',
       email: '',
-      hashed_password: '3r8&653%1',
+      hashed_password: '',
       lat: 39,
       long: 105,
       location: []
     }
-    this.setName = this.setName.bind(this)
-    this.setEmail = this.setEmail.bind(this)
-    this.setPhone = this.setPhone.bind(this)
-    this.setPassword = this.setPassword.bind(this)
+    // this.setName = this.setName.bind(this)
+    // this.setEmail = this.setEmail.bind(this)
+    // this.setPhone = this.setPhone.bind(this)
+    // this.setPassword = this.setPassword.bind(this)
   }
 
   componentDidMount() {
@@ -42,30 +42,26 @@ class CreateAccount extends Component {
 
   setName = (e) => {
     this.setState({
-      name: e.target
+      name: e
     })
-    console.log(this.state.name)
   }
 
   setEmail = (e) => {
     this.setState({
-      email: e.target
+      email: e
     })
-    console.log(this.state.email)
   }
 
   setPhone = (e) => {
     this.setState({
-      phone: e.target
+      phone: e
     })
-    console.log(this.state.phone)
   }
 
   setPassword = (e) => {
     this.setState({
-      hashed_password: e.target
+      hashed_password: e
     })
-    console.log(this.state.hashed_password)
   }
 
   createUser = (e) => {
@@ -144,13 +140,10 @@ class CreateAccount extends Component {
           <FontAwesome>{snowflake}</FontAwesome>
         </Text> */}
 
-        <Image style={styles.snowflake} source={require('./assets/snowflake-solid.svg')} />
+        {/* <Image style={styles.snowflake} source={require('./assets/snowflake-solid.svg')} />
 
-        <Image style={styles.snowflake} source={SvgComponent} />
+        <Image style={styles.snowflake} source={SvgComponent} /> */}
 
-        
-
-        
 
         <View style={styles.inputContainer}>
           <TextInput
