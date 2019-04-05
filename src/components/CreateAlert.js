@@ -15,6 +15,9 @@ class CreateAlert extends Component {
    console.log(this.state)
   }
 
+  // Converting kelvin to Farenheit:
+    // F = 1.8(K - 273) + 32
+
   createAlert = async (e) => {
     e.preventDefault()
     const newAlert = {
