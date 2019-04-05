@@ -65,20 +65,20 @@ class CreateAccount extends Component {
   }
 
 
-  getLocation = (e) => {
-    console.log("e", e)
-    window.navigator.geolocation.getCurrentPosition(position => { 
-    console.log("position", position)
-      this.setState({
-      // lat: position.coords.latitude
-      location: position.coords.latitude
-    }),
-      err => this.setState({
-        errorMessage: err.message
-      })
-    })
-    console.log("location", this.state.location)
-  }
+  // getLocation = (e) => {
+  //   console.log("e", e)
+  //   window.navigator.geolocation.getCurrentPosition(position => { 
+  //   console.log("position", position)
+  //     this.setState({
+  //     // lat: position.coords.latitude
+  //     location: position.coords.latitude
+  //   }),
+  //     err => this.setState({
+  //       errorMessage: err.message
+  //     })
+  //   })
+  //   console.log("location", this.state.location)
+  // }
 
   // getLocation = async (toGoogleAddress) => {
   //   await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${toGoogleAddress}&key=AIzaSyBixPOjrGSjxpkw-pszxd_iUvQdbMBTXxg`, {
@@ -181,7 +181,7 @@ class CreateAccount extends Component {
         <Button
           title="Create Account"
           style={styles.create}
-          onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat }); this.getLocation()  } }
+          onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }); this.getLocation()  } }
         />
 
         <Button
