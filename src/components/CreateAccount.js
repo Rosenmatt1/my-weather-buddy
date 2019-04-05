@@ -181,7 +181,7 @@ class CreateAccount extends Component {
         <Button
           title="Create Account"
           style={styles.create}
-          onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }); this.getLocation()  } }
+          onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long });   } }
         />
 
         <Button

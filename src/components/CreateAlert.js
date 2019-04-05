@@ -5,6 +5,14 @@ import Heading from './Heading.js'
 class CreateAlert extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      maxTemp: 90,
+      minTemp: 0,
+    }
+  }
+
+  componentDidMount() {
+   console.log(this.state)
   }
 
   createAlert = async (e) => {
@@ -36,97 +44,97 @@ class CreateAlert extends Component {
             <Text> Send Alert if Temp is </Text>
             <Text> > </Text>
             <TextInput
-              style={styles.userInput}
-              placeholder="90"
-            // value="this will be the temp"
+                style={styles.userInput}
+                placeholder="90"
+              // value="this will be the temp"
+              // onChangeText={this.placeNameChangedHandler}
+              />
+              <Text> degrees </Text>
+          </View>
+
+            <TextInput
+              style={styles.alertMessage}
+              placeholder="ie Wear Shorts and Sandals"
+            // value="this will be the alert message"
             // onChangeText={this.placeNameChangedHandler}
             />
-            <Text> degrees </Text>
-          </View>
+            <View style={styles.center}>
+              <Text style={styles.miniText}>Enter Text Message to Receive</Text>
+            </View>
 
-          <TextInput
-            style={styles.alertMessage}
-            placeholder="ie Wear Shorts and Sandals"
-          // value="this will be the alert message"
-          // onChangeText={this.placeNameChangedHandler}
-          />
-          <View style={styles.center}>
-            <Text style={styles.miniText}>Enter Text Message to Receive</Text>
-          </View>
-
-          <Button
-            style={styles.createAlertButton}
-            title="Set Alert"
-            onPress={() =>
-              this.props.navigation.navigate('viewAlerts')
-            }
-          //  onPress={(e) => { func1(); func2(); }}>
-          />
-
-          <View style={styles.marginTop}>
             <Button
-              style={styles.viewAlertsButton}
-              title="View Alerts"
+              style={styles.createAlertButton}
+              title="Set Alert"
               onPress={() =>
                 this.props.navigation.navigate('viewAlerts')
               }
+            //  onPress={(e) => { func1(); func2(); }}>
             />
+
+            <View style={styles.marginTop}>
+              <Button
+                style={styles.viewAlertsButton}
+                title="View Alerts"
+                onPress={() =>
+                  this.props.navigation.navigate('viewAlerts')
+                }
+              />
+            </View>
+
           </View>
-
         </View>
-      </View>
-    )
-  }
-}
-
+        )
+      }
+    }
+    
 const styles = StyleSheet.create({
-  alertSetter: {
-    flexDirection: 'row',
-  },
+          alertSetter: {
+          flexDirection: 'row',
+      },
   center: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+          justifyContent: 'center',
+        alignItems: 'center',
+      },
   form: {
-    flex: 1,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: "center",
-    backgroundColor: '#C8F4F9',
-  },
+          flex: 1,
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: "center",
+        backgroundColor: '#C8F4F9',
+      },
   inputContainer: {
-    width: '70%'
-  },
+          width: '70%'
+      },
   userInput: {
-    width: '10%',
-    borderWidth: 1,
-    backgroundColor: 'white',
-    borderColor: '#eee',
-  },
+          width: '10%',
+        borderWidth: 1,
+        backgroundColor: 'white',
+        borderColor: '#eee',
+      },
   alertMessage: {
-    width: '100%',
-    borderWidth: 1,
-    backgroundColor: 'white',
-    borderColor: '#eee',
-    padding: 5,
-    margin: 8,
-  },
+          width: '100%',
+        borderWidth: 1,
+        backgroundColor: 'white',
+        borderColor: '#eee',
+        padding: 5,
+        margin: 8,
+      },
   createAlertButton: {
-    width: '30%'
-  },
+          width: '30%'
+      },
   viewAlertsButton: {
-    width: '30%',
-    marginTop: 70,
-  },
+          width: '30%',
+        marginTop: 70,
+      },
   marginTop: {
-    marginTop: 70,
-  },
+          marginTop: 70,
+      },
   miniText: {
-    width: '80%',
-    fontWeight: '100',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-})
-
+          width: '80%',
+        fontWeight: '100',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+    })
+    
 export default CreateAlert
