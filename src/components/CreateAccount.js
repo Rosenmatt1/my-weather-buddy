@@ -7,9 +7,6 @@ import Heading from './Heading.js'
 // const chev = parseIconFromClassName('fas fa-chevron-left')
 // const snowflake = parseIconFromClassName('fas fa-chevron-left')
 
-
-
-
 class CreateAccount extends Component {
   constructor(props) {
     super(props)
@@ -22,10 +19,6 @@ class CreateAccount extends Component {
       long: 105,
       location: []
     }
-    // this.setName = this.setName.bind(this)
-    // this.setEmail = this.setEmail.bind(this)
-    // this.setPhone = this.setPhone.bind(this)
-    // this.setPassword = this.setPassword.bind(this)
   }
 
   componentDidMount() {
@@ -64,29 +57,15 @@ class CreateAccount extends Component {
     })
   }
 
-  createUser = (e) => {
-    // this.setState({
-    //   name: e.nativeEventtarget[0].value,
-    //   email: e.target[1],
-    //   phone: e.target[2],
-    //   hashed_password: e.target[3]
-    // })
+
+  getLocation = () => {
+    console.log(this.state.lat)
+    console.log(this.state.long)
     console.log(this.state.name)
     console.log(this.state.email)
     console.log(this.state.phone)
     console.log(this.state.hashed_password)
-    // this.postUser()
   }
-
-  // getLocation = () => {
-  //   console.log(this.state.lat)
-  //   console.log(this.state.long)
-  //   console.log(this.state.name)
-  //   console.log(this.state.email)
-  //   console.log(this.state.phone)
-  //   console.log(this.state.hashed_password)
-  // }
-
 
 
   postUser = () => {
@@ -150,36 +129,37 @@ class CreateAccount extends Component {
             style={styles.inputs}
             placeholder="Name"
             name="name"
-            // value={this.state.name}
+            value={this.state.name}
             onChangeText={(e) => this.setName(e)}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Email"
             name="email"
-            // value={this.state.email}
+            value={this.state.email}
             onChangeText={(e) => this.setEmail(e)}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Phone"
             name="phone"
-            // value={this.state.phone}
+            value={this.state.phone}
             onChangeText={(e) => this.setPhone(e)}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Password"
             name="hashed_password"
-            // value={this.state.hashed_password}
+            value={this.state.hashed_password}
             onChangeText={(e) => this.setPassword(e)}
           />
         </View>
+
         <Button
           title="Create Account"
           style={styles.create}
           onPress={() => {
-            this.props.navigation.navigate('createAlert', { lat: this.state.lat }); this.createUser();
+            this.props.navigation.navigate('createAlert', { lat: this.state.lat }); this.getLocation();
           }}
         />
 
