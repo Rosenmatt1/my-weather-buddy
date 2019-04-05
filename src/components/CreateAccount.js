@@ -1,7 +1,12 @@
 import React, { Component } from "react";
-import { View, TextInput, Button, StyleSheet, Text } from "react-native";
-import FontAwesome, { Icons } from 'react-native-fontawesome';
+import { View, TextInput, Button, StyleSheet, Text, Image } from "react-native";
+// import FontAwesome, { Icons, parseIconName } from 'react-native-fontawesome';
 import Heading from './Heading.js'
+import snowflake from './assets/snowflake-solid.svg'
+
+// const chev = parseIconFromClassName('fas fa-chevron-left')
+// const snowflake = parseIconFromClassName('fas fa-chevron-left')
+
 
 class CreateAccount extends Component {
   constructor(props) {
@@ -132,20 +137,31 @@ class CreateAccount extends Component {
       <View style={styles.form}>
         <Heading >My Weather Buddy</Heading>
 
+        {/* <Text style={{ margin: 10, fontSize: 15, textAlign: 'left' }}>
+         
+          <FontAwesome>{snowflake}</FontAwesome>
+        </Text> */}
+
+        <Image style={styles.snowflake} source={require('./assets/snowflake-solid.svg')} />
+
+        
+
+        
+
         <View style={styles.inputContainer}>
           <TextInput
             style={styles.inputs}
             placeholder="Name"
             name="name"
             // value={this.state.name}
-            onChangeText={(e) =>this.setName(e)}
+            onChangeText={(e) => this.setName(e)}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Email"
             name="email"
             // value={this.state.email}
-            onChangeText={(e) =>this.setEmail(e)}
+            onChangeText={(e) => this.setEmail(e)}
           />
           <TextInput
             style={styles.inputs}
@@ -216,6 +232,13 @@ const styles = StyleSheet.create({
     marginTop: 40,
     fontWeight: '100',
   },
+  snowflake: {
+    width: 10,
+    height: 10,
+    borderColor: 'white',
+    tintColor: 'black',
+    zIndex: 2,
+  }
 })
 
 export default CreateAccount
