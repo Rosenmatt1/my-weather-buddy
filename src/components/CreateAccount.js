@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { View, TextInput, Button, StyleSheet, Text, Image } from "react-native";
 // import FontAwesome, { Icons, parseIconName } from 'react-native-fontawesome';
 import Heading from './Heading.js'
-import snowflake from './assets/snowflake-solid.svg'
+import SvgComponent from './assets/snowflake-solid.svg'
 
 // const chev = parseIconFromClassName('fas fa-chevron-left')
 // const snowflake = parseIconFromClassName('fas fa-chevron-left')
+
+
 
 
 class CreateAccount extends Component {
@@ -143,6 +145,8 @@ class CreateAccount extends Component {
         </Text> */}
 
         <Image style={styles.snowflake} source={require('./assets/snowflake-solid.svg')} />
+
+        <Image style={styles.snowflake} source={SvgComponent} />
 
         
 
