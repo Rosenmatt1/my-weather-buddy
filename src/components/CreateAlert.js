@@ -22,8 +22,13 @@ class CreateAlert extends Component {
   // Converting kelvin to Farenheit:
   // F = 1.8(K - 273) + 32
 
-  chosenTemp = () => {
-    this.setState({ maxTemp: e })
+  chosenTemp = (e) => this.setState({ maxTemp: e })
+
+  setMessage = (e) => this.setState({ message: e })
+
+  viewState = () => {
+    console.log(this.state.maxTemp)
+    console.log(this.state.message)
   }
 
   getForecast = async (e) => {
@@ -71,7 +76,7 @@ class CreateAlert extends Component {
 
           <View style={styles.alertSetter}>
             <Text> Send Alert if Temp is </Text>
-            <Text> > </Text>
+            <Text> `${abc}` </Text>
             <TextInput
               style={styles.userInput}
               placeholder="90"
@@ -84,8 +89,8 @@ class CreateAlert extends Component {
           <TextInput
             style={styles.alertMessage}
             placeholder="ie Wear Shorts and Sandals"
-          // value="this will be the alert message"
-          // onChangeText={this.placeNameChangedHandler}
+            value={this.state.message}
+            onChangeText={(e) => this.setMessage(e)}
           />
           <View style={styles.center}>
             <Text style={styles.miniText}>Enter Text Message to Receive</Text>
@@ -94,10 +99,7 @@ class CreateAlert extends Component {
           <Button
             style={styles.createAlertButton}
             title="Set Alert"
-            onPress={() =>
-              this.props.navigation.navigate('viewAlerts')
-            }
-          //  onPress={(e) => { func1(); func2(); }}>
+            onPress={() => { this.props.navigation.navigate('viewAlerts'); this.viewState(); }}
           />
 
           <View style={styles.marginTop}>
