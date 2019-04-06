@@ -79,11 +79,6 @@ class CreateAlert extends Component {
 
 
   render() {
-    // const { navigation } = this.props;
-    // const lat = this.props.navigation.state.params(this.state.lat, '50');
-    // const long = this.props.navigation.state.params(this.state.long, '100');
-    // console.log(lat)
-    // console.log(long)
 
     return (
       <View style={styles.form}>
