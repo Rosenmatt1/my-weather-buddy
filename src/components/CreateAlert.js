@@ -4,8 +4,8 @@ import Heading from './Heading.js'
 import { navigation } from 'react-navigation'
 
 const symbol = "<"
-const lat = 39.7392
-const long = 104.9903
+// const lat =  Number(39.7392)
+// const long =  Number(104.9903)
 
 class CreateAlert extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ class CreateAlert extends Component {
   }
 
   componentDidMount() {
-  fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=-${long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.props.navigation.state.params.lat}&lon=-${this.props.navigation.state.params.long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
     method: "GET",
     "Content-Type": "application/json",
   })
@@ -32,27 +32,24 @@ class CreateAlert extends Component {
     this.setState({
       forecast: data
     })
+    console.log("forecast", this.state.forecast)
   })
   .catch(error => {
     console.error(error)
   })
   }
 
-  // Converting kelvin to Farenheit:
-  // F = 1.8(K - 273) + 32
-
   setTemp = (e) => this.setState({ chosenMinTemp: e })
 
   setMessage = (e) => this.setState({ message: e })
 
-  // viewState = () => {
-  //   console.log(this.state.forecast)
-  // }
+  viewState = () => {
+    console.log(this.props.navigation.state.params.lat)
+  }
 
 
-  
 
-  createAlert =  (e) => {
+  createAlert = async (e) => {
     e.preventDefault()
     const multiplier = Number(1.8)
     const kelvin = Number(this.state.forecast.list[0].main.temp_min)
@@ -60,7 +57,8 @@ class CreateAlert extends Component {
     const add32 = Number(32)
     const convertedTemp = multiplier * (kelvin - subtract273) + add32
     console.log("convertedTemp", convertedTemp)
-    this.setState({
+    console.log("kelvin", kelvin)
+    await this.setState({
       minTemp: Number(convertedTemp)
     })
     console.log("minTemp", this.state.minTemp)
@@ -79,15 +77,13 @@ class CreateAlert extends Component {
     })
   }
 
-  
-
 
   render() {
-    const { navigation } = this.props;
-    const lat = navigation.getParam('lat', '50');
-    const long = navigation.getParam('long', '100');
-
-    
+    // const { navigation } = this.props;
+    // const lat = this.props.navigation.state.params(this.state.lat, '50');
+    // const long = this.props.navigation.state.params(this.state.long, '100');
+    // console.log(lat)
+    // console.log(long)
 
     return (
       <View style={styles.form}>
@@ -127,8 +123,9 @@ class CreateAlert extends Component {
             <Button
               style={styles.viewAlertsButton}
               title="View Alerts"
-              onPress={() =>
-                this.props.navigation.navigate('viewAlerts')
+              onPress={() => {
+                this.props.navigation.navigate('viewAlerts'); this.viewState()
+              }
               }
             />
           </View>

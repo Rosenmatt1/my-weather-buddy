@@ -15,8 +15,8 @@ class CreateAccount extends Component {
       phone: '',
       email: '',
       hashed_password: '',
-      lat: 39,
-      long: 105,
+      lat: 39.7392,
+      long: 104.9903,
       location: []
     }
   }
