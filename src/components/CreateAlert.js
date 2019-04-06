@@ -45,30 +45,35 @@ class CreateAlert extends Component {
 
   setMessage = (e) => this.setState({ message: e })
 
-  viewState = () => {
-    console.log(this.state.forecast)
-  }
-
-
-
-
-
-  // createAlert = async (e) => {
-  //   e.preventDefault()
-  //   const newAlert = {
-  //     message: this.state.message,
-  //     user_id: 2,
-  //     type_id: 2
-  //   }
-  //   await fetch('http://localhost:3000/alert/2', {
-  //     method: 'POST',
-  //     body: JSON.stringify(newAlert),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //       'Accept': 'application/json',
-  //     }
-  //   })
+  // viewState = () => {
+  //   console.log(this.state.forecast)
   // }
+
+
+  
+
+  createAlert =  (e) => {
+    e.preventDefault()
+    const convertedTemp = Number(1.8((this.state.forecast.list[0].main.temp_min) - 273) + 32)
+    console.log("convertedTemp", convertedTemp)
+    this.setState({
+      minTemp: convertedTemp
+    })
+    const newAlert = {
+      message: this.state.message,
+      user_id: 2,
+      type_id: 2
+    }
+    fetch('http://localhost:3000/alert/2', {
+      method: 'POST',
+      body: JSON.stringify(newAlert),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    console.log("minTemp", this.state.minTemp)
+  }
 
   
 
@@ -78,6 +83,7 @@ class CreateAlert extends Component {
     const lat = navigation.getParam('lat', '50');
     const long = navigation.getParam('long', '100');
 
+    
 
     return (
       <View style={styles.form}>
@@ -110,7 +116,7 @@ class CreateAlert extends Component {
           <Button
             style={styles.createAlertButton}
             title="Set Alert"
-            onPress={() => { this.props.navigation.navigate('viewAlerts'); this.viewState(); }}
+            onPress={(e) => { this.props.navigation.navigate('viewAlerts'); this.createAlert(e); }}
           />
 
           <View style={styles.marginTop}>
