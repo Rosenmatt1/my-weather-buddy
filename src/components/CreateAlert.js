@@ -54,7 +54,11 @@ class CreateAlert extends Component {
 
   createAlert =  (e) => {
     e.preventDefault()
-    const convertedTemp = Number(1.8((this.state.forecast.list[0].main.temp_min) - 273) + 32)
+    const multiplier = Number(1.8)
+    const kelvin = Number(this.state.forecast.list[0].main.temp_min)
+    const subtract273 = Number(273)
+    const add32 = Number(32)
+    const convertedTemp = multiplier * (kelvin - subtract273) + add32
     console.log("convertedTemp", convertedTemp)
     this.setState({
       minTemp: convertedTemp
