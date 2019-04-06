@@ -4,15 +4,17 @@ import Heading from './Heading.js'
 import { navigation } from 'react-navigation'
 
 const symbol = "<"
-const lat = 35
-const long = 105
+const lat = 39.7392
+const long = 104.9903
 
 class CreateAlert extends Component {
   constructor(props) {
     super(props)
     this.state = {
       message: "",
-      maxTemp: 90,
+      chosenMaxTemp: 90,
+      chosenMinTemp: 90,
+      maxTemp: 0,
       minTemp: 0,
       user_id: 0,
       type_id: 0,
@@ -20,37 +22,34 @@ class CreateAlert extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   console.log(this.state)
-  // }
+  componentDidMount() {
+  fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=-${long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
+    method: "GET",
+    "Content-Type": "application/json",
+  })
+  .then(response => response.json())
+  .then(data => {
+    this.setState({
+      forecast: data
+    })
+  })
+  .catch(error => {
+    console.error(error)
+  })
+  }
 
   // Converting kelvin to Farenheit:
   // F = 1.8(K - 273) + 32
 
-  setTemp = (e) => this.setState({ maxTemp: e })
+  setTemp = (e) => this.setState({ chosenMinTemp: e })
 
   setMessage = (e) => this.setState({ message: e })
 
   viewState = () => {
-    console.log(this.props.lat)
-    console.log(this.props.long)
+    console.log(this.state.forecast)
   }
 
-  getForecast = async (e) => {
-    await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
-      method: "GET",
-      "Content-Type": "application/json",
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          forecast: data
-        })
-      })
-      .catch(error => {
-        console.error(error)
-      })
-  }
+
 
 
 
@@ -91,7 +90,7 @@ class CreateAlert extends Component {
             <Text> {symbol} </Text>
             <TextInput
               style={styles.userInput}
-              placeholder="90"
+              placeholder="40"
               value={this.state.chosenTemp}
               onChangeText={(e) => this.setTemp(e)}
             />
