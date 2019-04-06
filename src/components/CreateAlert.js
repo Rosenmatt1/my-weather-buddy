@@ -61,8 +61,9 @@ class CreateAlert extends Component {
     const convertedTemp = multiplier * (kelvin - subtract273) + add32
     console.log("convertedTemp", convertedTemp)
     this.setState({
-      minTemp: convertedTemp
+      minTemp: Number(convertedTemp)
     })
+    console.log("minTemp", this.state.minTemp)
     const newAlert = {
       message: this.state.message,
       user_id: 2,
@@ -76,7 +77,6 @@ class CreateAlert extends Component {
         'Accept': 'application/json',
       }
     })
-    console.log("minTemp", this.state.minTemp)
   }
 
   
