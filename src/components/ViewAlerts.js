@@ -41,7 +41,7 @@ class ViewAlerts extends Component {
       })
   }
 
-  // onItemDelete = id => {
+  // deleteAlert = id => {
   //   this.setState(prevState => {
   //     return {
   //       alerts: prevState.alerts.filter(alert => {
@@ -55,7 +55,7 @@ class ViewAlerts extends Component {
 
     // if (this.state.received) {
     //   const mappedAlerts = this.state.alerts.map((alert, idx) => {
-    //     <Alert
+    //     return <Alert
     //       key={idx}
     //       message={alert.message}
     //       id={alert.id}
