@@ -41,6 +41,16 @@ class ViewAlerts extends Component {
       })
   }
 
+  // onItemDelete = id => {
+  //   this.setState(prevState => {
+  //     return {
+  //       alerts: prevState.alerts.filter(alert => {
+  //         return alert.id !== id
+  //       })
+  //     }
+  //   })
+  // }
+
   render() {
 
     // if (this.state.received) {
