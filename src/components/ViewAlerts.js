@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, StyleSheet, Text, Button } from "react-native";
 import Heading from './Heading.js'
-// import Alert from './Alert.js'
+import Alert from './Alert.js'
 
 const puce = '#513B41'
 
@@ -24,6 +24,7 @@ class ViewAlerts extends Component {
         this.setState({
           alerts: data,
         })
+        console.log("alerts", this.state.alerts)
       })
       .catch(error => {
         console.error(error)
@@ -36,7 +37,6 @@ class ViewAlerts extends Component {
         this.setState({
           received: true
         })
-        console.log("alerts", this.state.alerts)
         console.log(this.state.received)
       })
   }
@@ -53,16 +53,7 @@ class ViewAlerts extends Component {
 
   render() {
 
-    // if (this.state.received) {
-    //   const mappedAlerts = this.state.alerts.map((alert, idx) => {
-    //     return <Alert
-    //       key={idx}
-    //       message={alert.message}
-    //       id={alert.id}
-    //       alert={alert}
-    //     ></Alert>
-    //   })
-    // }
+   
 
     return (
       <View style={styles.container}>
@@ -71,6 +62,19 @@ class ViewAlerts extends Component {
         <Text style={styles.miniText}> **Alerts are sent at 7pm the night before the weather condition will be met** </Text>
 
         {/* <View>{mappedAlerts}</View> */}
+
+      {this.state.received 
+        ? this.state.alerts.map((alert, idx) => {
+          return <Alert
+            key={idx}
+            message={alert.message}
+            id={alert.id}
+            alert={alert}
+          />
+         })
+        : <View></View>
+    }
+    
 
         <View style={styles.alertContainer}>
           <View style={styles.center}>

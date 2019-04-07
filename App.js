@@ -27,11 +27,10 @@ class App extends Component {
 }
 
 const AppNavigator = createStackNavigator({
-  viewAlerts: ViewAlerts,
   createAccount: CreateAccount,
   login: Login,
   createAlert: CreateAlert,
-  
+  viewAlerts: ViewAlerts,
   accountDetails: AccountDetails,
   // postform: Postform,
   // post: Post,
