@@ -1,85 +1,97 @@
 import React, { Component } from "react";
-import { View, Button, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Button } from "react-native";
 import Heading from './Heading.js'
+// import Alert from './Alert.js'
 
 const puce = '#513B41'
 
-class ViewAlert extends Component {
+class ViewAlerts extends Component {
   constructor(props) {
     super(props)
     this.state = {
       alerts: [],
+      received: false
     }
   }
 
-  componentDidMount() {
-    fetch(`http://localhost:3000/`, {
+  getAlerts =  () => {
+   fetch(`http://localhost:3000/`, {
       method: "GET",
       "Content-Type": "application/json",
     })
       .then(response => response.json())
       .then(data => {
         this.setState({
-          alerts: data
+          alerts: data,
         })
-        console.log("alerts", this.state.alerts)
       })
       .catch(error => {
         console.error(error)
       })
   }
 
+   componentDidMount() {
+    Promise.all([this.getAlerts()])
+      .then(() => {
+        this.setState({
+          received: true
+        })
+        console.log("alerts", this.state.alerts)
+        console.log(this.state.received)
+      })
+  }
 
   render() {
+
+    // if (this.state.received) {
+    //   const mappedAlerts = this.state.alerts.map((alert, idx) => {
+    //     <Alert
+    //       key={idx}
+    //       message={alert.message}
+    //       id={alert.id}
+    //       alert={alert}
+    //     ></Alert>
+    //   })
+    // }
+
     return (
       <View style={styles.container}>
-        <Heading>Current Alerts</Heading>
 
+        <Heading>Current Alerts</Heading>
         <Text style={styles.miniText}> **Alerts are sent at 7pm the night before the weather condition will be met** </Text>
+
+        {/* <View>{mappedAlerts}</View> */}
 
         <View style={styles.alertContainer}>
           <View style={styles.center}>
             <Text style={styles.puceColor}>Alert 1</Text>
-            <Text style={styles.puceColor}>Content of Alert.  If over 90 degrees, wear shorts and sandals.</Text>
+            <Text style={styles.puceColor}>Wear hat and gloves.</Text>
           </View>
 
           <View style={styles.rower}>
             <Button
               style={styles.delete}
               title="Delete"
-              onPress={() =>
-                this.props.navigation.navigate('viewAlerts')
-              }
-            //  onPress={(e) => { func1(); func2(); }}>
+              onPress={() => this.props.navigation.navigate('viewAlerts')}
             />
             <Button
               style={styles.update}
               title="Edit"
-              onPress={() =>
-                this.props.navigation.navigate('viewAlerts')
-              }
-            //  onPress={(e) => { func1(); func2(); }}>
+              onPress={() => this.props.navigation.navigate('viewAlerts')}
             />
           </View>
         </View>
 
-
         <Button
           // style={styles.buttons}
           title="Create New Alert"
-          onPress={() =>
-            this.props.navigation.navigate('createAlert')
-          }
-        //  onPress={(e) => { func1(); func2(); }}>
+          onPress={() => this.props.navigation.navigate('createAlert')}
         />
 
         <Button
           // style={styles.buttons}
           title="Account Details"
-          onPress={() =>
-            this.props.navigation.navigate('accountDetails')
-          }
-        //  onPress={(e) => { func1(); func2(); }}>
+          onPress={() => this.props.navigation.navigate('accountDetails')}
         />
 
       </View>
@@ -126,7 +138,6 @@ const styles = StyleSheet.create({
     fontWeight: '100',
     marginBottom: 30,
   },
-
 })
 
-export default ViewAlert
+export default ViewAlerts
