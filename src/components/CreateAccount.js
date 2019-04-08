@@ -193,7 +193,7 @@ class CreateAccount extends Component {
         //  onPress={(e) => { func1(); func2(); }}>
         />
 
-        <Text style={styles.miniText}>**The location for your alerts will be set to your current location at the time of making the account. Please accept the GeoCoordinates request.**</Text>
+        {/* <Text style={styles.miniText}>**The location for your alerts will be set to your current location at the time of making the account. Please accept the GeoCoordinates request.**</Text> */}
 
       </View>
     )
