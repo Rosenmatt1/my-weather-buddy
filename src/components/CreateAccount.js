@@ -7,6 +7,8 @@ import Heading from './Heading.js'
 // const chev = parseIconFromClassName('fas fa-chevron-left')
 // const snowflake = parseIconFromClassName('fas fa-chevron-left')
 
+const puce = '#513B41'
+
 class CreateAccount extends Component {
   constructor(props) {
     super(props)
@@ -218,6 +220,7 @@ const styles = StyleSheet.create({
     borderColor: '#eee',
     padding: 5,
     margin: 8,
+    color: puce,
   },
   create: {
     width: '30%'
