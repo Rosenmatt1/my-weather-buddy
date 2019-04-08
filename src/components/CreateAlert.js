@@ -82,7 +82,7 @@ class CreateAlert extends Component {
 
     return (
       <View style={styles.form}>
-        <Heading>My Weather Buddy</Heading>
+        <Heading>Create Alert</Heading>
 
         <View style={styles.inputContainer}>
 

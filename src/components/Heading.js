@@ -7,7 +7,7 @@ const heading = props => (
 
 const styles = StyleSheet.create({
   header: {
-    fontSize: 24,
+    fontSize: 36,
     fontWeight: 'bold',
     marginBottom: 40,
     color: '#513B41'

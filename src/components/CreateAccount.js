@@ -225,11 +225,11 @@ const styles = StyleSheet.create({
   login: {
     width: '30%'
   },
-  miniText: {
-    width: '70%',
-    marginTop: 40,
-    fontWeight: '100',
-  },
+  // miniText: {
+  //   width: '70%',
+  //   marginTop: 40,
+  //   fontWeight: '100',
+  // },
   snowflake: {
     width: 10,
     height: 10,
