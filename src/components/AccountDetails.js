@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Platform, StyleSheet, View, Button, Text, } from 'react-native'
 import Heading from './Heading.js'
 
+const puce = '#513B41'
+
 class AccountDetails extends Component {
   render() {
     return (
@@ -9,8 +11,8 @@ class AccountDetails extends Component {
         <Heading> Account Details </Heading>
 
         <View style={styles.email}>
-          <Text>Email(UserName):</Text>
-          <Text>Matty85@aol.com</Text>
+          <Text style={styles.sizer}>Email(UserName):</Text>
+          <Text style={styles.sizerSmaller}>Matty85@aol.com</Text>
         </View>
         <Button
           title="Change Email"
@@ -18,8 +20,8 @@ class AccountDetails extends Component {
         />
 
         <View style={styles.password}>
-          <Text>Password:</Text>
-          <Text>*********</Text>
+          <Text style={styles.sizer}>Password:</Text>
+          <Text style={styles.sizer}>  *********</Text>
         </View>
         <Button
           title="Change Password"
@@ -47,6 +49,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#C8F4F9',
+  },
+  sizer: {
+    fontSize: 20,
+    color: puce,
+  },
+  sizerSmaller: {
+    fontSize: 16,
+    color: puce,
   },
   email: {
     flexDirection: 'row',

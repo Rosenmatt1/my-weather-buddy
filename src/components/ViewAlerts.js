@@ -70,11 +70,10 @@ class ViewAlerts extends Component {
           : <View></View>
         } */}
 
-
         <View style={styles.alertContainer}>
           <View style={styles.center}>
             <Text style={styles.title}>Alert 1</Text>
-            <Text style={styles.puceColor}>Wear hat and gloves.</Text>
+            <Text style={styles.message}>Wear hat and gloves.</Text>
           </View>
 
           <View style={styles.rower}>
@@ -117,7 +116,7 @@ const styles = StyleSheet.create({
     color: puce,
     margin: 5,
   },
-  puceColor: {
+  message: {
     color: puce,
   },
   center: {
@@ -150,6 +149,7 @@ const styles = StyleSheet.create({
     width: '70%',
     fontWeight: '100',
     marginBottom: 30,
+    color: puce,
   },
 })
 

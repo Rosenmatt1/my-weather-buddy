@@ -7,6 +7,8 @@ const symbol = "<"
 // const lat =  Number(39.7392)
 // const long =  Number(104.9903)
 
+const puce = '#513B41'
+
 class CreateAlert extends Component {
   constructor(props) {
     super(props)
@@ -24,19 +26,19 @@ class CreateAlert extends Component {
 
   componentDidMount() {
     fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.props.navigation.state.params.lat}&lon=-${this.props.navigation.state.params.long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
-    method: "GET",
-    "Content-Type": "application/json",
-  })
-  .then(response => response.json())
-  .then(data => {
-    this.setState({
-      forecast: data
+      method: "GET",
+      "Content-Type": "application/json",
     })
-    console.log("forecast", this.state.forecast)
-  })
-  .catch(error => {
-    console.error(error)
-  })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          forecast: data
+        })
+        console.log("forecast", this.state.forecast)
+      })
+      .catch(error => {
+        console.error(error)
+      })
   }
 
   setTemp = (e) => this.setState({ chosenMinTemp: e })
@@ -46,8 +48,6 @@ class CreateAlert extends Component {
   viewState = () => {
     console.log(this.props.navigation.state.params.lat)
   }
-
-
 
   createAlert = async (e) => {
     e.preventDefault()
@@ -85,17 +85,20 @@ class CreateAlert extends Component {
         <Heading>Create Alert</Heading>
 
         <View style={styles.inputContainer}>
+          <View style={styles.center}>
+            <Text style={styles.sizer}>  Send Alert  </Text>
 
-          <View style={styles.alertSetter}>
-            <Text> Send Alert if Temp is </Text>
-            <Text> {symbol} </Text>
-            <TextInput
-              style={styles.userInput}
-              placeholder="40"
-              value={this.state.chosenTemp}
-              onChangeText={(e) => this.setTemp(e)}
-            />
-            <Text> degrees </Text>
+            <View style={styles.alertSetter}>
+              <Text style={styles.sizer}> if Temp is {symbol} </Text>
+
+              <TextInput
+                style={styles.userInput}
+                placeholder="40"
+                value={this.state.chosenTemp}
+                onChangeText={(e) => this.setTemp(e)}
+              />
+              <Text style={styles.sizer}> degrees </Text>
+            </View>
           </View>
 
           <TextInput
@@ -105,7 +108,7 @@ class CreateAlert extends Component {
             onChangeText={(e) => this.setMessage(e)}
           />
           <View style={styles.center}>
-            <Text style={styles.miniText}>Enter Text Message to Receive</Text>
+            <Text style={styles.sizer}>Enter Text Message to Receive</Text>
           </View>
 
           <Button
@@ -135,7 +138,12 @@ const styles = StyleSheet.create({
   alertSetter: {
     flexDirection: 'row',
   },
+  sizer: {
+    fontSize: 18,
+    color: puce,
+  },
   center: {
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -147,7 +155,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#C8F4F9',
   },
   inputContainer: {
-    width: '70%'
+    width: '80%'
   },
   userInput: {
     width: '10%',
@@ -159,6 +167,7 @@ const styles = StyleSheet.create({
     width: '100%',
     borderWidth: 1,
     backgroundColor: 'white',
+    height: 50,
     borderColor: '#eee',
     padding: 5,
     margin: 8,
