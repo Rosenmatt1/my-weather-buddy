@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 40,
+    color: '#513B41'
   },
 })
 

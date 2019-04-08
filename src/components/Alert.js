@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
-import Alert from './Alert.js'
+import { View, Text, Button} from "react-native";
 
-// const puce = '#513B41'
+const puce = '#513B41'
 
 class Alert extends Component {
   
@@ -12,7 +11,7 @@ class Alert extends Component {
         <Text>Hello!</Text>
         <View style={styles.alertContainer}>
           <View style={styles.center}>
-            <Text style={styles.puceColor}>{this.props.alert.id}</Text>
+            <Text style={styles.title}>{this.props.alert.id}</Text>
             <Text style={styles.puceColor}>{this.props.alert.message}</Text>
           </View>
 
@@ -31,13 +30,11 @@ class Alert extends Component {
         </View>
 
         <Button
-          // style={styles.buttons}
           title="Create New Alert"
           onPress={() => this.props.navigation.navigate('createAlert')}
         />
 
         <Button
-          // style={styles.buttons}
           title="Account Details"
           onPress={() => this.props.navigation.navigate('accountDetails')}
         />
@@ -46,40 +43,44 @@ class Alert extends Component {
   }
 }
 
-// const styles = StyleSheet.create({
-//   rower: {
-//     flexDirection: 'row',
-//     justifyContent: 'center'
-//   },
-//   puceColor: {
-//     color: puce,
-//   },
-//   center: {
-//     justifyContent: 'center',
-//     alignItems: "center",
-//   },
-//   container: {
-//     flex: 1,
-//     width: '100%',
-//     justifyContent: 'center',
-//     alignItems: "center",
-//     backgroundColor: '#C8F4F9',
-//   },
-//   alertContainer: {
-//     width: '70%',
-//     borderWidth: 1,
-//     borderColor: puce,
-//     borderRadius: 15,
-//     backgroundColor: 'white',
-//     marginBottom: 30,
-//   },
-//   update: {
-//     width: '30%'
-//   },
-//   delete: {
-//     width: '30%',
-//     color: '#F83839',
-//   },
-// })
+const styles = StyleSheet.create({
+  rower: {
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
+  title: {
+    color: puce,
+    margin: 5,
+  },
+  puceColor: {
+    color: puce,
+  },
+  center: {
+    justifyContent: 'center',
+    alignItems: "center",
+  },
+  container: {
+    flex: 1,
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: "center",
+    backgroundColor: '#C8F4F9',
+  },
+  alertContainer: {
+    width: '70%',
+    borderWidth: 1,
+    borderColor: puce,
+    borderRadius: 15,
+    backgroundColor: 'white',
+    marginBottom: 30,
+  },
+  update: {
+    width: '30%'
+  },
+  delete: {
+    width: '30%',
+    color: '#F83839',
+  },
+})
 
 export default Alert

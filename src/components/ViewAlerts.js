@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text, Button } from "react-native";
+import { View, StyleSheet, Text, Button  } from "react-native";
 import Heading from './Heading.js'
 // import Alert from './Alert.js'
 
@@ -14,8 +14,8 @@ class ViewAlerts extends Component {
     }
   }
 
-  getAlerts =  () => {
-   fetch(`http://localhost:3000/`, {
+  getAlerts = () => {
+    fetch(`http://localhost:3000/`, {
       method: "GET",
       "Content-Type": "application/json",
     })
@@ -31,7 +31,7 @@ class ViewAlerts extends Component {
       })
   }
 
-   componentDidMount() {
+  componentDidMount() {
     Promise.all([this.getAlerts()])
       .then(() => {
         this.setState({
@@ -59,17 +59,17 @@ class ViewAlerts extends Component {
         <Heading>Current Alerts</Heading>
         <Text style={styles.miniText}> **Alerts are sent at 7pm the night before the weather condition will be met** </Text>
 
-      {/* {this.state.received 
-        ?  
-        this.state.alerts.map((alert, idx) => {
-          return <Alert
-            key={idx}
-            alert={alert}
-          />
-         }) 
-        : <View></View> 
+        {/* {this.state.received
+          ?
+          this.state.alerts.map((alert, idx) => {
+            return <Alert
+              key={idx}
+              alert={alert}
+            />
+          })
+          : <View></View>
         } */}
-    
+
 
         <View style={styles.alertContainer}>
           <View style={styles.center}>
