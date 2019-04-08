@@ -115,9 +115,12 @@ const styles = StyleSheet.create({
   title: {
     color: puce,
     margin: 5,
+    fontWeight: 'bold',
+    fontSize: 22,
   },
   message: {
     color: puce,
+    fontSize: 16,
   },
   center: {
     justifyContent: 'center',
@@ -147,7 +150,7 @@ const styles = StyleSheet.create({
   },
   miniText: {
     width: '70%',
-    fontWeight: '100',
+    fontWeight: '200',
     marginBottom: 30,
     color: puce,
   },

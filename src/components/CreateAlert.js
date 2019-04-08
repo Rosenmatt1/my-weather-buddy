@@ -3,7 +3,7 @@ import { View, TextInput, Button, StyleSheet, Text } from "react-native";
 import Heading from './Heading.js'
 import { navigation } from 'react-navigation'
 
-const symbol = "<"
+// const symbol = "<"
 // const lat =  Number(39.7392)
 // const long =  Number(104.9903)
 
@@ -100,7 +100,7 @@ class CreateAlert extends Component {
             <Text style={styles.sizer}>  Send Alert  </Text>
 
             <View style={styles.alertSetter}>
-              <Text style={styles.sizer} onPress={() => this.flipSymbol()}> if Temp is {flipped} </Text> 
+              <Text style={styles.sizer} onPress={() => this.flipSymbol()}> if Temp is  <Text style={styles.maxormin}> {flipped}</Text>   </Text> 
 
               <TextInput
                 style={styles.userInput}
@@ -146,6 +146,12 @@ class CreateAlert extends Component {
 }
 
 const styles = StyleSheet.create({
+  maxormin: {
+    fontSize: 22,
+    color: '#F83839',
+    margin: 4,
+    fontWeight: 'bold',
+  },
   alertSetter: {
     flexDirection: 'row',
   },
@@ -175,6 +181,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     backgroundColor: 'white',
     borderColor: '#eee',
+    borderRadius: 2,
   },
   alertMessage: {
     width: '100%',
@@ -184,13 +191,17 @@ const styles = StyleSheet.create({
     borderColor: '#eee',
     padding: 5,
     margin: 8,
+    borderRadius: 11,
+    borderColor: puce,
   },
   createAlertButton: {
-    width: '30%'
+    width: '30%',
+    borderWidth: 1,
   },
   viewAlertsButton: {
     width: '30%',
     marginTop: 70,
+    borderWidth: 1,
   },
   marginTop: {
     marginTop: 70,
