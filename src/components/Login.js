@@ -9,7 +9,6 @@ class Login extends Component {
     return (
       <View style={styles.container}>
         <Heading> My Weather Buddy </Heading>
-        <Heading> Login </Heading>
 
         <View style={styles.inputContainer}>
           <TextInput
