@@ -24,22 +24,22 @@ class CreateAlert extends Component {
     }
   }
 
-  componentDidMount() {
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.props.navigation.state.params.lat}&lon=-${this.props.navigation.state.params.long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
-      method: "GET",
-      "Content-Type": "application/json",
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          forecast: data
-        })
-        console.log("forecast", this.state.forecast)
-      })
-      .catch(error => {
-        console.error(error)
-      })
-  }
+  // componentDidMount() {
+  //   fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.props.navigation.state.params.lat}&lon=-${this.props.navigation.state.params.long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
+  //     method: "GET",
+  //     "Content-Type": "application/json",
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       this.setState({
+  //         forecast: data
+  //       })
+  //       console.log("forecast", this.state.forecast)
+  //     })
+  //     .catch(error => {
+  //       console.error(error)
+  //     })
+  // }
 
   setTemp = (e) => this.setState({ chosenMinTemp: e })
 
@@ -141,6 +141,7 @@ const styles = StyleSheet.create({
   sizer: {
     fontSize: 18,
     color: puce,
+    margin: 4,
   },
   center: {
     flexDirection: 'column',
