@@ -21,6 +21,8 @@ class CreateAlert extends Component {
       user_id: 0,
       type_id: 0,
       forecast: [],
+      minOrMax: '<',
+      flipper: false,
     }
   }
 
@@ -47,6 +49,12 @@ class CreateAlert extends Component {
 
   viewState = () => {
     console.log(this.props.navigation.state.params.lat)
+  }
+
+  flipSymbol = () => {
+    this.setState({
+      flipper: true,
+    })
   }
 
   createAlert = async (e) => {
@@ -142,6 +150,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: puce,
     margin: 4,
+    fontWeight: 'bold',
   },
   center: {
     flexDirection: 'column',
