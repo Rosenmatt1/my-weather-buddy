@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Platform, StyleSheet, View, Button, TextInput } from 'react-native'
 import Heading from './Heading.js'
 
+const puce = '#513B41'
+
 class Login extends Component {
   render() {
     return (
@@ -51,6 +53,7 @@ const styles = StyleSheet.create({
     borderColor: '#eee',
     padding: 5,
     margin: 8,
+    color: puce,
   },
 })
 
