@@ -10,10 +10,10 @@ class Alert extends Component {
     return (
       <View>
         <Text>Hello!</Text>
-        {/* <View style={styles.alertContainer}>
+        <View style={styles.alertContainer}>
           <View style={styles.center}>
-            <Text style={styles.puceColor}>Alert 1</Text>
-            <Text style={styles.puceColor}>Eat cookies</Text>
+            <Text style={styles.puceColor}>{this.props.alert.id}</Text>
+            <Text style={styles.puceColor}>{this.props.alert.message}</Text>
           </View>
 
           <View style={styles.rower}>
@@ -40,7 +40,7 @@ class Alert extends Component {
           // style={styles.buttons}
           title="Account Details"
           onPress={() => this.props.navigation.navigate('accountDetails')}
-        /> */}
+        />
       </View>
     )
   }

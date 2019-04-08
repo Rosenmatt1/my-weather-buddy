@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { View, StyleSheet, Text, Button } from "react-native";
 import Heading from './Heading.js'
-// import Alert from './Alert.js'
+import Alert from './Alert.js'
 
 const puce = '#513B41'
 
@@ -59,18 +59,16 @@ class ViewAlerts extends Component {
         <Heading>Current Alerts</Heading>
         <Text style={styles.miniText}> **Alerts are sent at 7pm the night before the weather condition will be met** </Text>
 
-      {/* {this.state.received 
-        ?  */}
-        {/* this.state.alerts.map((alert, idx) => {
-          <Alert
+      {this.state.received 
+        ?  
+        this.state.alerts.map((alert, idx) => {
+          return <Alert
             key={idx}
-            message={alert.message}
-            id={alert.id}
             alert={alert}
           />
-         }) */}
-        {/* : <View></View> */}
-    {/* } */}
+         }) 
+        : <View></View> 
+        }
     
 
         <View style={styles.alertContainer}>
