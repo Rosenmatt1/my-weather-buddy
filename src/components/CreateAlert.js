@@ -21,7 +21,8 @@ class CreateAlert extends Component {
       user_id: 0,
       type_id: 0,
       forecast: [],
-      minOrMax: '<',
+      min: '<',
+      max: '>',
       flipper: false,
     }
   }
@@ -53,7 +54,7 @@ class CreateAlert extends Component {
 
   flipSymbol = () => {
     this.setState({
-      flipper: true,
+      flipper: !this.state.flipper,
     })
   }
 
@@ -88,6 +89,8 @@ class CreateAlert extends Component {
 
   render() {
 
+    const flipped = this.state.flipper ? this.state.max : this.state.min
+
     return (
       <View style={styles.form}>
         <Heading>Create Alert</Heading>
@@ -97,7 +100,7 @@ class CreateAlert extends Component {
             <Text style={styles.sizer}>  Send Alert  </Text>
 
             <View style={styles.alertSetter}>
-              <Text style={styles.sizer}> if Temp is {symbol} </Text>
+              <Text style={styles.sizer} onPress={() => this.flipSymbol()}> if Temp is {flipped} </Text> 
 
               <TextInput
                 style={styles.userInput}
