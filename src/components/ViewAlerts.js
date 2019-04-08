@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: puce,
+    margin: 5,
   },
   puceColor: {
     color: puce,
