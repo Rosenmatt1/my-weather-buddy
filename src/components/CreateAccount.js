@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
   },
   inputs: {
     width: '100%',
-    height: 40,
+    height: 45,
     borderWidth: 1,
     backgroundColor: 'white',
     borderColor: '#eee',
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
     color: puce,
   },
   createContainer: {
-    backgroundColor: '#7FE5F0',
+    backgroundColor: puce,
     borderRadius: 10,
     padding: 10,
     shadowColor: '#000000',
