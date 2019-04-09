@@ -167,9 +167,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   sizer: {
-    fontSize: 18,
+    fontSize: 20,
     color: puce,
-    margin: 4,
+    margin: 5,
     fontWeight: 'bold',
   },
   center: {
@@ -186,13 +186,15 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '80%',
+    marginTop: 35,
   },
   userInput: {
     borderWidth: 1,
+    width: 24,
     backgroundColor: 'white',
     borderColor: '#eee',
     height: 25,
-    borderRadius: 2,
+    borderRadius: 1,
     marginTop: 5,
   },
   alertMessage: {
@@ -208,7 +210,7 @@ const styles = StyleSheet.create({
   },
   viewAlertsButton: {
     width: '30%',
-    marginTop: 70,
+    marginTop: 80,
     borderWidth: 1,
   },
   marginTop: {
@@ -222,6 +224,7 @@ const styles = StyleSheet.create({
     marginRight: '50%',
   },
   createButton: {
+    marginTop: 20,
     backgroundColor: puce,
     borderRadius: 10,
     width: '40%',
