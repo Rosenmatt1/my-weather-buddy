@@ -38,7 +38,7 @@ class Alert extends Component {
     })
   }
 
-  
+
   render() {
     return (
       <View style={styles.alertContainer}>
@@ -52,7 +52,7 @@ class Alert extends Component {
             <Button
               style={styles.delete}
               title="Delete"
-              color={puce}
+              color='white'
               onPress={() => this.deleteAlert()}
             />
           </View>
@@ -61,7 +61,7 @@ class Alert extends Component {
             <Button
               style={styles.update}
               title="Edit"
-              color={puce}
+              color='white'
               // onPress={() => this.editAlert()}
             />
           </View>
@@ -101,19 +101,19 @@ const styles = StyleSheet.create({
   },
   buttonStyler: {
     borderWidth: 1,
+    backgroundColor: puce,
     borderColor: puce,
     borderRadius: 10,
     width: 80,
     height: 40,
     margin: 10,
-    // padding: 10,
-    // shadowColor: '#7FE5F0',
-    // shadowOffset: {
-    //   width: 0,
-    //   height: 3
-    // },
-    // shadowRadius: 10,
-    // shadowOpacity: 0.25
+    shadowColor: '#7FE5F0',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 10,
+    shadowOpacity: 0.25
   },
   update: {
     width: '30%',
