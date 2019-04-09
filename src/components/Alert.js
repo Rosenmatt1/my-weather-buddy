@@ -5,6 +5,16 @@ const puce = '#513B41'
 
 class Alert extends Component {
 
+  deleteAlert = id => {
+    this.setState(prevState => {
+      return {
+        alerts: prevState.alerts.filter(alert => {
+          return alert.id !== id
+        })
+      }
+    })
+  }
+
   render() {
     return (
       <View style={styles.alertContainer}>
@@ -19,7 +29,7 @@ class Alert extends Component {
               style={styles.delete}
               title="Delete"
               color={puce}
-              onPress={() => this.props.navigation.navigate('viewAlerts')}
+              onPress={() => this.deleteAlert()}
             />
           </View>
 
@@ -28,7 +38,7 @@ class Alert extends Component {
               style={styles.update}
               title="Edit"
               color={puce}
-              onPress={() => this.props.navigation.navigate('viewAlerts')}
+              onPress={() => this.editAlert()}
             />
           </View>
         </View>

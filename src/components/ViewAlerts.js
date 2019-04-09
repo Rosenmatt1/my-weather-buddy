@@ -38,15 +38,6 @@ class ViewAlerts extends Component {
     this.getAlerts()
   }
 
-  // deleteAlert = id => {
-  //   this.setState(prevState => {
-  //     return {
-  //       alerts: prevState.alerts.filter(alert => {
-  //         return alert.id !== id
-  //       })
-  //     }
-  //   })
-  // }
 
   render() {
 
@@ -112,7 +103,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     height: 60,
     margin: 10,
-    marginTop: 30,
+    marginTop: 35,
     padding: 10,
     shadowColor: '#000000',
     shadowOffset: {
