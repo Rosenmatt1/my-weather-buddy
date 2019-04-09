@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, TextInput, Button, StyleSheet, Text } from "react-native";
+import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity } from "react-native";
 import Heading from './Heading.js'
 import { navigation } from 'react-navigation'
 
@@ -130,14 +130,16 @@ class CreateAlert extends Component {
           </View>
         </View>
 
-        <View style={styles.createButton}>
-          <Button
-            style={styles.createAlertButton}
-            title="Set Alert"
-            color="#FFFFFF"
-            onPress={(e) => { this.props.navigation.navigate('viewAlerts'); this.createAlert(e); }}
-          />
-        </View>
+        <TouchableOpacity>
+          <View style={styles.createButton}>
+            <Button
+              style={styles.createAlertButton}
+              title="Set Alert"
+              color="#FFFFFF"
+              onPress={(e) => { this.props.navigation.navigate('viewAlerts'); this.createAlert(e); }}
+            />
+          </View>
+        </TouchableOpacity>
 
         <View style={styles.marginTop}>
           <Button
@@ -194,7 +196,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderColor: '#eee',
     height: 25,
-    borderRadius: 1,
+    borderRadius: 2,
     marginTop: 5,
   },
   alertMessage: {
@@ -210,11 +212,10 @@ const styles = StyleSheet.create({
   },
   viewAlertsButton: {
     width: '30%',
-    marginTop: 80,
     borderWidth: 1,
   },
   marginTop: {
-    marginTop: 70,
+    marginTop: 80,
   },
   createAlertButton: {
     width: '40%',
@@ -224,7 +225,7 @@ const styles = StyleSheet.create({
     marginRight: '50%',
   },
   createButton: {
-    marginTop: 20,
+    marginTop: 15,
     backgroundColor: puce,
     borderRadius: 10,
     width: '40%',

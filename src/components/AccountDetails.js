@@ -36,6 +36,7 @@ class AccountDetails extends Component {
         <View style={styles.logout}>
           <Button
             title="Log Out"
+            color='white'
             onPress={() =>
               this.props.navigation.navigate('login')
             }
@@ -71,6 +72,17 @@ const styles = StyleSheet.create({
   },
   logout: {
     marginTop: 30,
+    marginLeft: 20,
+    backgroundColor: puce,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 10,
+    shadowOpacity: 0.25
   },
 })
 
