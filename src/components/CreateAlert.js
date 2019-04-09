@@ -62,6 +62,7 @@ class CreateAlert extends Component {
     })
   }
 
+
   createAlert = async (e) => {
     e.preventDefault()
     const multiplier = Number(1.8)
@@ -71,14 +72,16 @@ class CreateAlert extends Component {
     const convertedTemp = multiplier * (kelvin - subtract273) + add32
     console.log("convertedTemp", convertedTemp)
     console.log("kelvin", kelvin)
+    const maxormin = this.state.min ? 'min' : 'max'
+    console.log("maxorMin", maxormin)
     await this.setState({
       minTemp: Number(convertedTemp)
     })
     console.log("minTemp", this.state.minTemp)
     const newAlert = {
       message: this.state.message,
-      user_id: 2,
-      type_id: 2
+      user_id: 1,
+      type: maxormin,
     }
     fetch('http://localhost:3000/alert/2', {
       method: 'POST',
