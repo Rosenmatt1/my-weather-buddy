@@ -45,19 +45,9 @@ const styles = StyleSheet.create({
     color: puce,
     fontSize: 16,
   },
-  puceColor: {
-    color: puce,
-  },
   center: {
     justifyContent: 'center',
     alignItems: "center",
-  },
-  container: {
-    flex: 1,
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: "center",
-    backgroundColor: '#C8F4F9',
   },
   alertContainer: {
     width: '70%',
