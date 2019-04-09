@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text, Button  } from "react-native";
+import { View, StyleSheet, Text, Button } from "react-native";
 import Heading from './Heading.js'
 import Alert from './Alert.js'
 
@@ -74,17 +74,18 @@ class ViewAlerts extends Component {
           : <View></View>
         }
 
-        <Button
-          // style={styles.buttons}
-          title="Create New Alert"
-          onPress={() => this.props.navigation.navigate('createAlert')}
-        />
-
-        <Button
-          // style={styles.buttons}
-          title="Account Details"
-          onPress={() => this.props.navigation.navigate('accountDetails')}
-        />
+        <View style={styles.rower}>
+          <Button
+            // style={styles.buttons}
+            title="Create New Alert"
+            onPress={() => this.props.navigation.navigate('createAlert')}
+          />
+          <Button
+            // style={styles.buttons}
+            title="Account Details"
+            onPress={() => this.props.navigation.navigate('accountDetails')}
+          />
+        </View>
 
       </View>
     )
@@ -104,6 +105,10 @@ const styles = StyleSheet.create({
     fontWeight: '200',
     marginBottom: 30,
     color: puce,
+  },
+  rower: {
+    flexDirection: 'row',
+    justifyContent: 'center'
   },
 })
 
