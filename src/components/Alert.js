@@ -4,6 +4,29 @@ import { View, StyleSheet, Text, Button } from "react-native";
 const puce = '#513B41'
 
 class Alert extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      alerts: [],
+    }
+  }
+
+  getAlerts = () => {
+    fetch(`http://localhost:3000/`, {
+      method: "GET",
+      "Content-Type": "application/json",
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          alerts: data,
+        })
+        console.log("alerts", this.state.alerts)
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
 
   deleteAlert = id => {
     this.setState(prevState => {
@@ -15,6 +38,7 @@ class Alert extends Component {
     })
   }
 
+  
   render() {
     return (
       <View style={styles.alertContainer}>
