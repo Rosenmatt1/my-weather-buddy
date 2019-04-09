@@ -67,16 +67,21 @@ class ViewAlerts extends Component {
         }
 
         <View style={styles.rower}>
-          <Button
-            // style={styles.buttons}
-            title="Create New Alert"
-            onPress={() => this.props.navigation.navigate('createAlert')}
-          />
-          <Button
-            // style={styles.buttons}
-            title="Account Details"
-            onPress={() => this.props.navigation.navigate('accountDetails')}
-          />
+          <View style={styles.buttons}>
+            <Button
+              title="Create New Alert"
+              color="white"
+              onPress={() => this.props.navigation.navigate('createAlert')}
+            />
+          </View>
+
+          <View style={styles.buttons}>
+            <Button
+              title="Account Details"
+              color="white"
+              onPress={() => this.props.navigation.navigate('accountDetails')}
+            />
+          </View>
         </View>
 
       </View>
@@ -101,6 +106,21 @@ const styles = StyleSheet.create({
   rower: {
     flexDirection: 'row',
     justifyContent: 'center'
+  },
+  buttons: {
+    backgroundColor: puce,
+    borderRadius: 10,
+    height: 60,
+    margin: 10,
+    marginTop: 30,
+    padding: 10,
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 10,
+    shadowOpacity: 0.25
   },
 })
 

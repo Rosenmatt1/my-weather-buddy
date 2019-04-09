@@ -18,7 +18,7 @@ class Alert extends Component {
             <Button
               style={styles.delete}
               title="Delete"
-              color="#FFFFFF"
+              color={puce}
               onPress={() => this.props.navigation.navigate('viewAlerts')}
             />
           </View>
@@ -27,7 +27,7 @@ class Alert extends Component {
             <Button
               style={styles.update}
               title="Edit"
-              color="#FFFFFF"
+              color={puce}
               onPress={() => this.props.navigation.navigate('viewAlerts')}
             />
           </View>
@@ -63,21 +63,22 @@ const styles = StyleSheet.create({
     borderColor: puce,
     borderRadius: 15,
     backgroundColor: 'white',
-    marginBottom: 30,
+    marginBottom: 11,
   },
   buttonStyler: {
-    backgroundColor: puce,
-    // borderRadius: 10,
+    borderWidth: 1,
+    borderColor: puce,
+    borderRadius: 10,
     height: 50,
     margin: 10,
-    padding: 10,
-    shadowColor: '#000000',
-    shadowOffset: {
-      width: 0,
-      height: 3
-    },
-    shadowRadius: 10,
-    shadowOpacity: 0.25
+    // padding: 10,
+    // shadowColor: '#7FE5F0',
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 3
+    // },
+    // shadowRadius: 10,
+    // shadowOpacity: 0.25
   },
   update: {
     width: '30%',

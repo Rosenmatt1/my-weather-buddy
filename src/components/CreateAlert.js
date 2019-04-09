@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, TextInput, Button, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { View, TextInput, Button, StyleSheet, Text, } from "react-native";
 import Heading from './Heading.js'
 import { navigation } from 'react-navigation'
 
@@ -130,7 +130,6 @@ class CreateAlert extends Component {
           </View>
         </View>
 
-        <TouchableOpacity>
           <View style={styles.createButton}>
             <Button
               style={styles.createAlertButton}
@@ -139,7 +138,6 @@ class CreateAlert extends Component {
               onPress={(e) => { this.props.navigation.navigate('viewAlerts'); this.createAlert(e); }}
             />
           </View>
-        </TouchableOpacity>
 
         <View style={styles.marginTop}>
           <Button
@@ -151,8 +149,6 @@ class CreateAlert extends Component {
             }
           />
         </View>
-
-
       </View>
     )
   }
