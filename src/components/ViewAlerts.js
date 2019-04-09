@@ -10,7 +10,6 @@ class ViewAlerts extends Component {
     super(props)
     this.state = {
       alerts: [],
-      received: false
     }
   }
 

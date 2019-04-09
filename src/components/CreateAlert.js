@@ -128,27 +128,29 @@ class CreateAlert extends Component {
           <View style={styles.center}>
             <Text style={styles.sizer}>Enter Text Message to Receive</Text>
           </View>
-
-          <View style={styles.createButton}>
-            <Button
-              style={styles.createAlertButton}
-              title="Set Alert"
-              onPress={(e) => { this.props.navigation.navigate('viewAlerts'); this.createAlert(e); }}
-            />
-          </View>
-
-          <View style={styles.marginTop}>
-            <Button
-              style={styles.viewAlertsButton}
-              title="View Alerts"
-              onPress={() => {
-                this.props.navigation.navigate('viewAlerts'); this.viewState()
-              }
-              }
-            />
-          </View>
-
         </View>
+
+        <View style={styles.createButton}>
+          <Button
+            style={styles.createAlertButton}
+            title="Set Alert"
+            color="#FFFFFF"
+            onPress={(e) => { this.props.navigation.navigate('viewAlerts'); this.createAlert(e); }}
+          />
+        </View>
+
+        <View style={styles.marginTop}>
+          <Button
+            style={styles.viewAlertsButton}
+            title="View Alerts"
+            onPress={() => {
+              this.props.navigation.navigate('viewAlerts'); this.viewState()
+            }
+            }
+          />
+        </View>
+
+
       </View>
     )
   }
@@ -186,7 +188,6 @@ const styles = StyleSheet.create({
     width: '80%'
   },
   userInput: {
-    width: '10%',
     borderWidth: 1,
     backgroundColor: 'white',
     borderColor: '#eee',
@@ -212,14 +213,16 @@ const styles = StyleSheet.create({
     marginTop: 70,
   },
   createAlertButton: {
-    width: '30%',
+    width: '40%',
     borderWidth: 1,
+    flexDirection: 'row',
+    marginLeft: '50%',
+    marginRight: '50%',
   },
   createButton: {
     backgroundColor: puce,
     borderRadius: 10,
-    color: 'white',
-    width: '30%',
+    width: '40%',
     padding: 10,
     shadowColor: '#000000',
     shadowOffset: {
