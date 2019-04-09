@@ -14,17 +14,25 @@ class Alert extends Component {
         </View>
 
         <View style={styles.rower}>
-          <Button
-            style={styles.delete}
-            title="Delete"
-            onPress={() => this.props.navigation.navigate('viewAlerts')}
-          />
-          <Button
-            style={styles.update}
-            title="Edit"
-            onPress={() => this.props.navigation.navigate('viewAlerts')}
-          />
+          <View style={styles.buttonStyler}>
+            <Button
+              style={styles.delete}
+              title="Delete"
+              color="#FFFFFF"
+              onPress={() => this.props.navigation.navigate('viewAlerts')}
+            />
+          </View>
+
+          <View style={styles.buttonStyler}>
+            <Button
+              style={styles.update}
+              title="Edit"
+              color="#FFFFFF"
+              onPress={() => this.props.navigation.navigate('viewAlerts')}
+            />
+          </View>
         </View>
+
       </View>
     )
   }
@@ -57,8 +65,22 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     marginBottom: 30,
   },
+  buttonStyler: {
+    backgroundColor: puce,
+    // borderRadius: 10,
+    height: 50,
+    margin: 10,
+    padding: 10,
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 10,
+    shadowOpacity: 0.25
+  },
   update: {
-    width: '30%'
+    width: '30%',
   },
   delete: {
     width: '30%',
@@ -67,3 +89,4 @@ const styles = StyleSheet.create({
 })
 
 export default Alert
+
