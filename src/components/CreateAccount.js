@@ -112,7 +112,6 @@ class CreateAccount extends Component {
 
   // <input id="autocomplete" onChange={props.pickUpAddress} type="address" className="form-control border-dark" placeholder="Enter Pick Up Location" value={props.puAddress} />
 
-
   postUser = () => {
     const newUser = {
       name: this.state.name,
@@ -179,12 +178,16 @@ class CreateAccount extends Component {
           />
         </View>
 
+        
+        <View style={styles.createContainer}>
         <Button
           title="Create Account"
+          color="#FFFFFF"
           style={styles.create}
           onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long });   } }
         />
-
+        </View>
+  
         <Button
           style={styles.login}
           title="Already have an account? Login"
@@ -222,8 +225,20 @@ const styles = StyleSheet.create({
     margin: 8,
     color: puce,
   },
+  createContainer: {
+    backgroundColor: '#7FE5F0',
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 10,
+    shadowOpacity: 0.25
+  },
   create: {
-    width: '30%'
+    width: '30%',
   },
   login: {
     width: '30%'
