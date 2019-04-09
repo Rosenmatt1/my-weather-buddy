@@ -114,7 +114,7 @@ class CreateAlert extends Component {
 
           <TextInput
             style={styles.alertMessage}
-            placeholder="ie Wear Shorts and Sandals"
+            placeholder="ie Wear Hat and Gloves"
             value={this.state.message}
             onChangeText={(e) => this.setMessage(e)}
           />

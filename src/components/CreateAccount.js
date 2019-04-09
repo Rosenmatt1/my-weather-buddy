@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, TextInput, Button, StyleSheet, Text, Image } from "react-native";
+import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
 // import FontAwesome, { Icons, parseIconName } from 'react-native-fontawesome';
 import Heading from './Heading.js'
 // import SvgComponent from './assets/snowflake-solid.svg'
@@ -178,24 +178,33 @@ class CreateAccount extends Component {
           />
         </View>
 
-        
-        <View style={styles.createContainer}>
-        <Button
-          title="Create Account"
-          color="#FFFFFF"
-          style={styles.create}
-          onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long });   } }
-        />
+        <TouchableOpacity>
+          <View style={styles.createContainer}>
+            <Button
+              title="Create Account"
+              color="#FFFFFF"
+              style={styles.create}
+              onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }); }}
+            />
+          </View>
+        </TouchableOpacity>
+
+        <View style={styles.rower}>
+          <Text style={styles.mini}>Already have an account?</Text>
+          <Text style={styles.login}
+            onPress={() =>
+              this.props.navigation.navigate('login')
+            }>  Login</Text>
+          {/* <Button
+            style={styles.login}
+            title="Login"
+            onPress={() =>
+              this.props.navigation.navigate('login')
+            }
+          /> */}
         </View>
-  
-        <Button
-          style={styles.login}
-          title="Already have an account? Login"
-          onPress={() =>
-            this.props.navigation.navigate('login')
-          }
-        //  onPress={(e) => { func1(); func2(); }}>
-        />
+
+        {/* onPress={(e) => { func1(); func2(); }} */}
 
         {/* <Text style={styles.miniText}>**The location for your alerts will be set to your current location at the time of making the account. Please accept the GeoCoordinates request.**</Text> */}
 
@@ -225,6 +234,12 @@ const styles = StyleSheet.create({
     margin: 8,
     color: puce,
   },
+  rower: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: "center",
+    marginTop: 20,
+  },
   createContainer: {
     backgroundColor: puce,
     borderRadius: 10,
@@ -241,7 +256,11 @@ const styles = StyleSheet.create({
     width: '30%',
   },
   login: {
-    width: '30%'
+    width: '30%',
+    color: 'blue'
+  },
+  mini: {
+    color: puce,
   },
   // miniText: {
   //   width: '70%',
