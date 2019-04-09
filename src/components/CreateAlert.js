@@ -185,13 +185,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#C8F4F9',
   },
   inputContainer: {
-    width: '80%'
+    width: '80%',
   },
   userInput: {
     borderWidth: 1,
     backgroundColor: 'white',
     borderColor: '#eee',
+    height: 25,
     borderRadius: 2,
+    marginTop: 5,
   },
   alertMessage: {
     width: '100%',
