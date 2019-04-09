@@ -28,13 +28,33 @@ class Alert extends Component {
       })
   }
 
-  deleteAlert = id => {
-    this.setState(prevState => {
-      return {
-        alerts: prevState.alerts.filter(alert => {
-          return alert.id !== id
-        })
+  // deleteAlert = id => {
+  //   this.setState(prevState => {
+  //     return {
+  //       alerts: prevState.alerts.filter(alert => {
+  //         return alert.id !== id
+  //       })
+  //     }
+  //   })
+  // }
+
+  deleteAlert = async (id) => {
+    const removedAlert = this.state.alerts.filter(alert => {
+      if (alert.id === id) {
       }
+      return alert.id
+    })
+    const returnTheRest = this.state.alerts.filter(alert => alert.id !== id)
+    await fetch(`http://localhost:3000/alert/1`, {
+      method: 'DELETE',
+      body: JSON.stringify(removedAlert),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    this.setState({
+      alerts: returnTheRest,
     })
   }
 

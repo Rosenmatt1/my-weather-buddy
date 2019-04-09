@@ -16,12 +16,12 @@ class AccountDetails extends Component {
         <Heading> Account Details </Heading>
 
         <View style={styles.email}>
-          <Text style={styles.sizer}>Email(UserName):</Text>
-          <Text style={styles.sizerSmaller}>Matty85@aol.com</Text>
+          <Text style={styles.sizer}>Email(UserName):  </Text>
+          <Text style={styles.sizer}>matty85@aol.com</Text>
         </View>
         <Button
           title="Change Email"
-          onPress={() => this.props.navigation.navigate('createAlert')}
+          onPress={() => this.changeEmail()}
         />
 
         <View style={styles.password}>
@@ -30,7 +30,7 @@ class AccountDetails extends Component {
         </View>
         <Button
           title="Change Password"
-          onPress={() => this.props.navigation.navigate('createAlert')}
+          onPress={() => this.changePassword()}
         />
 
         <View style={styles.logout}>

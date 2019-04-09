@@ -14,16 +14,17 @@ class CreateAlert extends Component {
     super(props)
     this.state = {
       message: "",
-      chosenMaxTemp: 90,
-      chosenMinTemp: 90,
-      maxTemp: 0,
-      minTemp: 0,
+      // chosenMaxTemp: 90,
+      // chosenMinTemp: 90,
+      chosenTemp: 0,
+      weatherTemp: 0,
       user_id: 0,
-      type_id: 0,
+      type: '',
       forecast: [],
       min: '<',
       max: '>',
       flipper: false,
+      id: 0,
     }
   }
 
@@ -31,24 +32,24 @@ class CreateAlert extends Component {
     header: null,
   }
 
-  // componentDidMount() {
-  //   fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.props.navigation.state.params.lat}&lon=-${this.props.navigation.state.params.long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
-  //     method: "GET",
-  //     "Content-Type": "application/json",
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       this.setState({
-  //         forecast: data
-  //       })
-  //       console.log("forecast", this.state.forecast)
-  //     })
-  //     .catch(error => {
-  //       console.error(error)
-  //     })
-  // }
+  componentDidMount() {
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.props.navigation.state.params.lat}&lon=-${this.props.navigation.state.params.long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
+      method: "GET",
+      "Content-Type": "application/json",
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          forecast: data
+        })
+        console.log("forecast", this.state.forecast)
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
 
-  setTemp = (e) => this.setState({ chosenMinTemp: e })
+  setTemp = (e) => this.setState({ chosenTemp: e })
 
   setMessage = (e) => this.setState({ message: e })
 
@@ -62,7 +63,6 @@ class CreateAlert extends Component {
     })
   }
 
-
   createAlert = async (e) => {
     e.preventDefault()
     const multiplier = Number(1.8)
@@ -72,18 +72,21 @@ class CreateAlert extends Component {
     const convertedTemp = multiplier * (kelvin - subtract273) + add32
     console.log("convertedTemp", convertedTemp)
     console.log("kelvin", kelvin)
-    const maxormin = this.state.min ? 'min' : 'max'
+    const maxormin = this.state.flipper ? 'max' : 'min'
+    const id = this.state.id
     console.log("maxorMin", maxormin)
     await this.setState({
-      minTemp: Number(convertedTemp)
+      weatherTemp: Number(convertedTemp)
     })
     console.log("minTemp", this.state.minTemp)
     const newAlert = {
       message: this.state.message,
       user_id: 1,
       type: maxormin,
+      chosenTemp: this.state.chosenTemp,
+      weatherTemp: this.state.weatherTemp,
     }
-    fetch('http://localhost:3000/alert/2', {
+    fetch(`http://localhost:3000/alert/${id}`, {
       method: 'POST',
       body: JSON.stringify(newAlert),
       headers: {
