@@ -38,9 +38,8 @@ class ViewAlerts extends Component {
     this.getAlerts()
   }
 
-
+  
   render() {
-
     return (
       <View style={styles.container}>
 

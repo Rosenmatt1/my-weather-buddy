@@ -157,7 +157,7 @@ class CreateAlert extends Component {
 const styles = StyleSheet.create({
   maxormin: {
     fontSize: 22,
-    color: '#F83839',
+    color: '#ff6ec7',
     margin: 4,
     fontWeight: 'bold',
   },

@@ -38,7 +38,7 @@ class Alert extends Component {
               style={styles.update}
               title="Edit"
               color={puce}
-              onPress={() => this.editAlert()}
+              // onPress={() => this.editAlert()}
             />
           </View>
         </View>

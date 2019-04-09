@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '70%',
-    marginTop: 80,
+    marginTop: 40,
   },
   inputs: {
     width: '100%',
