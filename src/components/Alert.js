@@ -1,43 +1,30 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text, Button} from "react-native";
+import { View, StyleSheet, Text, Button } from "react-native";
 
 const puce = '#513B41'
 
 class Alert extends Component {
-  
+
   render() {
     return (
-      <View>
-        <Text>Hello!</Text>
-        <View style={styles.alertContainer}>
-          <View style={styles.center}>
-            <Text style={styles.title}>{this.props.alert.id}</Text>
-            <Text style={styles.puceColor}>{this.props.alert.message}</Text>
-          </View>
-
-          <View style={styles.rower}>
-            <Button
-              style={styles.delete}
-              title="Delete"
-              onPress={() => this.props.navigation.navigate('viewAlerts')}
-            />
-            <Button
-              style={styles.update}
-              title="Edit"
-              onPress={() => this.props.navigation.navigate('viewAlerts')}
-            />
-          </View>
+      <View style={styles.alertContainer}>
+        <View style={styles.center}>
+          <Text style={styles.title}>Alert {this.props.alert.id}</Text>
+          <Text style={styles.message}>{this.props.alert.message}</Text>
         </View>
 
-        <Button
-          title="Create New Alert"
-          onPress={() => this.props.navigation.navigate('createAlert')}
-        />
-
-        <Button
-          title="Account Details"
-          onPress={() => this.props.navigation.navigate('accountDetails')}
-        />
+        <View style={styles.rower}>
+          <Button
+            style={styles.delete}
+            title="Delete"
+            onPress={() => this.props.navigation.navigate('viewAlerts')}
+          />
+          <Button
+            style={styles.update}
+            title="Edit"
+            onPress={() => this.props.navigation.navigate('viewAlerts')}
+          />
+        </View>
       </View>
     )
   }
@@ -51,6 +38,12 @@ const styles = StyleSheet.create({
   title: {
     color: puce,
     margin: 5,
+    fontWeight: 'bold',
+    fontSize: 22,
+  },
+  message: {
+    color: puce,
+    fontSize: 16,
   },
   puceColor: {
     color: puce,

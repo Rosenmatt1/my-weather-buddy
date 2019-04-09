@@ -74,26 +74,6 @@ class ViewAlerts extends Component {
           : <View></View>
         }
 
-        <View style={styles.alertContainer}>
-          <View style={styles.center}>
-            <Text style={styles.title}>Alert 1</Text>
-            <Text style={styles.message}>Wear hat and gloves.</Text>
-          </View>
-
-          <View style={styles.rower}>
-            <Button
-              style={styles.delete}
-              title="Delete"
-              onPress={() => this.props.navigation.navigate('viewAlerts')}
-            />
-            <Button
-              style={styles.update}
-              title="Edit"
-              onPress={() => this.props.navigation.navigate('viewAlerts')}
-            />
-          </View>
-        </View>
-
         <Button
           // style={styles.buttons}
           title="Create New Alert"
