@@ -30,10 +30,13 @@ class Login extends Component {
           />
         </View>
 
-        <Button
-          title="Login"
-          onPress={() => this.props.navigation.navigate('createAlert')}
-        />
+        <View style={styles.loginButton}>
+          <Button
+            title="Login"
+            color="white"
+            onPress={() => this.props.navigation.navigate('createAlert')}
+          />
+        </View>
 
       </View>
     )
@@ -52,12 +55,26 @@ const styles = StyleSheet.create({
   },
   inputs: {
     width: '100%',
+    height: 45,
     borderWidth: 1,
     backgroundColor: 'white',
     borderColor: '#eee',
     padding: 5,
     margin: 8,
     color: puce,
+  },
+  loginButton: {
+    marginTop: 25,
+    backgroundColor: puce,
+    borderRadius: 10,
+    padding: 10,
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+    shadowRadius: 10,
+    shadowOpacity: 0.25
   },
 })
 

@@ -194,18 +194,10 @@ class CreateAccount extends Component {
         </TouchableOpacity>
 
         <View style={styles.rower}>
-          <Text style={styles.mini}>Already have an account?</Text>
           <Text style={styles.login}
             onPress={() =>
               this.props.navigation.navigate('login')
-            }>  Login</Text>
-          {/* <Button
-            style={styles.login}
-            title="Login"
-            onPress={() =>
-              this.props.navigation.navigate('login')
-            }
-          /> */}
+            }> Already have an account?  Login </Text>
         </View>
 
         {/* onPress={(e) => { func1(); func2(); }} */}
@@ -245,6 +237,8 @@ const styles = StyleSheet.create({
     marginLeft: 40,
   },
   createButton: {
+    marginTop: 25,
+    marginLeft: 20,
     backgroundColor: puce,
     borderRadius: 10,
     padding: 10,
@@ -260,11 +254,8 @@ const styles = StyleSheet.create({
     width: '30%',
   },
   login: {
-    width: '30%',
+    width: '70%',
     color: 'blue'
-  },
-  mini: {
-    color: puce,
   },
   // miniText: {
   //   width: '70%',
