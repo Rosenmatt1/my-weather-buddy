@@ -5,6 +5,11 @@ import Heading from './Heading.js'
 const puce = '#513B41'
 
 class Login extends Component {
+
+  static navigationOptions = {
+    header: null,
+  }
+
   render() {
     return (
       <View style={styles.container}>

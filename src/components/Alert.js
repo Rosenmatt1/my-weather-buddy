@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Button} from "react-native";
+import { View, StyleSheet, Text, Button} from "react-native";
 
 const puce = '#513B41'
 

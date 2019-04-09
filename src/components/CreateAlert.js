@@ -27,6 +27,10 @@ class CreateAlert extends Component {
     }
   }
 
+  static navigationOptions = {
+    header: null,
+  }
+
   // componentDidMount() {
   //   fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.props.navigation.state.params.lat}&lon=-${this.props.navigation.state.params.long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
   //     method: "GET",

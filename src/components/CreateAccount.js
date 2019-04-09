@@ -23,6 +23,10 @@ class CreateAccount extends Component {
     }
   }
 
+  static navigationOptions = {
+    header: null,
+  }
+
   // componentDidMount() {
   //   let geoOptions = {
   //     enableHighAccuracy: true,
