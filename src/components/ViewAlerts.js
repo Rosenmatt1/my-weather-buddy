@@ -36,13 +36,7 @@ class ViewAlerts extends Component {
   }
 
   componentDidMount() {
-    Promise.all([this.getAlerts()])
-      .then(() => {
-        this.setState({
-          received: true
-        })
-        console.log(this.state.received)
-      })
+    this.getAlerts()
   }
 
   // deleteAlert = id => {
@@ -63,9 +57,8 @@ class ViewAlerts extends Component {
         <Heading>Current Alerts</Heading>
         <Text style={styles.miniText}> **Alerts are sent at 7pm the night before the weather condition will be met** </Text>
 
-        {this.state.received
-          ?
-          this.state.alerts.map((alert, idx) => {
+        {this.state.alerts[0]
+          ? this.state.alerts.map((alert, idx) => {
             return <Alert
               key={idx}
               alert={alert}

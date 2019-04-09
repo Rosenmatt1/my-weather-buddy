@@ -116,6 +116,7 @@ class CreateAccount extends Component {
 
   // <input id="autocomplete" onChange={props.pickUpAddress} type="address" className="form-control border-dark" placeholder="Enter Pick Up Location" value={props.puAddress} />
 
+
   postUser = () => {
     const newUser = {
       name: this.state.name,
@@ -134,7 +135,6 @@ class CreateAccount extends Component {
       }
     })
   }
-
 
   render() {
     return (
@@ -183,7 +183,7 @@ class CreateAccount extends Component {
         </View>
 
         <TouchableOpacity>
-          <View style={styles.createContainer}>
+          <View style={styles.createButton}>
             <Button
               title="Create Account"
               color="#FFFFFF"
@@ -241,10 +241,10 @@ const styles = StyleSheet.create({
   rower: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: "center",
     marginTop: 20,
+    marginLeft: 40,
   },
-  createContainer: {
+  createButton: {
     backgroundColor: puce,
     borderRadius: 10,
     padding: 10,

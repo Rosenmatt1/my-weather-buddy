@@ -107,7 +107,7 @@ class CreateAlert extends Component {
             <Text style={styles.sizer}>  Send Alert  </Text>
 
             <View style={styles.alertSetter}>
-              <Text style={styles.sizer} onPress={() => this.flipSymbol()}> if Temp is  <Text style={styles.maxormin}> {flipped}</Text>   </Text> 
+              <Text style={styles.sizer} onPress={() => this.flipSymbol()}> if Temp is  <Text style={styles.maxormin}> {flipped}</Text>   </Text>
 
               <TextInput
                 style={styles.userInput}
@@ -129,11 +129,13 @@ class CreateAlert extends Component {
             <Text style={styles.sizer}>Enter Text Message to Receive</Text>
           </View>
 
-          <Button
-            style={styles.createAlertButton}
-            title="Set Alert"
-            onPress={(e) => { this.props.navigation.navigate('viewAlerts'); this.createAlert(e); }}
-          />
+          <View style={styles.createButton}>
+            <Button
+              style={styles.createAlertButton}
+              title="Set Alert"
+              onPress={(e) => { this.props.navigation.navigate('viewAlerts'); this.createAlert(e); }}
+            />
+          </View>
 
           <View style={styles.marginTop}>
             <Button
@@ -201,10 +203,6 @@ const styles = StyleSheet.create({
     borderRadius: 11,
     borderColor: puce,
   },
-  createAlertButton: {
-    width: '30%',
-    borderWidth: 1,
-  },
   viewAlertsButton: {
     width: '30%',
     marginTop: 70,
@@ -213,12 +211,22 @@ const styles = StyleSheet.create({
   marginTop: {
     marginTop: 70,
   },
-  miniText: {
-    width: '80%',
-    fontWeight: '100',
-    justifyContent: 'center',
-    alignItems: 'center',
+  createAlertButton: {
+    width: '30%',
+    borderWidth: 1,
   },
+  createButton: {
+    backgroundColor: puce,
+    borderRadius: 10,
+    color: 'white',
+    width: '30%',
+    padding: 10,
+    shadowColor: '#000000',
+    shadowOffset: {
+      width: 0,
+      height: 3
+    },
+  }
 })
 
 export default CreateAlert
