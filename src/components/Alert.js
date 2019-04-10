@@ -39,15 +39,17 @@ class Alert extends Component {
   // }
 
   deleteAlert = async (id) => {
-    const removedAlert = this.state.alerts.filter(alert => {
-      if (alert.id === id) {
-      }
-      return alert.id
-    })
+    // const removedAlert = this.state.alerts.filter(alert => {
+    //   if (alert.id === id) {
+    //     return true 
+    //   } else {
+    //     return false
+    //   }
+    // })
     const returnTheRest = this.state.alerts.filter(alert => alert.id !== id)
     await fetch(`http://localhost:3000/alert/1`, {
       method: 'DELETE',
-      body: JSON.stringify(removedAlert),
+      body: JSON.stringify(),
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
