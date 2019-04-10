@@ -24,7 +24,6 @@ class CreateAlert extends Component {
       min: '<',
       max: '>',
       flipper: false,
-      // email: "Matty85@aol.com"
     }
   }
 
@@ -92,7 +91,6 @@ class CreateAlert extends Component {
     console.log("kelvin", kelvin)
     const maxormin = this.state.flipper ? 'max' : 'min'
     console.log("maxorMin", maxormin)
-    // console.log("email", this.props.email)
     await this.setState({
       weatherTemp: Number(convertedTemp)
     })
