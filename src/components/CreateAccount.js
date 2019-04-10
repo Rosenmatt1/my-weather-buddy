@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
-// import FontAwesome, { Icons, parseIconName } from 'react-native-fontawesome';
-import Heading from './Heading.js'
-// import SvgComponent from './assets/snowflake-solid.svg'
+import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text, Image } from "react-native";
+// import FontAwesome, { Icons, parseIconName  } from 'react-native-fontawesome';
 
-// const chev = parseIconFromClassName('fas fa-chevron-left')
+// const validIcon = parseIconFromClassName('fas fa-chevron-left')
+import Heading from './Heading.js'
+import snowflake from './assets/snowflake-solid.png'
+
 // const snowflake = parseIconFromClassName('fas fa-chevron-left')
 
 const puce = '#513B41'
@@ -141,14 +142,16 @@ class CreateAccount extends Component {
       <View style={styles.form}>
         <Heading >My Weather Buddy</Heading>
 
-        {/* <Text style={{ margin: 10, fontSize: 15, textAlign: 'left' }}>
-         
-          <FontAwesome>{snowflake}</FontAwesome>
-        </Text> */}
+        {/* <View>
+          <Text style={{ margin: 10, fontSize: 15, textAlign: 'left' }}>
+            <FontAwesome>{Icons.validIcon}</FontAwesome>
+            Text
+      </Text>
+        </View> */}
 
-        {/* <Image style={styles.snowflake} source={require('./assets/snowflake-solid.svg')} />
+        <Image style={styles.snowflake} source={require('./assets/snowflake-solid.png')} />
 
-        <Image style={styles.snowflake} source={SvgComponent} /> */}
+        {/* <Image style={styles.snowflake} source={snowflaket} /> */}
 
 
         <View style={styles.inputContainer}>
@@ -263,10 +266,10 @@ const styles = StyleSheet.create({
   //   fontWeight: '100',
   // },
   snowflake: {
-    width: 10,
-    height: 10,
-    borderColor: 'white',
-    tintColor: 'black',
+    height: 30,
+    width: 30,
+    // borderColor: 'white',
+    // tintColor: 'black',
     zIndex: 2,
   }
 })
