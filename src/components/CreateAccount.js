@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text, Image } from "react-native";
 // import FontAwesome, { Icons, parseIconName  } from 'react-native-fontawesome';
-
 // const validIcon = parseIconFromClassName('fas fa-chevron-left')
 import Heading from './Heading.js'
-import snowflake from './assets/snowflake-solid.png'
-
-// const snowflake = parseIconFromClassName('fas fa-chevron-left')
 
 const puce = '#513B41'
 
@@ -150,8 +146,6 @@ class CreateAccount extends Component {
         </View> */}
 
         <Image style={styles.snowflake} source={require('./assets/snowflake-solid.png')} />
-
-        {/* <Image style={styles.snowflake} source={snowflaket} /> */}
 
 
         <View style={styles.inputContainer}>
