@@ -69,7 +69,7 @@ class ViewAlerts extends Component {
             <Button
               title="Account Details"
               color="white"
-              onPress={() => this.props.navigation.navigate('accountDetails')}
+              onPress={() => this.props.navigation.navigate('accountDetails', { lat: this.state.lat, long: this.state.long, email: this.state.email } )}
             />
           </View>
         </View>

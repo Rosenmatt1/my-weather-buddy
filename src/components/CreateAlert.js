@@ -24,7 +24,7 @@ class CreateAlert extends Component {
       min: '<',
       max: '>',
       flipper: false,
-      id: 0,
+      // email: "Matty85@aol.com"
     }
   }
 
@@ -49,12 +49,30 @@ class CreateAlert extends Component {
       })
   }
 
+  getUserId = () => {
+    fetch(``, {
+      method: "GET",
+      "Content-Type": "application/json",
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          forecast: data
+        })
+        console.log("forecast", this.state.forecast)
+      })
+      .catch(error => {
+        console.error(error)
+      })
+  }
+
   setTemp = (e) => this.setState({ chosenTemp: e })
 
   setMessage = (e) => this.setState({ message: e })
 
   viewState = () => {
     console.log(this.props.navigation.state.params.lat)
+    console.log(this.props.navigation.state.params.email)
   }
 
   flipSymbol = () => {
@@ -73,20 +91,20 @@ class CreateAlert extends Component {
     console.log("convertedTemp", convertedTemp)
     console.log("kelvin", kelvin)
     const maxormin = this.state.flipper ? 'max' : 'min'
-    const id = this.state.id
     console.log("maxorMin", maxormin)
+    // console.log("email", this.props.email)
     await this.setState({
       weatherTemp: Number(convertedTemp)
     })
-    console.log("minTemp", this.state.minTemp)
     const newAlert = {
       message: this.state.message,
+      user_email: 'Matty85@aol.com',
       user_id: 1,
       type: maxormin,
       chosenTemp: this.state.chosenTemp,
       weatherTemp: this.state.weatherTemp,
     }
-    fetch(`http://localhost:3000/alert/${id}`, {
+    fetch(`http://localhost:3000/alert/`, {
       method: 'POST',
       body: JSON.stringify(newAlert),
       headers: {
@@ -138,7 +156,7 @@ class CreateAlert extends Component {
               style={styles.createAlertButton}
               title="Set Alert"
               color="#FFFFFF"
-              onPress={(e) => { this.props.navigation.navigate('viewAlerts'); this.createAlert(e); }}
+            onPress={(e) => { this.props.navigation.navigate('viewAlerts', { lat: this.state.lat, long: this.state.long, email: this.state.email }); this.createAlert(e); }}
             />
           </View>
 
@@ -147,9 +165,7 @@ class CreateAlert extends Component {
             style={styles.viewAlertsButton}
             title="View Alerts"
             onPress={() => {
-              this.props.navigation.navigate('viewAlerts'); this.viewState()
-            }
-            }
+              this.props.navigation.navigate('viewAlerts', { lat: this.state.lat, long: this.state.long, email: this.state.email }); this.viewState() }}
           />
         </View>
       </View>
