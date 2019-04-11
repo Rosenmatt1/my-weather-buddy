@@ -140,6 +140,7 @@ class CreateAccount extends Component {
         <Heading >MyWeather Buddy</Heading>
 
         <Image style={styles.snowflake} source={require('./assets/snowflake.png')} />
+        <Image style={styles.snowflake} source={require('./assets/snowflakepuce.png')} />
 
         <View style={styles.inputContainer}>
           <TextInput
