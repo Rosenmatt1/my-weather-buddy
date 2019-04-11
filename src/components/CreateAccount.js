@@ -137,7 +137,7 @@ class CreateAccount extends Component {
   render() {
     return (
       <View style={styles.form}>
-        <Heading >My Weather Buddy</Heading>
+        <Heading >MyWeather Buddy</Heading>
 
         {/* <View>
           <Text style={{ margin: 10, fontSize: 15, textAlign: 'left' }}>

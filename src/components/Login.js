@@ -13,7 +13,7 @@ class Login extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Heading> My Weather Buddy </Heading>
+        <Heading> MyWeather Buddy </Heading>
 
         <View style={styles.inputContainer}>
           <TextInput
