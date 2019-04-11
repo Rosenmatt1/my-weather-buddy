@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text, Image } from "react-native";
-// import FontAwesome, { Icons, parseIconName  } from 'react-native-fontawesome';
-// const validIcon = parseIconFromClassName('fas fa-chevron-left')
 import Heading from './Heading.js'
 
 const puce = '#513B41'
+
+// neon pink '#ff6ec7'
+// pink #FA8BDA
 
 class CreateAccount extends Component {
   constructor(props) {
@@ -147,6 +148,8 @@ class CreateAccount extends Component {
 
         <Image style={styles.snowflake} source={require('./assets/snowflake-solid.png')} />
 
+        <Image style={styles.snowflake} source={require('./assets/snowflake.png')} />
+
 
         <View style={styles.inputContainer}>
           <TextInput
@@ -260,8 +263,8 @@ const styles = StyleSheet.create({
   //   fontWeight: '100',
   // },
   snowflake: {
-    height: 30,
-    width: 30,
+    height: 33,
+    width: 33,
     // borderColor: 'white',
     // tintColor: 'black',
     zIndex: 2,
