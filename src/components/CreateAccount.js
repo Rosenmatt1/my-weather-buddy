@@ -138,9 +138,9 @@ class CreateAccount extends Component {
 
         <View style={styles.rower}>
           <Image style={styles.icon} source={require('./assets/wind.png')} />
-          <Image style={styles.icon} source={require('./assets/umbrella.png')} />
+          
           <Image style={styles.icon} source={require('./assets/snowflake.png')} />
-          <Image style={styles.icon} source={require('./assets/snowflakepuce.png')} />
+          <Image style={styles.icon} source={require('./assets/umbrella.png')} />
         </View>
 
         <View style={styles.inputContainer}>
