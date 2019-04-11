@@ -1,13 +1,26 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, View, Button, Text, } from 'react-native'
 import Heading from './Heading.js'
+import ChangeEmail from './ChangeEmail.js'
 
 const puce = '#513B41'
 
 class AccountDetails extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      notdisplay: true,
+    }
+  }
 
   static navigationOptions = {
     header: null,
+  }
+
+  changeEmail = () => {
+    this.setState({
+      notdisplay: false
+    })
   }
 
   render() {
@@ -15,15 +28,15 @@ class AccountDetails extends Component {
       <View style={styles.container}>
         <Heading> Account Details </Heading>
 
-        <View style={styles.email}>
-          <Text style={styles.sizer}>Email(UserName):  </Text>
-          <Text style={styles.sizer}>matty85@aol.com</Text>
-        </View>
-        <Button
-          title="Change Email"
-          onPress={() => this.changeEmail()}
-        />
-
+          <View style={styles.email}>
+            <Text style={styles.sizer}>Email(UserName):  </Text>
+            <Text style={styles.sizer}>matty85@aol.com</Text>
+          </View>
+          <Button
+            title="Change Email"
+            onPress={() => this.changeEmail()}
+          />
+        
         <View style={styles.password}>
           <Text style={styles.sizer}>Password:</Text>
           <Text style={styles.sizer}>  *********</Text>

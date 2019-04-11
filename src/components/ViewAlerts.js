@@ -18,7 +18,7 @@ class ViewAlerts extends Component {
   }
 
   getAlerts = () => {
-    fetch(`http://localhost:3000/`, {
+    fetch(`http://localhost:3000/user/1`, {
       method: "GET",
       "Content-Type": "application/json",
     })

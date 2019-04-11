@@ -38,7 +38,10 @@ class Alert extends Component {
   //   })
   // }
 
+  
+
   deleteAlert = async (id) => {
+    console.log(id)
     // const removedAlert = this.state.alerts.filter(alert => {
     //   if (alert.id === id) {
     //     return true 
@@ -46,8 +49,10 @@ class Alert extends Component {
     //     return false
     //   }
     // })
+
     const returnTheRest = this.state.alerts.filter(alert => alert.id !== id)
-    await fetch(`http://localhost:3000/alert/1`, {
+    console.log(returnTheRest)
+    await fetch(`http://localhost:3000/alert/3`, {
       method: 'DELETE',
       body: JSON.stringify(),
       headers: {
@@ -55,8 +60,44 @@ class Alert extends Component {
         'Accept': 'application/json',
       }
     })
+    // this.setState({
+    //   alerts: returnTheRest,
+    // })
+    this.getAlerts()
+  }
+
+  editAlert = async (e) => {
+    e.preventDefault()
+    console.log(e)
+    const editedAlert = {
+      // id: this.state.flashcards[this.state.index].id,
+      message: this.state.message,
+      chosenTemp: this.state.chosenTemp,
+      weatherTemp: this.state.weatherTemp,
+      user_id: this.state.user_id,
+      user_email: this.state.email,
+      type: this.state.type
+    }
+    const mappedAlerts = this.state.alerts.map(alert => {
+      if (this.state.alerts[this.state.index].id === alert.id) {
+        this.state.alerts[this.state.index].message = "testing edit"
+        this.state.alerts[this.state.index].chosenTemp = 100
+        this.state.alerts[this.state.index].weatherTemp = 66
+        this.state.alerts[this.state.index].type = 'max'
+      }
+      return alert
+    })
+    await fetch(`http://localhost:3000/alert/1`, {
+      method: 'PUT',
+      body: JSON.stringify(editedAlert),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
     this.setState({
-      alerts: returnTheRest,
+      alerts: mappedAlerts,
+      edit: false,
     })
   }
 

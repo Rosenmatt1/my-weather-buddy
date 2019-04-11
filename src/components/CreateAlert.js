@@ -24,6 +24,7 @@ class CreateAlert extends Component {
       min: '<',
       max: '>',
       flipper: false,
+      placeholder: true,
     }
   }
 
@@ -110,6 +111,9 @@ class CreateAlert extends Component {
         'Accept': 'application/json',
       }
     })
+    this.setState({
+      placeholder: false,
+    })
   }
 
 
@@ -126,12 +130,13 @@ class CreateAlert extends Component {
             <Text style={styles.sizer}>  Send Alert  </Text>
 
             <View style={styles.alertSetter}>
-              <Text style={styles.sizer} onPress={() => this.flipSymbol()}> if Temp is  <Text style={styles.maxormin}> {flipped}</Text>   </Text>
+              <Text style={styles.sizer} onPress={() => this.flipSymbol()}> if Temp is   <Text style={styles.maxormin}> {flipped}</Text>   </Text>
 
               <TextInput
                 style={styles.userInput}
-                placeholder="40"
+                placeholder={this.state.placeholder ? "40" : ""}
                 value={this.state.chosenTemp}
+                
                 onChangeText={(e) => this.setTemp(e)}
               />
               <Text style={styles.sizer}> degrees </Text>
@@ -205,7 +210,7 @@ const styles = StyleSheet.create({
   },
   userInput: {
     borderWidth: 1,
-    width: 24,
+    width: 25,
     backgroundColor: 'white',
     borderColor: '#eee',
     height: 25,
