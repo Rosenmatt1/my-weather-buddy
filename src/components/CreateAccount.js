@@ -139,17 +139,7 @@ class CreateAccount extends Component {
       <View style={styles.form}>
         <Heading >MyWeather Buddy</Heading>
 
-        {/* <View>
-          <Text style={{ margin: 10, fontSize: 15, textAlign: 'left' }}>
-            <FontAwesome>{Icons.validIcon}</FontAwesome>
-            Text
-      </Text>
-        </View> */}
-
-        <Image style={styles.snowflake} source={require('./assets/snowflake-solid.png')} />
-
         <Image style={styles.snowflake} source={require('./assets/snowflake.png')} />
-
 
         <View style={styles.inputContainer}>
           <TextInput
@@ -263,8 +253,8 @@ const styles = StyleSheet.create({
   //   fontWeight: '100',
   // },
   snowflake: {
-    height: 33,
-    width: 33,
+    height: 40,
+    width: 40,
     // borderColor: 'white',
     // tintColor: 'black',
     zIndex: 2,
