@@ -49,7 +49,6 @@ class Alert extends Component {
     //     return false
     //   }
     // })
-
     const returnTheRest = this.state.alerts.filter(alert => alert.id !== id)
     console.log(returnTheRest)
     await fetch(`http://localhost:3000/alert/3`, {
@@ -88,7 +87,7 @@ class Alert extends Component {
       return alert
     })
     await fetch(`http://localhost:3000/alert/1`, {
-      method: 'PUT',
+      method: 'PATCH',
       body: JSON.stringify(editedAlert),
       headers: {
         'Content-Type': 'application/json',
@@ -125,7 +124,7 @@ class Alert extends Component {
               style={styles.update}
               title="Edit"
               color='white'
-              // onPress={() => this.editAlert()}
+              onPress={() => this.editAlert()}
             />
           </View>
         </View>
