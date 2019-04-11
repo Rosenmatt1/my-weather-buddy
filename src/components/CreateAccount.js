@@ -4,9 +4,6 @@ import Heading from './Heading.js'
 
 const puce = '#513B41'
 
-// neon pink '#ff6ec7'
-// pink #FA8BDA
-
 class CreateAccount extends Component {
   constructor(props) {
     super(props)
@@ -139,8 +136,12 @@ class CreateAccount extends Component {
       <View style={styles.form}>
         <Heading >MyWeather Buddy</Heading>
 
-        <Image style={styles.snowflake} source={require('./assets/snowflake.png')} />
-        <Image style={styles.snowflake} source={require('./assets/snowflakepuce.png')} />
+        <View style={styles.rower}>
+          <Image style={styles.icon} source={require('./assets/wind.png')} />
+          <Image style={styles.icon} source={require('./assets/umbrella.png')} />
+          <Image style={styles.icon} source={require('./assets/snowflake.png')} />
+          <Image style={styles.icon} source={require('./assets/snowflakepuce.png')} />
+        </View>
 
         <View style={styles.inputContainer}>
           <TextInput
@@ -180,7 +181,7 @@ class CreateAccount extends Component {
               color="#FFFFFF"
               style={styles.create}
               onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long, email: this.state.email }); }}
-          />
+            />
           </View>
         </TouchableOpacity>
 
@@ -201,6 +202,9 @@ class CreateAccount extends Component {
 }
 
 const styles = StyleSheet.create({
+  rower: {
+    flexDirection: 'row'
+  },
   form: {
     flex: 1,
     width: '100%',
@@ -253,12 +257,9 @@ const styles = StyleSheet.create({
   //   marginTop: 40,
   //   fontWeight: '100',
   // },
-  snowflake: {
+  icon: {
     height: 40,
     width: 40,
-    // borderColor: 'white',
-    // tintColor: 'black',
-    zIndex: 2,
   }
 })
 
