@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 38,
     fontWeight: 'bold',
-    marginBottom: 30,
+    marginBottom: 10,
     color: '#513B41'
   },
 })

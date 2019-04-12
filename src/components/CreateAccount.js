@@ -139,7 +139,7 @@ class CreateAccount extends Component {
         <View style={styles.rower}>
           <Image style={styles.icon} source={require('./assets/wind.png')} />
           <Image style={styles.icon} source={require('./assets/sunny.png')} />
-          <Image style={styles.icon} source={require('./assets/snowflake.png')} />
+          <Image style={styles.snow} source={require('./assets/snowflake.png')} />
           <Image style={styles.icon} source={require('./assets/umbrella.png')} />
         </View>
 
@@ -204,6 +204,7 @@ class CreateAccount extends Component {
 const styles = StyleSheet.create({
   rower: {
     flexDirection: 'row',
+    justifyContent: 'center',
   },
   form: {
     flex: 1,
@@ -260,7 +261,12 @@ const styles = StyleSheet.create({
   icon: {
     height: 40,
     width: 40,
-    margin: 10
+    margin: 10,
+  },
+  snow: {
+    height: 37,
+    width: 37,
+    margin: 10,
   }
 })
 
