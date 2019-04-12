@@ -97,7 +97,6 @@ class CreateAlert extends Component {
     })
     const newAlert = {
       message: this.state.message,
-      user_email: 'Matty85@aol.com',
       user_id: 1,
       type: maxormin,
       chosenTemp: this.state.chosenTemp,
@@ -179,7 +178,7 @@ class CreateAlert extends Component {
 const styles = StyleSheet.create({
   maxormin: {
     fontSize: 22,
-    color: '#ff6ec7',
+    color: 'blue',
     margin: 4,
     fontWeight: 'bold',
   },
