@@ -180,16 +180,14 @@ class CreateAccount extends Component {
               title="Create Account"
               color="#FFFFFF"
               style={styles.create}
-              onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long, email: this.state.email }); }}
+              onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }); }}
             />
           </View>
         </TouchableOpacity>
 
         <View style={styles.rower2}>
           <Text style={styles.login}
-            onPress={() =>
-              this.props.navigation.navigate('login')
-            }> Already have an account?  Login </Text>
+            onPress={() => { this.props.navigation.navigate('login', { lat: this.state.lat, long: this.state.long}) }}> Already have an account?  Login </Text>
         </View>
 
         {/* onPress={(e) => { func1(); func2(); }} */}

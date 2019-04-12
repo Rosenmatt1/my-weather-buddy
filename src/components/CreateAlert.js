@@ -1,11 +1,6 @@
 import React, { Component } from "react";
 import { View, TextInput, Button, StyleSheet, Text, } from "react-native";
 import Heading from './Heading.js'
-import { navigation } from 'react-navigation'
-
-// const symbol = "<"
-// const lat =  Number(39.7392)
-// const long =  Number(104.9903)
 
 const puce = '#513B41'
 
@@ -14,8 +9,6 @@ class CreateAlert extends Component {
     super(props)
     this.state = {
       message: "",
-      // chosenMaxTemp: 90,
-      // chosenMinTemp: 90,
       chosenTemp: 0,
       weatherTemp: 0,
       user_id: 0,
@@ -117,9 +110,7 @@ class CreateAlert extends Component {
 
 
   render() {
-
     const flipped = this.state.flipper ? this.state.max : this.state.min
-
     return (
       <View style={styles.form}>
         <Heading>Create Alert</Heading>
@@ -158,7 +149,7 @@ class CreateAlert extends Component {
               style={styles.createAlertButton}
               title="Set Alert"
               color="#FFFFFF"
-            onPress={(e) => { this.props.navigation.navigate('viewAlerts', { lat: this.state.lat, long: this.state.long, email: this.state.email }); this.createAlert(e); }}
+            onPress={(e) => { this.props.navigation.navigate('viewAlerts', { lat: this.state.lat, long: this.state.long }); this.createAlert(e); }}
             />
           </View>
 
@@ -167,7 +158,7 @@ class CreateAlert extends Component {
             style={styles.viewAlertsButton}
             title="View Alerts"
             onPress={() => {
-              this.props.navigation.navigate('viewAlerts', { lat: this.state.lat, long: this.state.long, email: this.state.email }); this.viewState() }}
+              this.props.navigation.navigate('viewAlerts', { lat: this.state.lat, long: this.state.long }); this.viewState() }}
           />
         </View>
       </View>

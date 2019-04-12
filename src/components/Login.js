@@ -41,7 +41,7 @@ class Login extends Component {
           <Button
             title="Login"
             color="white"
-            onPress={() => this.props.navigation.navigate('createAlert')}
+            onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }) }}
           />
         </View>
 
