@@ -185,7 +185,7 @@ class CreateAccount extends Component {
           </View>
         </TouchableOpacity>
 
-        <View style={styles.rower}>
+        <View style={styles.rower2}>
           <Text style={styles.login}
             onPress={() =>
               this.props.navigation.navigate('login')
@@ -206,6 +206,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
+  rower2: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 20,
+    marginLeft: 40,
+  },
   form: {
     flex: 1,
     width: '100%',
@@ -214,7 +220,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#C8F4F9',
   },
   inputContainer: {
-    width: '70%'
+    width: '70%',
+    marginTop: 20,
   },
   inputs: {
     width: '100%',
@@ -225,12 +232,6 @@ const styles = StyleSheet.create({
     padding: 5,
     margin: 8,
     color: puce,
-  },
-  rower: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 20,
-    marginLeft: 40,
   },
   createButton: {
     marginTop: 25,

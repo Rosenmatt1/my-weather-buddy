@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, View, Button, TextInput } from 'react-native'
+import { Platform, StyleSheet, View, Button, TextInput, Image } from 'react-native'
 import Heading from './Heading.js'
 
 const puce = '#513B41'
@@ -14,6 +14,13 @@ class Login extends Component {
     return (
       <View style={styles.container}>
         <Heading> MyWeather Buddy </Heading>
+
+        <View style={styles.rower}>
+          <Image style={styles.icon} source={require('./assets/wind.png')} />
+          <Image style={styles.icon} source={require('./assets/sunny.png')} />
+          <Image style={styles.snow} source={require('./assets/snowflake.png')} />
+          <Image style={styles.icon} source={require('./assets/umbrella.png')} />
+        </View>
 
         <View style={styles.inputContainer}>
           <TextInput
@@ -44,6 +51,10 @@ class Login extends Component {
 }
 
 const styles = StyleSheet.create({
+  rower: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -52,7 +63,7 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '70%',
-    marginTop: 40,
+    marginTop: 20,
   },
   inputs: {
     width: '100%',
@@ -77,6 +88,16 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     shadowOpacity: 0.25
   },
+  icon: {
+    height: 40,
+    width: 40,
+    margin: 10,
+  },
+  snow: {
+    height: 37,
+    width: 37,
+    margin: 10,
+  }
 })
 
 export default Login
