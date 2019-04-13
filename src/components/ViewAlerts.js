@@ -43,7 +43,7 @@ class ViewAlerts extends Component {
     return (
       <View style={styles.container}>
 
-        <Heading>Current Alerts</Heading>
+        <Heading style={styles.header}>Current Alerts</Heading>
 
         <View style={styles.rower}>
           <Image style={styles.icon} source={require('./assets/wind.png')} />
@@ -88,6 +88,9 @@ class ViewAlerts extends Component {
 }
 
 const styles = StyleSheet.create({
+  header: {
+    marginBottom: 0
+  },
   rower: {
     flexDirection: 'row',
     justifyContent: 'center',

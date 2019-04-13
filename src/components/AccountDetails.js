@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Platform, StyleSheet, View, Button, Text, } from 'react-native'
+import { Platform, StyleSheet, View, Button, Text, Image } from 'react-native'
 import Heading from './Heading.js'
 import ChangeEmail from './ChangeEmail.js'
 
@@ -26,7 +26,14 @@ class AccountDetails extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Heading> Account Details </Heading>
+        <Heading style={styles.header}> Account Details </Heading>
+
+        <View style={styles.rower}>
+          <Image style={styles.icon} source={require('./assets/wind.png')} />
+          <Image style={styles.icon} source={require('./assets/sunny.png')} />
+          <Image style={styles.snow} source={require('./assets/snowflake.png')} />
+          <Image style={styles.icon} source={require('./assets/umbrella.png')} />
+        </View>
 
           <View style={styles.holder}>
             <Text style={styles.sizer}>Email(UserName):  </Text>
@@ -71,6 +78,14 @@ class AccountDetails extends Component {
 }
 
 const styles = StyleSheet.create({
+  header: {
+    marginBottom: 0
+  },
+  rower: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 30
+  },
   container: {
     flex: 1,
     justifyContent: 'center',

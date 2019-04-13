@@ -112,7 +112,7 @@ class CreateAlert extends Component {
     const flipped = this.state.flipper ? this.state.max : this.state.min
     return (
       <View style={styles.form}>
-        <Heading>Create Alert</Heading>
+        <Heading style={styles.header}>Create Alert</Heading>
 
         <View style={styles.rower}>
           <Image style={styles.icon} source={require('./assets/wind.png')} />
@@ -132,8 +132,7 @@ class CreateAlert extends Component {
               <TextInput
                 style={styles.userInput}
                 placeholder={this.state.placeholder ? "40" : ""}
-                value={this.state.chosenTemp}
-                
+                // value={this.state.chosenTemp}
                 onChangeText={(e) => this.setTemp(e)}
               />
               <Text style={styles.sizer}> degrees </Text>
@@ -143,7 +142,7 @@ class CreateAlert extends Component {
           <TextInput
             style={styles.alertMessage}
             placeholder="ie Wear Hat and Gloves"
-            value={this.state.message}
+            // value={this.state.message}
             onChangeText={(e) => this.setMessage(e)}
           />
           <View style={styles.center}>
