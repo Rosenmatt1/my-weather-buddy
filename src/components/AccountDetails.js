@@ -33,7 +33,7 @@ class AccountDetails extends Component {
             <Text style={styles.sizer}>matty85@aol.com</Text>
           </View>
           <Button
-            title="Update Email"
+            title="Change Email"
             onPress={() => this.changeEmail()}
           />
         
@@ -42,7 +42,7 @@ class AccountDetails extends Component {
           <Text style={styles.sizer}>  *********</Text>
         </View>
         <Button
-          title="Update Password"
+          title="Change Password"
           onPress={() => this.changePassword()}
         />
 
@@ -51,7 +51,7 @@ class AccountDetails extends Component {
           <Text style={styles.sizer}>  long: 104.9903</Text>
         </View>
         <Button
-          title="Update Lat & Long"
+          title="Change Lat & Long"
           onPress={() => this.changePassword()}
         />
 
