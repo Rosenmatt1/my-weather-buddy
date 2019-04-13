@@ -28,7 +28,7 @@ class AccountDetails extends Component {
       <View style={styles.container}>
         <Heading> Account Details </Heading>
 
-          <View style={styles.email}>
+          <View style={styles.holder}>
             <Text style={styles.sizer}>Email(UserName):  </Text>
             <Text style={styles.sizer}>matty85@aol.com</Text>
           </View>
@@ -37,7 +37,7 @@ class AccountDetails extends Component {
             onPress={() => this.changeEmail()}
           />
         
-        <View style={styles.password}>
+        <View style={styles.holder}>
           <Text style={styles.sizer}>Password:</Text>
           <Text style={styles.sizer}>  *********</Text>
         </View>
@@ -46,9 +46,9 @@ class AccountDetails extends Component {
           onPress={() => this.changePassword()}
         />
 
-        <View style={styles.password}>
-          <Text style={styles.sizer}>Password:</Text>
-          <Text style={styles.sizer}>  *********</Text>
+        <View style={styles.holder}>
+          <Text style={styles.sizer}>lat: 39.7392</Text>
+          <Text style={styles.sizer}>  long: 104.9903</Text>
         </View>
         <Button
           title="Update Lat & Long"
@@ -85,11 +85,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: puce,
   },
-  email: {
+  holder: {
     flexDirection: 'row',
-  },
-  password: {
-    flexDirection: 'row',
+    marginTop: 20
   },
   logout: {
     marginTop: 30,
