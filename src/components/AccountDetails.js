@@ -118,6 +118,16 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     shadowOpacity: 0.25
   },
+  icon: {
+    height: 40,
+    width: 40,
+    margin: 10,
+  },
+  snow: {
+    height: 37,
+    width: 37,
+    margin: 10,
+  }
 })
 
 export default AccountDetails
