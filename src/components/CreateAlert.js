@@ -175,6 +175,9 @@ class CreateAlert extends Component {
 }
 
 const styles = StyleSheet.create({
+  header: {
+    marginBottom: 0
+  },
   rower: {
     flexDirection: 'row',
     justifyContent: 'center',
