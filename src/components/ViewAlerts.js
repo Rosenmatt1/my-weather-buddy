@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Text, Button } from "react-native";
+import { View, StyleSheet, Text, Button, Image } from "react-native";
 import Heading from './Heading.js'
 import Alert from './Alert.js'
 
@@ -44,6 +44,14 @@ class ViewAlerts extends Component {
       <View style={styles.container}>
 
         <Heading>Current Alerts</Heading>
+
+        <View style={styles.rower}>
+          <Image style={styles.icon} source={require('./assets/wind.png')} />
+          <Image style={styles.icon} source={require('./assets/sunny.png')} />
+          <Image style={styles.snow} source={require('./assets/snowflake.png')} />
+          <Image style={styles.icon} source={require('./assets/umbrella.png')} />
+        </View>
+
         <Text style={styles.miniText}> **Alerts are sent at 7pm the night before the weather condition will be met** </Text>
 
         {this.state.alerts[0]
@@ -80,6 +88,15 @@ class ViewAlerts extends Component {
 }
 
 const styles = StyleSheet.create({
+  rower: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 30
+  },
+  rower2: {
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
   container: {
     flex: 1,
     width: '100%',
@@ -92,10 +109,6 @@ const styles = StyleSheet.create({
     fontWeight: '200',
     marginBottom: 30,
     color: puce,
-  },
-  rower: {
-    flexDirection: 'row',
-    justifyContent: 'center'
   },
   buttons: {
     backgroundColor: puce,
@@ -112,6 +125,16 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     shadowOpacity: 0.25
   },
+  icon: {
+    height: 40,
+    width: 40,
+    margin: 10,
+  },
+  snow: {
+    height: 37,
+    width: 37,
+    margin: 10,
+  }
 })
 
 export default ViewAlerts

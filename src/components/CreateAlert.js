@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, TextInput, Button, StyleSheet, Text, } from "react-native";
+import { View, TextInput, Button, StyleSheet, Text, Image } from "react-native";
 import Heading from './Heading.js'
 
 const puce = '#513B41'
@@ -65,7 +65,6 @@ class CreateAlert extends Component {
 
   viewState = () => {
     console.log(this.props.navigation.state.params.lat)
-    console.log(this.props.navigation.state.params.email)
   }
 
   flipSymbol = () => {
@@ -115,6 +114,14 @@ class CreateAlert extends Component {
       <View style={styles.form}>
         <Heading>Create Alert</Heading>
 
+        <View style={styles.rower}>
+          <Image style={styles.icon} source={require('./assets/wind.png')} />
+          <Image style={styles.icon} source={require('./assets/sunny.png')} />
+          <Image style={styles.snow} source={require('./assets/snowflake.png')} />
+          <Image style={styles.icon} source={require('./assets/umbrella.png')} />
+        </View>
+
+
         <View style={styles.inputContainer}>
           <View style={styles.center}>
             <Text style={styles.sizer}>  Send Alert  </Text>
@@ -161,15 +168,21 @@ class CreateAlert extends Component {
               this.props.navigation.navigate('viewAlerts', { lat: this.state.lat, long: this.state.long }); this.viewState() }}
           />
         </View>
+
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  rower: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginBottom: 40
+  },
   maxormin: {
     fontSize: 22,
-    color: 'blue',
+    color: '#0071FF',
     margin: 4,
     fontWeight: 'bold',
   },
@@ -243,6 +256,16 @@ const styles = StyleSheet.create({
       width: 0,
       height: 3
     },
+  },
+  icon: {
+    height: 40,
+    width: 40,
+    margin: 10,
+  },
+  snow: {
+    height: 37,
+    width: 37,
+    margin: 10,
   }
 })
 
