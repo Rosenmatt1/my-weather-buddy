@@ -180,7 +180,7 @@ class CreateAccount extends Component {
               title="Create Account"
               color="#FFFFFF"
               style={styles.create}
-              onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }); }}
+              onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }) }}
             />
           </View>
         </TouchableOpacity>
