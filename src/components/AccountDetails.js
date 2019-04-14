@@ -36,7 +36,7 @@ class AccountDetails extends Component {
         </View>
 
           <View style={styles.holder}>
-            <Text style={styles.sizer}>Email(UserName):  </Text>
+          <Text style={styles.sizer}><Text style={styles.bolder}>Email(UserName):</Text>  </Text>
             <Text style={styles.sizer}>matty85@aol.com</Text>
           </View>
           <Button
@@ -45,7 +45,7 @@ class AccountDetails extends Component {
           />
         
         <View style={styles.holder}>
-          <Text style={styles.sizer}>Password:</Text>
+          <Text style={styles.sizer}><Text style={styles.bolder}>Password:</Text></Text>
           <Text style={styles.sizer}>  *********</Text>
         </View>
         <Button
@@ -54,8 +54,8 @@ class AccountDetails extends Component {
         />
 
         <View style={styles.holder}>
-          <Text style={styles.sizer}>lat: 39.7392</Text>
-          <Text style={styles.sizer}>  long: 104.9903</Text>
+          <Text style={styles.sizer}><Text style={styles.bolder}>lat:</Text> 39.7392</Text>
+          <Text style={styles.sizer}>  <Text style={styles.bolder}>long:</Text> 104.9903</Text>
         </View>
         <Button
           title="Change Lat & Long"
@@ -66,8 +66,7 @@ class AccountDetails extends Component {
           <Button
             title="Log Out"
             color='white'
-            onPress={() => {
-              this.props.navigation.navigate('login', { lat: this.state.lat, long: this.state.long }) }}
+            onPress={() => { this.props.navigation.navigate('login', { lat: this.state.lat, long: this.state.long }) }}
           //  onPress={(e) => { func1(); func2(); }}>
           />
         </View>
@@ -105,7 +104,7 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   logout: {
-    marginTop: 30,
+    marginTop: 40,
     marginLeft: 20,
     backgroundColor: puce,
     borderRadius: 10,
@@ -117,6 +116,9 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 10,
     shadowOpacity: 0.25
+  },
+  bolder: {
+    fontWeight: 'bold',
   },
   icon: {
     height: 40,

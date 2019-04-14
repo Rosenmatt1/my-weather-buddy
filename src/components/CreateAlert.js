@@ -64,7 +64,8 @@ class CreateAlert extends Component {
   setMessage = (e) => this.setState({ message: e })
 
   viewState = () => {
-    console.log(this.props.navigation.state.params.lat)
+    // console.log(this.props.navigation.state.params.lat)
+    console.log("hello")
   }
 
   flipSymbol = () => {

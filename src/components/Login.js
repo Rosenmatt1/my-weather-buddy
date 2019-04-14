@@ -5,6 +5,9 @@ import Heading from './Heading.js'
 const puce = '#513B41'
 
 class Login extends Component {
+  constructor(props) {
+    super(props)
+  }
 
   static navigationOptions = {
     header: null,
