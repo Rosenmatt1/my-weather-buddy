@@ -23,23 +23,20 @@ class CreateAccount extends Component {
     header: null,
   }
 
-  // componentDidMount() {
-  //   let geoOptions = {
-  //     enableHighAccuracy: true,
-  //     timeOut: 20000,
-  //     maximumAge: 60 * 60 * 24
-  //   }
-  //   window.navigator.geolocation.getCurrentPosition(position => {
-  //     console.log("position", position)
-  //     this.setState({
-  //       // lat: position.coords.latitude
-  //       location: position.coords.latitude
-  //     }),
-  //       err => this.setState({
-  //         errorMessage: err.message
-  //       }), geoOptions
-  //   })
-  // }
+  componentDidMount() {
+    window.navigator.geolocation.getCurrentPosition(position => {
+      console.log("position", position)
+      this.setState({
+        lat: position.coords.latitude,
+        long: position.coords.longitude,
+      }),
+      console.log("lat", this.state.lat)
+      console.log("lat", this.state.long)
+      err => this.setState({
+        errorMessage: err.message
+      })
+    })
+  }
 
   setName = (e) => {
     this.setState({
@@ -65,20 +62,20 @@ class CreateAccount extends Component {
     })
   }
 
-  getLocation = (e) => {
-    window.navigator.geolocation.getCurrentPosition(position => { 
-    console.log("position", position)
-      this.setState({
-      lat: position.coords.latitude,
-      long: position.coords.longitude,
-    }),
-      console.log("lat", this.state.lat)
-      console.log("lat", this.state.long)
-      err => this.setState({
-        errorMessage: err.message
-      })
-    })
-  }
+  // getLocation = (e) => {
+  //   window.navigator.geolocation.getCurrentPosition(position => { 
+  //   console.log("position", position)
+  //     this.setState({
+  //     lat: position.coords.latitude,
+  //     long: position.coords.longitude,
+  //   }),
+  //     console.log("lat", this.state.lat)
+  //     console.log("lat", this.state.long)
+  //     err => this.setState({
+  //       errorMessage: err.message
+  //     })
+  //   })
+  // }
 
   postUser = () => {
     const newUser = {
@@ -149,10 +146,12 @@ class CreateAccount extends Component {
               title="Create Account"
               color="#FFFFFF"
               style={styles.create}
-              onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }); this.postUser(); this.getLocation(); }}
+              onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }); this.postUser();  }}
             />
           </View>
         </TouchableOpacity>
+
+        {/* this.getLocation(); */}
 
         <View style={styles.rower2}>
           <Text style={styles.login}

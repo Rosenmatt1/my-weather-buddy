@@ -28,7 +28,7 @@ class CreateAlert extends Component {
   componentDidMount() {
     console.log("2ndPageLat", this.props.navigation.state.params.lat)
     console.log("2ndPageLong", this.props.navigation.state.params.long)
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.props.navigation.state.params.lat}&lon=-${this.props.navigation.state.params.long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${this.props.navigation.state.params.lat}&lon=${this.props.navigation.state.params.long}&APPID=ab7c893ba66ab77f4354fb07e9abfd0e`, {
       method: "GET",
       "Content-Type": "application/json",
     })
