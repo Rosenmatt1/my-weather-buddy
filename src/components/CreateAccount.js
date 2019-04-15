@@ -14,11 +14,8 @@ class CreateAccount extends Component {
       phone: '',
       email: '',
       hashed_password: '',
-      // lat: 39.7392,
-      // long: 104.9903,
       lat: 0,
       long: 0,
-      location: []
     }
   }
 
@@ -69,52 +66,19 @@ class CreateAccount extends Component {
   }
 
   getLocation = (e) => {
-    console.log("e", e)
     window.navigator.geolocation.getCurrentPosition(position => { 
     console.log("position", position)
       this.setState({
-      // lat: position.coords.latitude
-      location: position.coords.latitude
+      lat: position.coords.latitude,
+      long: position.coords.longitude,
     }),
-    console.log("lat", this.state.lat)
-        console.log("location1", this.state.location)
+      console.log("lat", this.state.lat)
+      console.log("lat", this.state.long)
       err => this.setState({
         errorMessage: err.message
       })
     })
   }
-
-  // getLocation = async (toGoogleAddress) => {
-  //   await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${toGoogleAddress}&key=AIzaSyBixPOjrGSjxpkw-pszxd_iUvQdbMBTXxg`, {
-  //     method: "GET", "Content-Type": "application/json",
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => { this.setState({ location: data.results[0].geometry.location }) })
-  // }
-
-  // const toAddress = e.target[1].value
-  // Promise.all([this.fromAddressGoogle(fromAddress), this.toAddressGoogle(toAddress)])
-
-
-  // pickUpAddress = async (e) => {
-  //   this.setState({ puAddress: e.target.value })
-  //   await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${e.target.value}&key=AIzaSyBixPOjrGSjxpkw-pszxd_iUvQdbMBTXxg&sessiontoken=${localStorage.lyftjwt}`, {
-  //     method: "GET",
-  //     "Content-Type": "application/json",
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       this.setState({
-  //         autocompletePu: data
-  //       })
-  //     })
-  //     .catch(error => {
-  //       console.error(error)
-  //     })
-  // }
-
-  // <input id="autocomplete" onChange={props.pickUpAddress} type="address" className="form-control border-dark" placeholder="Enter Pick Up Location" value={props.puAddress} />
-
 
   postUser = () => {
     const newUser = {
