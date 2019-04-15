@@ -133,6 +133,7 @@ class CreateAccount extends Component {
     })
   }
 
+
   render() {
     return (
       <View style={styles.form}>
@@ -182,7 +183,7 @@ class CreateAccount extends Component {
               title="Create Account"
               color="#FFFFFF"
               style={styles.create}
-              onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }) }}
+              onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }); this.postUser() }}
             />
           </View>
         </TouchableOpacity>
