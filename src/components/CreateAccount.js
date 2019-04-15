@@ -4,6 +4,8 @@ import Heading from './Heading.js'
 
 const puce = '#513B41'
 
+const url = 'https://myweatherbuddy.herokuapp.com/'
+
 class CreateAccount extends Component {
   constructor(props) {
     super(props)
