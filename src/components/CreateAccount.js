@@ -14,8 +14,10 @@ class CreateAccount extends Component {
       phone: '',
       email: '',
       hashed_password: '',
-      lat: 39.7392,
-      long: 104.9903,
+      // lat: 39.7392,
+      // long: 104.9903,
+      lat: 0,
+      long: 0,
       location: []
     }
   }
@@ -66,21 +68,21 @@ class CreateAccount extends Component {
     })
   }
 
-
-  // getLocation = (e) => {
-  //   console.log("e", e)
-  //   window.navigator.geolocation.getCurrentPosition(position => { 
-  //   console.log("position", position)
-  //     this.setState({
-  //     // lat: position.coords.latitude
-  //     location: position.coords.latitude
-  //   }),
-  //     err => this.setState({
-  //       errorMessage: err.message
-  //     })
-  //   })
-  //   console.log("location", this.state.location)
-  // }
+  getLocation = (e) => {
+    console.log("e", e)
+    window.navigator.geolocation.getCurrentPosition(position => { 
+    console.log("position", position)
+      this.setState({
+      // lat: position.coords.latitude
+      location: position.coords.latitude
+    }),
+    console.log("lat", this.state.lat)
+        console.log("location1", this.state.location)
+      err => this.setState({
+        errorMessage: err.message
+      })
+    })
+  }
 
   // getLocation = async (toGoogleAddress) => {
   //   await fetch(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${toGoogleAddress}&key=AIzaSyBixPOjrGSjxpkw-pszxd_iUvQdbMBTXxg`, {
@@ -183,7 +185,7 @@ class CreateAccount extends Component {
               title="Create Account"
               color="#FFFFFF"
               style={styles.create}
-              onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }); this.postUser() }}
+              onPress={() => { this.props.navigation.navigate('createAlert', { lat: this.state.lat, long: this.state.long }); this.postUser(); this.getLocation(); }}
             />
           </View>
         </TouchableOpacity>
