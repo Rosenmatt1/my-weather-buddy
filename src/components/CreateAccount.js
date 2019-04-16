@@ -139,6 +139,7 @@ class CreateAccount extends Component {
             placeholder="Password"
             name="password"
             type="password"
+            secureTextEntry={true}
             value={this.state.hashed_password}
             onChangeText={(e) => this.setPassword(e)}
           />
