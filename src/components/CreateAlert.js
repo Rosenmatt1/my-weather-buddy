@@ -65,11 +65,6 @@ class CreateAlert extends Component {
 
   setMessage = (e) => this.setState({ message: e })
 
-  viewState = () => {
-    // console.log(this.props.navigation.state.params.lat)
-    console.log("hello")
-  }
-
   flipSymbol = () => {
     this.setState({
       flipper: !this.state.flipper,
@@ -167,7 +162,7 @@ class CreateAlert extends Component {
             style={styles.viewAlertsButton}
             title="View Alerts"
             onPress={() => {
-              this.props.navigation.navigate('viewAlerts', { lat: this.state.lat, long: this.state.long }); this.viewState() }}
+              this.props.navigation.navigate('viewAlerts', { lat: this.state.lat, long: this.state.long }) }}
           />
         </View>
 

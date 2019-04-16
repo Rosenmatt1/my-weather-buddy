@@ -114,6 +114,7 @@ class CreateAccount extends Component {
             style={styles.inputs}
             placeholder="Name"
             name="name"
+            type="name"
             value={this.state.name}
             onChangeText={(e) => this.setName(e)}
           />
@@ -121,6 +122,7 @@ class CreateAccount extends Component {
             style={styles.inputs}
             placeholder="Email"
             name="email"
+            type="email"
             value={this.state.email}
             onChangeText={(e) => this.setEmail(e)}
           />
@@ -128,13 +130,15 @@ class CreateAccount extends Component {
             style={styles.inputs}
             placeholder="Phone"
             name="phone"
+            type="phone"
             value={this.state.phone}
             onChangeText={(e) => this.setPhone(e)}
           />
           <TextInput
             style={styles.inputs}
             placeholder="Password"
-            name="hashed_password"
+            name="password"
+            type="password"
             value={this.state.hashed_password}
             onChangeText={(e) => this.setPassword(e)}
           />

@@ -10,6 +10,8 @@ class ViewAlerts extends Component {
     super(props)
     this.state = {
       alerts: [],
+      lat: this.props.navigation.state.params.lat,
+      long: this.props.navigation.state.params.long
     }
   }
 
@@ -35,6 +37,8 @@ class ViewAlerts extends Component {
   }
 
   componentDidMount() {
+    console.log("3rdPageLat", this.state.lat)
+    console.log("3rdPageLong",this.state.long)
     this.getAlerts()
   }
 
