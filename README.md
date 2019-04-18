@@ -27,3 +27,5 @@ Technologies Used:
 
 Color Palette:
 https://www.canva.com/colors/combinations/berry-jar/
+
+https://media.giphy.com/media/fqheYI3vJQvXGhFDDB/giphy.gif
