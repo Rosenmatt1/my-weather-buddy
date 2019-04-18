@@ -1,3 +1,4 @@
+A weather app that allows users to set and receive text message weather alerts based on the criteria of their choosing. Built with React Native and JavaScript on the front end. On the back end is Node.js, Express, Knex, PostgreSQL, and KNEX. The app utilizes the Twilio API to send the weather alerts as text messages.
 
 ![MyWeather Buddy](https://media.giphy.com/media/fqheYI3vJQvXGhFDDB/giphy.gif)
 
