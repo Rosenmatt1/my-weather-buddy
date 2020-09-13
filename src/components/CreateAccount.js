@@ -51,7 +51,7 @@ class CreateAccount extends Component {
   }
 
   setPhone = (e) => {
-    parsedPhone = e.replace('-','');
+    parsedPhone = e.replace('-','').replace('(','').replace(')','');
     this.setState({
       phone: parsedPhone
     })
